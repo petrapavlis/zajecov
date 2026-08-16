@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1263 → 2046 · Zaječov · Analýza a dlouhodobé priority obce</title>
+<meta name="description" content="Nezávislá analýza situace obce Zaječov na základě veřejných dat: voda, demografie, bydlení, péče o seniory, rozpočet. S doporučeními a akčním plánem.">
+<meta name="author" content="Petra Pavlisová">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* dvě barvy + neutrály */
+  --green:#2E4A39;        /* Brdy — nadpisy, linie, tmavé prvky */
+  --green-soft:#7A9484;   /* oslabená zeleň — ilustrace, popisky */
+  --rust:#A8613F;         /* pálená krytina — jediný akcent */
+
+  --paper:#F7F6F1;
+  --paper-2:#EFEEE6;
+  --rule:#DCDBD1;
+  --rule-2:#C9C8BC;
+  --ink:#2E332F;
+  --ink-soft:#666B64;
+
+  --maxw:940px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Libre Franklin",system-ui,sans-serif;
+  font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+
+/* ---------- typografie ---------- */
+h1,h2{
+  font-family:"Fraunces",Georgia,serif;font-weight:600;
+  font-variation-settings:"SOFT" 30;
+  line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green);
+}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-family:"Libre Franklin",sans-serif;font-size:1.12rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
+p{margin:0 0 1em}
+a{color:var(--rust);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--green)}
+strong{font-weight:600;color:var(--green)}
+
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--rust);
+  display:block;margin:0 0 1em;
+}
+.lede{font-size:1.08rem;color:var(--ink-soft)}
+
+/* ---------- navigace ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,246,241,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav-in{
+  max-width:var(--maxw);margin:0 auto;padding:0 26px;
+  display:flex;align-items:center;gap:26px;height:52px;
+}
+.nav-mark{
+  font-family:"JetBrains Mono",monospace;font-size:.74rem;font-weight:700;letter-spacing:.02em;
+  color:var(--green);text-decoration:none;white-space:nowrap;flex:none;
+}
+.nav-mark span{color:var(--rust)}
+.nav-links{
+  display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;margin-left:auto;
+}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-family:"JetBrains Mono",monospace;font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.on{color:var(--rust);border-bottom-color:var(--rust)}
+@media(max-width:720px){
+  .nav-in{gap:16px;padding:0 18px}
+  .nav-mark{font-size:.68rem}
+  .nav-links{gap:18px}
+  .nav-links a{font-size:.63rem;letter-spacing:.1em}
+}
+@media(max-width:430px){.nav-mark{display:none}.nav-links{margin-left:0}}
+
+section[id]{scroll-margin-top:64px}
+
+/* ---------- hlavička ---------- */
+.hero{padding:44px 0 0}
+.stamp{
+  font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-soft);margin:0 0 40px;
+  display:flex;flex-wrap:wrap;gap:6px 14px;
+}
+.stamp i{font-style:normal;color:var(--rule-2)}
+h1 .arrow{color:var(--rust);font-family:"JetBrains Mono",monospace;font-weight:400;font-size:.5em;vertical-align:.16em;padding:0 .12em}
+.thesis{
+  font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);
+  line-height:1.45;color:var(--ink-soft);max-width:31ch;margin:28px 0 0;
+}
+.thesis b{color:var(--green);font-weight:600}
+
+.hero-art{display:block;width:100%;height:auto;margin:34px 0 0;color:var(--green)}
+.art-cap{
+  font-family:"JetBrains Mono",monospace;font-size:.65rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-soft);text-align:center;margin:6px 0 0;
+}
+
+.byline{
+  border-top:1px solid var(--rule);margin-top:34px;padding:22px 0 0;
+  display:flex;flex-wrap:wrap;gap:8px 32px;font-size:.88rem;color:var(--ink-soft);
+}
+.byline b{color:var(--green);font-weight:600}
+.notice{
+  border-left:3px solid var(--rust);padding:2px 0 2px 16px;margin:24px 0 0;
+  font-size:.88rem;color:var(--ink-soft);
+}
+.notice p{margin:0}
+
+/* ---------- sekce ---------- */
+section{padding:62px 0}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{margin-bottom:34px;max-width:60ch}
+.sec-head p:last-child{margin-bottom:0}
+
+/* ---------- bloky ---------- */
+.block{background:#fff;border:1px solid var(--rule);padding:28px 30px}
+.grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.grid>*{background:#fff;padding:26px}
+@media(max-width:820px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.g4{grid-template-columns:1fr}}
+
+.stat .num{
+  font-family:"Fraunces",serif;font-weight:700;color:var(--rust);
+  font-size:2.6rem;line-height:1;letter-spacing:-.04em;display:block;margin-bottom:12px;
+}
+.stat b{display:block;color:var(--green);font-size:.94rem;margin-bottom:5px}
+.stat span.t{font-size:.87rem;color:var(--ink-soft);line-height:1.55}
+
+.flag{background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--rust);padding:26px 28px;margin-top:24px}
+.flag h3{margin-bottom:7px}
+.flag p:last-child{margin:0}
+
+/* ---------- tabulky ---------- */
+.tbl{border:1px solid var(--rule);background:#fff;margin-bottom:24px}
+.tbl:last-child{margin-bottom:0}
+.tbl-hd{padding:22px 26px 0}
+.tbl-hd h3{margin-bottom:4px}
+.tbl-hd .src{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+.scroller{overflow-x:auto;padding-top:16px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:420px}
+th,td{padding:9px 26px;text-align:left;border-top:1px solid var(--rule)}
+th{
+  font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-soft);
+}
+td:not(:first-child),th:not(:first-child){text-align:right}
+td:not(:first-child){font-family:"JetBrains Mono",monospace;font-variant-numeric:tabular-nums;font-size:.85rem}
+tr.hi td{color:var(--rust);font-weight:700}
+tr.hi td:first-child{color:var(--green)}
+td.ind{padding-left:44px;color:var(--ink-soft)}
+.tbl-note{padding:18px 26px 22px;border-top:1px solid var(--rule);font-size:.89rem;margin:0}
+
+/* ---------- rizika ---------- */
+.risk{padding:28px 0;border-top:1px solid var(--rule)}
+.risk:first-child{border-top:0;padding-top:0}
+.risk:last-child{padding-bottom:0}
+.risk-hd{display:flex;gap:16px;align-items:baseline;margin-bottom:16px}
+.risk-hd .n{font-family:"JetBrains Mono",monospace;font-size:.78rem;color:var(--rust);font-weight:700}
+.risk dl{margin:0;display:grid;grid-template-columns:110px 1fr;gap:2px 22px}
+.risk dt{
+  font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);padding-top:.42em;
+}
+.risk dd{margin:0 0 12px}
+@media(max-width:640px){
+  .risk dl{grid-template-columns:1fr;gap:0}
+  .risk dt{margin-top:12px}
+}
+
+/* ---------- teze ---------- */
+.pull{border-top:2px solid var(--green);border-bottom:2px solid var(--green);padding:46px 0;text-align:center}
+.pull q{
+  font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.45rem,4.2vw,2.3rem);
+  line-height:1.3;display:block;max-width:23ch;margin:0 auto;quotes:none;color:var(--green);
+}
+.pull q .o{color:var(--rust)}
+.pull p{color:var(--ink-soft);font-size:.94rem;margin:24px auto 0;max-width:54ch}
+
+/* ---------- osa horizontů ---------- */
+.spine{position:relative;padding-left:116px}
+.spine::before{content:"";position:absolute;left:80px;top:6px;bottom:6px;width:1px;background:var(--rule-2)}
+.pri{position:relative;padding:0 0 44px}
+.pri:last-child{padding-bottom:0}
+.pri .yr{position:absolute;left:-116px;top:-2px;width:80px;text-align:right;font-family:"JetBrains Mono",monospace}
+.pri .yr .v{display:block;font-size:1.7rem;font-weight:700;color:var(--green);line-height:1;letter-spacing:-.05em}
+.pri .yr .u{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+.pri::before{
+  content:"";position:absolute;left:-40px;top:9px;width:9px;height:9px;
+  background:var(--paper);border:2px solid var(--green-soft);border-radius:50%;
+}
+.pri.urgent::before{background:var(--rust);border-color:var(--rust)}
+.pri h3{font-family:"Fraunces",serif;font-size:1.32rem;font-weight:600;margin-bottom:12px;letter-spacing:-.015em}
+.pri p:last-child{margin-bottom:0}
+.pri ol{margin:.8em 0 0;padding-left:1.25em}
+.pri ol li{margin-bottom:.45em}
+.pri li::marker{color:var(--green-soft)}
+.pri .warn{
+  display:inline-block;font-family:"JetBrains Mono",monospace;font-size:.63rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--rust);border:1px solid var(--rust);padding:3px 9px;margin-bottom:13px;
+}
+@media(max-width:700px){
+  .spine{padding-left:0}
+  .spine::before{display:none}
+  .pri{padding:0 0 0 20px;border-left:2px solid var(--rule-2);margin-bottom:36px}
+  .pri.urgent{border-left-color:var(--rust)}
+  .pri::before{display:none}
+  .pri .yr{position:static;width:auto;text-align:left;margin-bottom:10px;display:flex;gap:7px;align-items:baseline}
+  .pri .yr .v{font-size:1.15rem}
+  .pri .yr .u{margin-top:0}
+}
+
+/* ---------- akční plán ---------- */
+.phase{border-top:1px solid var(--rule);padding:26px 0}
+.phase:first-of-type{border-top:0;padding-top:0}
+.phase:last-of-type{padding-bottom:0}
+.phase-hd{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:baseline;margin-bottom:16px}
+.tag{
+  font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.68rem;letter-spacing:.16em;
+  color:var(--green);border:1px solid var(--green);padding:4px 11px;
+}
+.phase:first-of-type .tag{background:var(--green);color:var(--paper)}
+.when{font-family:"JetBrains Mono",monospace;font-size:.76rem;color:var(--ink-soft)}
+.tasks{list-style:none;margin:0;padding:0}
+.tasks li{
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:baseline;
+  padding:9px 0;border-top:1px solid var(--rule);font-size:.92rem;
+}
+.tasks li:first-child{border-top:0}
+.cost{font-family:"JetBrains Mono",monospace;font-size:.75rem;color:var(--ink-soft);white-space:nowrap}
+.cost.k{color:var(--rust);font-weight:700}
+@media(max-width:560px){.tasks li{grid-template-columns:1fr}.cost{margin-top:-4px}}
+
+/* ---------- mezery ---------- */
+.gaps{list-style:none;margin:0;padding:0;counter-reset:g}
+.gaps li{counter-increment:g;position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--rule)}
+.gaps li:first-child{border-top:0}
+.gaps li::before{
+  content:counter(g,decimal-leading-zero);position:absolute;left:0;top:16px;
+  font-family:"JetBrains Mono",monospace;font-size:.76rem;font-weight:700;color:var(--rust);
+}
+
+/* ---------- zdroje ---------- */
+.srcgrp{margin-bottom:26px}
+.srcgrp:last-child{margin-bottom:0}
+.srcgrp h3{
+  font-family:"JetBrains Mono",monospace;font-size:.67rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rust);margin-bottom:10px;padding-bottom:9px;border-bottom:1px solid var(--rule);
+}
+.srcgrp ul{list-style:none;margin:0;padding:0}
+.srcgrp li{padding:9px 0;font-size:.87rem;border-top:1px solid var(--rule);line-height:1.55}
+.srcgrp li:first-child{border-top:0}
+.srcgrp .u{display:block;font-family:"JetBrains Mono",monospace;font-size:.7rem;color:var(--ink-soft);word-break:break-all;margin-top:3px}
+
+/* ---------- patička ---------- */
+footer{background:var(--paper-2);border-top:1px solid var(--rule)}
+.foot{padding:56px 0 34px;font-size:.92rem;max-width:66ch}
+.foot h3{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
+.foot p:last-child{margin-bottom:0}
+.foot-rule{
+  border-top:1px solid var(--rule-2);padding:18px 0 44px;
+  font-family:"JetBrains Mono",monospace;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between;
+}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+}
+:focus-visible{outline:2px solid var(--rust);outline-offset:3px}
+
+/* ---------- tisk ---------- */
+@media print{
+  body{background:#fff;font-size:10pt}
+  .rv{opacity:1;transform:none}
+  section{padding:14pt 0;break-inside:avoid}
+  .block,.tbl,.pri,.phase,.pull{break-inside:avoid}
+  footer{background:#fff}
+  a{color:var(--ink);text-decoration:none}
+  .tag{background:#fff !important;color:var(--green) !important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Obsah studie">
+  <div class="nav-in">
+    <a class="nav-mark" href="#top">1263 <span>→</span> 2046</a>
+    <div class="nav-links">
+      <a href="#shrnuti">Shrnutí</a>
+      <a href="#data">Data</a>
+      <a href="#rizika">Rizika</a>
+      <a href="#priority">Priority</a>
+      <a href="#plan">Plán</a>
+      <a href="#mezery">Co chybí</a>
+      <a href="#zdroje">Zdroje</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= HLAVIČKA ================= -->
+<header class="wrap hero" id="top">
+  <p class="stamp">
+    <span>Zaječov · Kvaň · Nová Ves</span><i>/</i>
+    <span>Okres Beroun</span><i>/</i>
+    <span>Srpen 2026</span>
+  </p>
+
+  <h1>1263 <span class="arrow">→</span> 2046</h1>
+
+  <p class="thesis">Klášter Svaté Dobrotivé stojí v Zaječově <b>763 let</b>.
+  Nejdelší plán, který dnes obec veřejně má, sahá do roku 2030.</p>
+
+  <svg class="hero-art" viewBox="0 0 1000 268" fill="none" role="img"
+       aria-label="Klášter Svaté Dobrotivé v Zaječově — konventní křídlo v popředí, za ním kostel a věž"
+       preserveAspectRatio="xMidYMax meet">
+
+    <!-- ===== POZADÍ ===== -->
+    <g stroke="currentColor" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity=".82">
+
+      <!-- vyšší kostelní budova (vlevo) -->
+      <path d="M300 158 v-40 M552 158 v-40" stroke-width="1.4"/>
+      <path d="M292 118 L 326 52 H 526 L 560 118 Z" stroke-width="1.6"/>
+      <path d="M326 52 H 526" stroke-width="1.9"/>
+      <path d="M292 118 H 560" stroke-width="1.1" opacity=".55"/>
+      <g stroke-width="1.05" opacity=".7">
+        <path d="M330 158 v-24 q10 -14 20 0 v24"/>
+        <path d="M386 158 v-24 q10 -14 20 0 v24"/>
+        <path d="M442 158 v-24 q10 -14 20 0 v24"/>
+        <path d="M498 158 v-24 q10 -14 20 0 v24"/>
+      </g>
+
+      <!-- nižší kostelní budova (uprostřed) -->
+      <path d="M566 158 v-28 M694 158 v-28" stroke-width="1.4"/>
+      <path d="M558 130 L 584 86 H 676 L 702 130 Z" stroke-width="1.5"/>
+      <path d="M584 86 H 676" stroke-width="1.7"/>
+      <path d="M558 130 H 702" stroke-width="1.1" opacity=".55"/>
+      <g stroke-width="1.05" opacity=".7">
+        <path d="M596 158 v-18 q9 -12 18 0 v18"/>
+        <path d="M648 158 v-18 q9 -12 18 0 v18"/>
+      </g>
+
+      <!-- věž (vpravo) -->
+      <path d="M708 158 v-60 M764 158 v-60" stroke-width="1.5"/>
+      <path d="M702 98 h68" stroke-width="1.8"/>
+      <g stroke-width="1.05" opacity=".78">
+        <path d="M717 132 v-16 a8 8 0 0 1 16 0 v16 z"/>
+        <path d="M740 132 v-16 a8 8 0 0 1 16 0 v16 z"/>
+      </g>
+      <!-- cibulová báň -->
+      <path d="M706 98 C 703 79, 712 63, 727 54 C 732 51, 741 48, 745 45
+               C 749 48, 758 51, 763 54 C 778 63, 787 79, 784 98 Z" stroke-width="1.7"/>
+      <path d="M706 98 C 725 92, 765 92, 784 98" stroke-width="1" opacity=".32"/>
+      <!-- lucerna, makovice, křížek -->
+      <path d="M732 45 v-16 h26 v16"/>
+      <path d="M727 29 h36" stroke-width="1.5"/>
+      <path d="M739 27 v-8 a6 6 0 0 1 12 0 v8" stroke-width=".95" opacity=".65"/>
+      <path d="M732 29 C 737 19, 753 19, 758 29" stroke-width="1.5"/>
+      <circle cx="745" cy="15" r="3.4" stroke-width="1.5"/>
+      <path d="M745 11.6 V 1 M740 6 h10" stroke-width="1.5"/>
+    </g>
+
+    <!-- ===== POPŘEDÍ: konventní křídlo ===== -->
+    <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+      <!-- jednoduchá valbová střecha, bez vikýřů -->
+      <path d="M192 186 L 226 152 H 854 L 888 186 Z" fill="var(--paper)" stroke-width="1.6"/>
+      <path d="M226 152 H 854" stroke-width="1.8"/>
+      <!-- stěna, dvě patra -->
+      <path d="M202 186 v68 H 878 v-68" fill="var(--paper)" stroke-width="1.6"/>
+      <path d="M202 186 H 878" stroke-width="1.3"/>
+      <path d="M202 221 H 878" stroke-width="1" opacity=".4"/>
+      <!-- horní patro -->
+      <g stroke-width="1.05" opacity=".72" fill="none">
+        <path d="M226 213 v-19 h13 v19 z M268 213 v-19 h13 v19 z M310 213 v-19 h13 v19 z
+                 M352 213 v-19 h13 v19 z M394 213 v-19 h13 v19 z M436 213 v-19 h13 v19 z
+                 M478 213 v-19 h13 v19 z M520 213 v-19 h13 v19 z M562 213 v-19 h13 v19 z
+                 M604 213 v-19 h13 v19 z M646 213 v-19 h13 v19 z M688 213 v-19 h13 v19 z
+                 M730 213 v-19 h13 v19 z M772 213 v-19 h13 v19 z M814 213 v-19 h13 v19 z"/>
+      </g>
+      <!-- přízemí -->
+      <g stroke-width="1.05" opacity=".72" fill="none">
+        <path d="M226 248 v-19 h13 v19 z M268 248 v-19 h13 v19 z M310 248 v-19 h13 v19 z
+                 M352 248 v-19 h13 v19 z M394 248 v-19 h13 v19 z M436 248 v-19 h13 v19 z
+                 M562 248 v-19 h13 v19 z M604 248 v-19 h13 v19 z M646 248 v-19 h13 v19 z
+                 M688 248 v-19 h13 v19 z M730 248 v-19 h13 v19 z M772 248 v-19 h13 v19 z
+                 M814 248 v-19 h13 v19 z"/>
+      </g>
+      <!-- portál -->
+      <path d="M482 254 v-27 a13 13 0 0 1 26 0 v27" stroke-width="1.3" fill="none"/>
+
+      <!-- břeh a hladina -->
+      <path d="M0 254 H 1000" stroke-width="1.1" opacity=".5"/>
+      <g stroke-width="1" opacity=".26">
+        <path d="M70 261 H 300 M340 261 H 520 M560 261 H 700 M740 261 H 940"/>
+        <path d="M140 267 H 430 M480 267 H 650 M700 267 H 890"/>
+      </g>
+    </g>
+
+    <!-- ===== STROMY A KEŘE ===== -->
+    <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round"
+       stroke-width="1.3" opacity=".48">
+      <path d="M74 254 v-38" fill="none"/>
+      <path d="M74 224 c-29 0 -37 -21 -22 -33 c-5 -19 27 -29 39 -14 c17 -7 33 10 23 27 c8 14 -12 23 -40 20z"/>
+      <path d="M934 254 v-28" fill="none"/>
+      <path d="M934 232 c-21 0 -26 -16 -16 -24 c-3 -14 19 -21 28 -10 c12 -5 24 7 17 19 c6 10 -8 18 -29 15z"/>
+    </g>
+    <g stroke="currentColor" fill="none" stroke-width="1.1" opacity=".3" stroke-linecap="round">
+      <path d="M256 254 v-16 M250 246 l6 -6 l6 6 M252 238 l4 -5 l4 5"/>
+      <path d="M420 254 v-14 M415 247 l5 -5 l5 5"/>
+      <path d="M600 254 v-15 M594 246 l6 -6 l6 6"/>
+      <path d="M760 254 v-13 M755 247 l5 -5 l5 5"/>
+      <path d="M860 254 v-16 M854 246 l6 -6 l6 6 M856 238 l4 -5 l4 5"/>
+    </g>
+  </svg>
+
+
+  <p class="art-cap">Klášter Svaté Dobrotivé · založen 1263 · první augustiniánský klášter v českých zemích</p>
+
+  <div class="byline">
+    <span><b>Analýza situace obce a návrh dlouhodobých priorit</b></span>
+    <span>Petra Pavlisová</span>
+    <span>Zpracováno z veřejných dat</span>
+  </div>
+
+  <div class="notice">
+    <p>Občanský podnět. Není to materiál obce Zaječov ani žádného volebního uskupení.</p>
+  </div>
+</header>
+
+<!-- ================= SHRNUTÍ ================= -->
+<section class="wrap rv" id="shrnuti">
+  <div class="sec-head">
+    <span class="eyebrow">Shrnutí</span>
+    <h2>Obec je vybavená, roste a investuje. Tři věci ale nikdo neřeší.</h2>
+  </div>
+
+  <div class="grid g4">
+    <div class="stat">
+      <span class="num">+52 %</span>
+      <b>Seniorů za 20 let</b>
+      <span class="t">206 osob (2001) → 314 osob (2023). Sociální služba pro ně v obci žádná.</span>
+    </div>
+    <div class="stat">
+      <span class="num">0,7 %</span>
+      <b>Vodních ploch v katastru</b>
+      <span class="t">Rok 2025 byl na Podbrdsku nejsušší v paměti, prameny nejslabší za 30 let.</span>
+    </div>
+    <div class="stat">
+      <span class="num">1</span>
+      <b>Dům ve vlastnictví obce</b>
+      <span class="t">Přitom čtvrtina bytů v obci není trvale obydlená.</span>
+    </div>
+    <div class="stat">
+      <span class="num">13×</span>
+      <b>Rozpočet vs. vlastní daně</b>
+      <span class="t">Schválené výdaje 2024: 194 mil. Kč. Daňový příjem: cca 15 mil. Kč.</span>
+    </div>
+  </div>
+
+  <div class="flag">
+    <h3>A jedna příležitost, která nepočká</h3>
+    <p>Právě běží <strong>komplexní pozemkové úpravy</strong> v katastrech Zaječov a Kvaň. Rozhoduje se v nich
+    o cestách, mezích, tůních, protierozních opatřeních — a o tom, jaké pozemky bude obec vlastnit.
+    Opakuje se to jednou za desítky let.</p>
+  </div>
+</section>
+
+<!-- ================= DATA ================= -->
+<section class="wrap rv" id="data">
+  <div class="sec-head">
+    <span class="eyebrow">Datový profil</span>
+    <h2>Jak na tom Zaječov je</h2>
+    <p class="lede">Vše z veřejných zdrojů — ČSÚ, Ministerstvo financí, úřední deska obce.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Obyvatelstvo</h3><p class="src">ČSÚ · sčítání 2001 / 2011 / 2021 · bilance 2023</p></div>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Ukazatel</th><th>2001</th><th>2011</th><th>2021</th><th>2023</th></tr></thead>
+        <tbody>
+          <tr><td>Obyvatel celkem</td><td>1 345</td><td>1 407</td><td>1 445</td><td>1 481</td></tr>
+          <tr><td>0–14 let</td><td>223</td><td>178</td><td>241</td><td>227</td></tr>
+          <tr><td>65 a více let</td><td>206</td><td>238</td><td>309</td><td>314</td></tr>
+          <tr class="hi"><td>Podíl 65+</td><td>15,3 %</td><td>16,9 %</td><td>21,4 %</td><td>21,2 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Obec roste <strong>výhradně migrací</strong>. V roce 2023 se narodilo 13 dětí a zemřelo 14;
+    přistěhovalo se 45 lidí, odstěhovalo 11. K 1. 1. 2025 měla obec 1 502 obyvatel.
+    Části: Zaječov 783, Kvaň 451, Nová Ves 211.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Krajina</h3><p class="src">ČSÚ · struktura pozemků · katastr 2 225 ha</p></div>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Kategorie</th><th>ha</th><th>Podíl</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td>Lesní půda</td><td>1 348</td><td>60,6 %</td></tr>
+          <tr><td>Zemědělská půda</td><td>527</td><td>23,7 %</td></tr>
+          <tr><td class="ind">z toho orná</td><td>248</td><td>11,1 %</td></tr>
+          <tr><td class="ind">z toho louky a pastviny</td><td>265</td><td>11,9 %</td></tr>
+          <tr><td>Ostatní plochy</td><td>310</td><td>13,9 %</td></tr>
+          <tr><td>Zastavěné plochy</td><td>24</td><td>1,1 %</td></tr>
+          <tr class="hi"><td>Vodní plochy</td><td>15</td><td>0,7 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Zaječov je <strong>lesní obec, ne zemědělská</strong>. Jižní část území leží v CHKO Brdy,
+    nejvyšší bod je Jordán (826 m). Koeficient ekologické stability 2,82.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Hospodaření obce</h3><p class="src">Ministerstvo financí ČR · skutečnost · mil. Kč</p></div>
+    <div class="scroller">
+      <table>
+        <thead><tr><th>Rok</th><th>Příjmy</th><th>Výdaje</th><th>Půjčky</th><th>Dluh. služba</th></tr></thead>
+        <tbody>
+          <tr><td>2020</td><td>37,3</td><td>35,8</td><td>0</td><td>0,4</td></tr>
+          <tr><td>2021</td><td>37,8</td><td>36,7</td><td>11,5</td><td>3,4</td></tr>
+          <tr><td>2022</td><td>42,2</td><td>45,7</td><td>0</td><td>3,4</td></tr>
+          <tr class="hi"><td>2023</td><td>51,8</td><td>75,7</td><td>31,7</td><td>4,8</td></tr>
+          <tr class="hi"><td>2024*</td><td>86,4</td><td>106,5</td><td>26,0</td><td>3,9</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">*k 09/2024, poslední veřejně dostupný údaj. Schválený rozpočet 2024 počítal
+    se 194 mil. Kč výdajů. Rozpočtové určení daní 2022: 14,7 mil. Kč.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Bydlení a sociální služby</h3><p class="src">ČSÚ · sčítání 2021 · evidence sociálních služeb</p></div>
+    <div class="scroller">
+      <table>
+        <tbody>
+          <tr><td>Domy celkem</td><td>560</td></tr>
+          <tr class="hi"><td>z toho neobydlené</td><td>121 · 21,6 %</td></tr>
+          <tr><td>Byty celkem</td><td>703</td></tr>
+          <tr class="hi"><td>z toho neobydlené</td><td>176 · 25,0 %</td></tr>
+          <tr><td>Nájemní byty v obci</td><td>19</td></tr>
+          <tr class="hi"><td>Domy ve vlastnictví obce či státu</td><td>1</td></tr>
+          <tr><td>Domovy pro seniory / se zvláštním režimem</td><td>0 / 0</td></tr>
+          <tr><td>Dům s pečovatelskou službou</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Obec je zapojena do <strong>Taxíku Maxíka</strong> — svoz seniorů 70+ a držitelů ZTP
+    k lékaři a na úřady v rámci Mikroregionu Hořovicko za 30 Kč. To funguje a je na čem stavět.</p>
+  </div>
+</section>
+
+<!-- ================= RIZIKA ================= -->
+<section class="wrap rv" id="rizika">
+  <div class="sec-head">
+    <span class="eyebrow">Analýza</span>
+    <h2>Čtyři strukturální rizika</h2>
+  </div>
+
+  <div class="block">
+    <div class="risk">
+      <div class="risk-hd"><span class="n">01</span><h3>Voda</h3></div>
+      <dl>
+        <dt>Zjištění</dt>
+        <dd>Obec plánuje obnovu vodovodního řadu Varta. To je oprava distribuce. Nikde není uvedeno,
+        jaká je vydatnost vlastních zdrojů, jaká je bilanční rezerva a zda existuje záložní propojení
+        na skupinový vodovod.</dd>
+        <dt>Kontext</dt>
+        <dd>Do poloviny srpna 2025 spadlo ve středních Čechách méně než 60 % běžného ročního úhrnu srážek,
+        vydatnost pramenů klesla na nejnižší úroveň za 30 let. Hořovice v dubnu 2026 vyzvaly občany
+        k šetření vodou. Sousední Bzová má zavedená omezení dodávek.</dd>
+        <dt>Riziko</dt>
+        <dd>Že bude potrubí nové a voda v něm nebude.</dd>
+      </dl>
+    </div>
+
+    <div class="risk">
+      <div class="risk-hd"><span class="n">02</span><h3>Stárnutí a péče</h3></div>
+      <dl>
+        <dt>Zjištění</dt>
+        <dd>Seniorů v obci přibylo za dvacet let o 52 %. Sociální služba pro ně v obci žádná není.</dd>
+        <dt>Kontext</dt>
+        <dd>V ČR chybí odhadem 45–50 tisíc lůžek v domovech pro seniory a domovech se zvláštním režimem.
+        Čekací doby dosahují dvou až tří let a Středočeský kraj patří mezi nejhorší. Do roku 2035 bude
+        podle predikce MPSV a ÚZIS potřeba vybudovat 34 700 nových lůžek.</dd>
+        <dt>Riziko</dt>
+        <dd>Zátěž zůstane na rodinách — konkrétně na ženách ve věku 45–60 let, které zároveň pracují.
+        Tedy na skupině, kterou obec potřebuje udržet v práci i v obci.</dd>
+      </dl>
+    </div>
+
+    <div class="risk">
+      <div class="risk-hd"><span class="n">03</span><h3>Bytový fond a pozemky</h3></div>
+      <dl>
+        <dt>Zjištění</dt>
+        <dd>Obec vlastní jeden dům. Čtvrtina bytového fondu není trvale obydlená.</dd>
+        <dt>Riziko</dt>
+        <dd>Obec bez vlastních pozemků a bytů nemá jak nabídnout startovací byt mladé rodině,
+        bezbariérový byt seniorovi, který už nezvládá dům, ani služební byt lékaři či pečovatelce.
+        Pozemek se koupit dá. Čas na jeho koupi za rozumnou cenu ne.</dd>
+      </dl>
+    </div>
+
+    <div class="risk">
+      <div class="risk-hd"><span class="n">04</span><h3>Rozpočtová expozice</h3></div>
+      <dl>
+        <dt>Zjištění</dt>
+        <dd>Roční daňový příjem cca 15 mil. Kč, schválené výdaje 2024 na 194 mil. Kč, přijaté půjčky
+        31,7 mil. (2023) a 26,0 mil. (do 09/2024), dluhová služba 4–5 mil. Kč ročně.</dd>
+        <dt>Riziko</dt>
+        <dd>Není v tom nic nezákonného — obce takto financují dotační investice. Ale nikde nezaznělo,
+        jaká bude dluhová služba v roce 2030 a co si obec kvůli ní nebude moci dovolit.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEZE ================= -->
+<section class="wrap rv">
+  <div class="pull">
+    <q>Všechny plánované projekty mají horizont čtyř let.<br><span class="o">Tyhle věci mají horizont třiceti.</span></q>
+    <p>Není to výtka. Je to důsledek formátu, ve kterém komunální politika tradičně mluví —
+    formátu, do kterého se nevejde nic, co nejde na konci období odškrtnout.</p>
+  </div>
+</section>
+
+<!-- ================= PRIORITY ================= -->
+<section class="wrap rv" id="priority">
+  <div class="sec-head">
+    <span class="eyebrow">Doporučení</span>
+    <h2>Šest priorit, seřazených podle nevratnosti</h2>
+    <p class="lede">Čísla vlevo nejsou pořadí. Je to <strong>doba, po kterou platí důsledky dnešního
+    rozhodnutí</strong> — jediné kritérium, které v komunální politice nikdo nepoužívá.</p>
+  </div>
+
+  <div class="spine">
+    <article class="pri">
+      <div class="yr"><span class="v">60</span><span class="u">let</span></div>
+      <h3>Vodní bilance obce</h3>
+      <p>Zpracovat a zveřejnit pasport vodních zdrojů: počet a vydatnost jímacích objektů, kapacita
+      vodojemů, roční bilance, chování zdrojů v suchých letech 2015, 2018, 2022 a 2025, existence
+      záložního propojení na skupinový vodovod.</p>
+      <p>Souběžně: povinné vsakování srážkových vod u nových staveb v regulativech územního plánu,
+      odpojení dešťových svodů od kanalizace, hospodaření se srážkovou vodou na obecních objektech.</p>
+    </article>
+
+    <article class="pri urgent">
+      <div class="yr"><span class="v">30</span><span class="u">let</span></div>
+      <span class="warn">Běží teď · nelze odložit</span>
+      <h3>Aktivní role v pozemkových úpravách</h3>
+      <p>Do plánu společných zařízení prosadit tůně a retenční prvky, zasakovací pásy, obnovu polních
+      cest s doprovodnou zelení, prvky ÚSES. Zároveň usilovat o scelení obecních pozemků do ploch
+      využitelných pro bydlení a případně pro budoucí zařízení sociálních služeb.</p>
+      <p>Ze všech bodů této analýzy je tenhle jediný, u kterého rozhoduje kalendář, ne vůle.</p>
+    </article>
+
+    <article class="pri">
+      <div class="yr"><span class="v">25</span><span class="u">let</span></div>
+      <h3>Pozemková a bytová politika</h3>
+      <p>Pasport obecního majetku. Definovat, které pozemky obec nebude prodávat a proč. Zvážit
+      předkupní právo na strategických plochách. Připravit projekt malometrážních obecních bytů —
+      kombinace startovacích bytů pro mladé a bezbariérových pro seniory v jednom objektu je dotačně
+      podporovaná a v obci této velikosti provozně schůdná.</p>
+    </article>
+
+    <article class="pri">
+      <div class="yr"><span class="v">15</span><span class="u">let</span></div>
+      <h3>Péče o seniory po krocích</h3>
+      <p>Vlastní domov se zvláštním režimem Zaječov nepostaví nikdy — nemá na to velikost, rozpočet
+      ani personál. Co v jeho možnostech je:</p>
+      <ol>
+        <li>Rozšířit Taxík Maxík o cesty na nákup a za rodinou, nejen k lékaři.</li>
+        <li>Zajistit rozvoz obědů a základní pečovatelskou službu — vlastní, nebo nákupem od poskytovatele.</li>
+        <li>Zavést odlehčovací službu, byť jen několik dní v měsíci. Pro pečující rodinu je to rozdíl
+        mezi únosným a neúnosným.</li>
+        <li>Otevřít v Mikroregionu Hořovicko jednání o sdílené kapacitě pobytových služeb.</li>
+        <li>Zřídit koordinátora sociální pomoci, byť na částečný úvazek. Rodiny dnes netuší, na co mají nárok.</li>
+      </ol>
+    </article>
+
+    <article class="pri">
+      <div class="yr"><span class="v">10</span><span class="u">let</span></div>
+      <h3>Konektivita</h3>
+      <p>Optické připojení do každé nemovitosti. Práce z domova je jediná reálná odpověď na kombinaci
+      „pečovat o rodiče a zároveň chodit do práce" v obci bez železnice a bez silnice vyšší než III. třídy.
+      Souběžně vyhodnotit dopravní obslužnost — zejména zda se středoškolák dostane po odpoledním
+      kroužku domů.</p>
+    </article>
+
+    <article class="pri">
+      <div class="yr"><span class="v">5</span><span class="u">let</span></div>
+      <h3>Provozní témata s tvrdým rozpočtovým dopadem</h3>
+      <p><strong>Odpady:</strong> od roku 2030 platí zákaz skládkování využitelných odpadů, poplatky
+      rostou už teď, v obci chybí sběrný dvůr. <strong>Energetika:</strong> od roku 2024 lze zakládat
+      energetická společenství — FVE na obecních budovách se sdílením přebytků je provozní úspora.
+      <strong>Krizová odolnost:</strong> záložní zdroj pro školu, úřad a vodárnu, systém obvolání seniorů.
+      <strong>Turismus:</strong> obec by měla mít pozici k parkování a erozi tras dřív, než ji tlak převálcuje.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= AKČNÍ PLÁN ================= -->
+<section class="wrap rv" id="plan">
+  <div class="sec-head">
+    <span class="eyebrow">Akční plán</span>
+    <h2>Čtyři fáze</h2>
+    <p class="lede">První fáze stojí dohromady kolem 130–160 tisíc korun. To je záměr — aby se první
+    krok nedal odmítnout s odkazem na rozpočet.</p>
+  </div>
+
+  <div class="block">
+    <div class="phase">
+      <div class="phase-hd"><span class="tag">FÁZE A</span><span class="when">do 6 měsíců</span></div>
+      <ul class="tasks">
+        <li><span>Demografická prognóza obce do roku 2045 podle pětiletých kohort</span><span class="cost k">30–60 tis.</span></li>
+        <li><span>Pasport vodních zdrojů a bilance</span><span class="cost k">do 100 tis.</span></li>
+        <li><span>Pasport obecního nemovitého majetku</span><span class="cost">vlastní silou</span></li>
+        <li><span>Ověření sociálních služeb v Registru MPSV a přehled pro občany</span><span class="cost">vlastní silou</span></li>
+        <li><span>Pracovní skupina pro pozemkové úpravy</span><span class="cost">0 Kč</span></li>
+        <li><span>Zveřejnění projekce dluhové služby do roku 2032</span><span class="cost">0 Kč</span></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><span class="tag">FÁZE B</span><span class="when">6–24 měsíců</span></div>
+      <ul class="tasks">
+        <li><span>Prosazení vodohospodářských prvků do plánu společných zařízení</span><span class="cost k">nelze odložit</span></li>
+        <li><span>Získání scelených obecních pozemků v rámci úprav</span><span class="cost k">nelze odložit</span></li>
+        <li><span>Regulativy hospodaření se srážkovou vodou do územního plánu</span></li>
+        <li><span>Rozšíření Taxíku Maxíka, zajištění rozvozu obědů</span></li>
+        <li><span>Studie proveditelnosti obecních malometrážních bytů</span></li>
+        <li><span>Jednání o sdílené kapacitě pobytových služeb v mikroregionu</span></li>
+        <li><span>Jednání o optickém připojení obce</span></li>
+        <li><span>Strategický plán rozvoje obce do roku 2045 s veřejným projednáním</span></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><span class="tag">FÁZE C</span><span class="when">2–6 let</span></div>
+      <ul class="tasks">
+        <li><span>Realizace retenčních opatření z pozemkových úprav</span></li>
+        <li><span>Výstavba obecních bytů — startovacích a bezbariérových</span></li>
+        <li><span>Zavedení odlehčovací služby</span></li>
+        <li><span>Zřízení koordinátora sociální pomoci</span></li>
+        <li><span>FVE na obecních budovách, energetické společenství</span></li>
+        <li><span>Sběrný dvůr, systém door-to-door pro odpady</span></li>
+        <li><span>Záložní energetické zdroje pro kritickou infrastrukturu</span></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><span class="tag">FÁZE D</span><span class="when">trvale</span></div>
+      <ul class="tasks">
+        <li><span>Každoroční aktualizace demografické prognózy proti skutečnosti</span></li>
+        <li><span>Vyhodnocování vodní bilance</span></li>
+        <li><span>Pravidelná veřejná projednání strategického plánu</span></li>
+        <li><span>Aktivní zastoupení obce vůči VLS ČR a AOPK v otázkách lesů a CHKO</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MEZERY ================= -->
+<section class="wrap rv" id="mezery">
+  <div class="sec-head">
+    <span class="eyebrow">Poctivě</span>
+    <h2>Co jsem nezjistila</h2>
+    <p class="lede">Z veřejných zdrojů se mi nepodařilo dohledat následující. Jejich doplnění je
+    předpokladem pro seriózní plánování.</p>
+  </div>
+
+  <div class="block">
+    <ol class="gaps">
+      <li><strong>Věkové složení po pětiletých skupinách.</strong> ČSÚ pro obce publikuje jen základní
+      skupiny. Bez detailu nelze určit, kolik bude v Zaječově lidí 80+ v roce 2035 a 2045. Hrubým
+      přepočtem podle celostátní dynamiky vychází ~360 seniorů v roce 2035 a 400–420 v roce 2045 —
+      ale je to odhad, ne projekce.</li>
+      <li><strong>Rozsah lesních a zemědělských pozemků ve vlastnictví obce.</strong></li>
+      <li><strong>Počet a vydatnost vodních zdrojů</strong>, bilance, existence záložního propojení.</li>
+      <li><strong>Aktuální zadlužení k roku 2026</strong> — poslední veřejný údaj je k 09/2024.</li>
+      <li><strong>Skutečná existence zdravotně-sociálních zařízení v obci.</strong> Evidence ČSÚ uvádí nulu;
+      terénní šetření SMS ČR tvrdí opak, ale totéž šetření tvrdí, že je v obci bankomat a policejní
+      stanice. Vycházím z ČSÚ.</li>
+      <li><strong>Počet příjemců příspěvku na péči</strong> s trvalým pobytem v obci — dostupné přes ÚP ČR.</li>
+    </ol>
+    <p style="margin:24px 0 0;padding-top:20px;border-top:1px solid var(--rule)">
+    Bod 01 je zásadní: <strong>obec nemá vlastní demografickou prognózu a bez ní plánuje kapacity
+    poslepu.</strong> Její pořízení je zároveň nejlevnější položkou celého plánu.</p>
+  </div>
+</section>
+
+<!-- ================= ZDROJE ================= -->
+<section class="wrap rv" id="zdroje">
+  <div class="sec-head">
+    <span class="eyebrow">Ověřitelnost</span>
+    <h2>Zdroje</h2>
+  </div>
+
+  <div class="block">
+    <div class="srcgrp">
+      <h3>Data o obci</h3>
+      <ul>
+        <li>RIS — Regionální informační servis, profil obce Zaječov (kód 531995). Agreguje data ČSÚ
+        (sčítání 2001/2011/2021, bilance obyvatel, pozemky, vybavenost, sociální zařízení),
+        Ministerstva financí (hospodaření 2010–2024) a terénní šetření SMS ČR.
+        <span class="u">risy.cz/cs/vyhledavace/obce/detail?Zuj=531995</span></li>
+        <li>Oficiální web obce Zaječov — Taxík Maxík, sociální pomoc <span class="u">zajecov.cz</span></li>
+        <li>Úřední deska obce Zaječov — komplexní pozemkové úpravy, střednědobý výhled rozpočtu <span class="u">zajecov.cz/uredni-deska</span></li>
+        <li>Český statistický úřad <span class="u">csu.gov.cz</span></li>
+      </ul>
+    </div>
+
+    <div class="srcgrp">
+      <h3>Demografie a stárnutí ČR</h3>
+      <ul>
+        <li>ČSÚ — Senioři v datech <span class="u">csu.gov.cz/seniori-v-datech/vekova-struktura</span></li>
+        <li>ČSÚ — Projekce obyvatelstva <span class="u">csu.gov.cz/seniori-v-datech/projekce-obyvatelstva</span></li>
+        <li>ČSÚ — Počet, struktura a projekce obyvatel <span class="u">csu.gov.cz/pocet-struktura-a-projekce-obyvatel</span></li>
+      </ul>
+    </div>
+
+    <div class="srcgrp">
+      <h3>Dlouhodobá péče</h3>
+      <ul>
+        <li>MPSV — Predikce potřeb dlouhodobé péče, 14. 11. 2025 <span class="u">mpsv.gov.cz/predikce-potreb-dlouhodobe-pece-cesko-ceka-jeden-z-nejvetsich-ukolu-pristich-desetileti</span></li>
+        <li>ČSÚ — Sociální služby <span class="u">csu.gov.cz/socialni-sluzby</span></li>
+        <li>ČSÚ — Příspěvek na péči <span class="u">csu.gov.cz/produkty/prispevek-na-peci-loni-vyuzivalo-vice-nez-370-tisic-lidi</span></li>
+        <li>Zdravé zprávy — Kapacity sociálních služeb nerostou, ale poptávka ano, 15. 5. 2025 <span class="u">zdravezpravy.cz/2025/05/15/kapacity-socialnich-sluzeb-vyrazne-nerostou-ale-poptavka-ano</span></li>
+        <li>ČeskéNoviny — Studie Deloitte pro APSS ČR, 21. 7. 2026 <span class="u">ceskenoviny.cz/zpravy/studie-kvuli-starnuti-je-do-r-2035-treba-70-mld-kc-na-35000-luzek-v-domovech/2853301</span></li>
+        <li>Česká alzheimerovská společnost — odhady prevalence demence <span class="u">alzheimer.cz/clanky/novinky-cals/nove-odhady-prevalence-ve-vyrocni-zprave</span></li>
+        <li>Registr poskytovatelů sociálních služeb MPSV <span class="u">portal.gov.cz</span></li>
+      </ul>
+    </div>
+
+    <div class="srcgrp">
+      <h3>Voda a sucho</h3>
+      <ul>
+        <li>Podbrdsko bez vody: Rok 2025 patří k nejsušším v historii regionu <span class="u">pribram.cz/clanek/podbrdsko-bez-vody-rok-2025-patri-k-nejsussim-v-historii-regionu/32632</span></li>
+        <li>Město Hořovice — výzva k šetření pitnou vodou, 13. 4. 2026 <span class="u">mesto-horovice.eu/aktualne/aktuality</span></li>
+        <li>Obec Bzová — úřední deska, omezení dodávek vody <span class="u">bzova.cz/urad/uredni-deska</span></li>
+        <li>Komunální ekologie — Oblasti Středočeského kraje ohrožené suchem <span class="u">komunalniekologie.cz</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PATIČKA ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <h3>Kdo to napsal a proč</h3>
+      <p>Petra Pavlisová. V Zaječově zatím trvale nebydlím, ale posledních dvacet let sem jezdím,
+      manžel je odtud a jednou tu chceme být natrvalo.</p>
+      <p>Tenhle dokument vznikl jako odpověď na otázku „co byste v Zaječově chtěli zlepšit". Není to
+      kritika konkrétních lidí ani volebního uskupení — všechno, co je v plánech obce, dává smysl.
+      Jen mi přišlo, že chybí věci, které se rozhodují teď a platí déle než jedno volební období.
+      Tak jsem si je dohledala.</p>
+      <p>Data jsou z veřejných zdrojů uvedených výše, stav k srpnu 2026. Kde jde o odhad nebo
+      interpolaci, je to označeno. Kde jsem něco nezjistila, je to napsané.
+      <strong>Opravy a doplnění vítám.</strong></p>
+    </div>
+    <div class="foot-rule">
+      <span>Obec se plánuje na desetiletí, ne na volební období</span>
+      <span>1263 → 2046</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+/* aktivní položka menu podle pozice ve stránce */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs  = links.map(function(a){ return document.querySelector(a.getAttribute('href')); })
+                   .filter(Boolean);
+  if (!secs.length || !('IntersectionObserver' in window)) return;
+
+  var visible = {};
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var best = null, bestVal = 0;
+    secs.forEach(function(s){
+      var v = visible[s.id] || 0;
+      if (v > bestVal){ bestVal = v; best = s.id; }
+    });
+    links.forEach(function(a){
+      a.classList.toggle('on', best !== null && a.getAttribute('href') === '#' + best);
+    });
+  }, { rootMargin: '-52px 0px -55% 0px', threshold: [0, .15, .35, .6, 1] });
+
+  secs.forEach(function(s){ spy.observe(s); });
+})();
+</script>
+
+</body>
+</html>
