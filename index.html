@@ -8,7 +8,7 @@
 <meta name="author" content="Petra Pavlisová">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   /* dvě barvy + neutrály */
@@ -37,8 +37,7 @@ body{
 
 /* ---------- typografie ---------- */
 h1,h2{
-  font-family:"Fraunces",Georgia,serif;font-weight:600;
-  font-variation-settings:"SOFT" 30;
+  font-family:"Archivo",system-ui,sans-serif;font-weight:600;
   line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green);
 }
 h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
@@ -53,7 +52,7 @@ strong{font-weight:600;color:var(--green)}
 .eyebrow{
   font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:500;
   letter-spacing:.22em;text-transform:uppercase;color:var(--rust);
-  display:block;margin:0 0 1em;
+  display:block;margin:0 0 1.4em;
 }
 .lede{font-size:1.08rem;color:var(--ink-soft)}
 
@@ -92,7 +91,7 @@ strong{font-weight:600;color:var(--green)}
 }
 @media(max-width:430px){.nav-mark{display:none}.nav-links{margin-left:0}}
 
-section[id]{scroll-margin-top:64px}
+section[id]{scroll-margin-top:52px}
 
 /* ---------- hlavička ---------- */
 .hero{padding:44px 0 0}
@@ -104,7 +103,7 @@ section[id]{scroll-margin-top:64px}
 .stamp i{font-style:normal;color:var(--rule-2)}
 h1 .arrow{color:var(--rust);font-family:"JetBrains Mono",monospace;font-weight:400;font-size:.5em;vertical-align:.16em;padding:0 .12em}
 .thesis{
-  font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);
+  font-family:"Archivo",system-ui,sans-serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);
   line-height:1.45;color:var(--ink-soft);max-width:31ch;margin:28px 0 0;
 }
 .thesis b{color:var(--green);font-weight:600}
@@ -127,9 +126,9 @@ h1 .arrow{color:var(--rust);font-family:"JetBrains Mono",monospace;font-weight:4
 .notice p{margin:0}
 
 /* ---------- sekce ---------- */
-section{padding:62px 0}
+section{padding:96px 0 78px}
 section+section{border-top:1px solid var(--rule)}
-.sec-head{margin-bottom:34px;max-width:60ch}
+.sec-head{margin-bottom:46px;max-width:60ch}
 .sec-head p:last-child{margin-bottom:0}
 
 /* ---------- bloky ---------- */
@@ -141,7 +140,7 @@ section+section{border-top:1px solid var(--rule)}
 @media(max-width:520px){.g4{grid-template-columns:1fr}}
 
 .stat .num{
-  font-family:"Fraunces",serif;font-weight:700;color:var(--rust);
+  font-family:"Archivo",system-ui,sans-serif;font-weight:700;color:var(--rust);
   font-size:2.6rem;line-height:1;letter-spacing:-.04em;display:block;margin-bottom:12px;
 }
 .stat b{display:block;color:var(--green);font-size:.94rem;margin-bottom:5px}
@@ -191,26 +190,26 @@ td.ind{padding-left:44px;color:var(--ink-soft)}
 /* ---------- teze ---------- */
 .pull{border-top:2px solid var(--green);border-bottom:2px solid var(--green);padding:46px 0;text-align:center}
 .pull q{
-  font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.45rem,4.2vw,2.3rem);
+  font-family:"Archivo",system-ui,sans-serif;font-weight:600;font-size:clamp(1.45rem,4.2vw,2.3rem);
   line-height:1.3;display:block;max-width:23ch;margin:0 auto;quotes:none;color:var(--green);
 }
 .pull q .o{color:var(--rust)}
 .pull p{color:var(--ink-soft);font-size:.94rem;margin:24px auto 0;max-width:54ch}
 
 /* ---------- osa horizontů ---------- */
-.spine{position:relative;padding-left:116px}
-.spine::before{content:"";position:absolute;left:80px;top:6px;bottom:6px;width:1px;background:var(--rule-2)}
-.pri{position:relative;padding:0 0 44px}
+.spine{position:relative;padding-left:154px}
+.spine::before{content:"";position:absolute;left:98px;top:8px;bottom:8px;width:1px;background:var(--rule-2)}
+.pri{position:relative;padding:0 0 52px}
 .pri:last-child{padding-bottom:0}
-.pri .yr{position:absolute;left:-116px;top:-2px;width:80px;text-align:right;font-family:"JetBrains Mono",monospace}
+.pri .yr{position:absolute;left:-154px;top:-2px;width:74px;text-align:right;font-family:"JetBrains Mono",monospace}
 .pri .yr .v{display:block;font-size:1.7rem;font-weight:700;color:var(--green);line-height:1;letter-spacing:-.05em}
 .pri .yr .u{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
 .pri::before{
-  content:"";position:absolute;left:-40px;top:9px;width:9px;height:9px;
+  content:"";position:absolute;left:-61px;top:10px;width:10px;height:10px;
   background:var(--paper);border:2px solid var(--green-soft);border-radius:50%;
 }
 .pri.urgent::before{background:var(--rust);border-color:var(--rust)}
-.pri h3{font-family:"Fraunces",serif;font-size:1.32rem;font-weight:600;margin-bottom:12px;letter-spacing:-.015em}
+.pri h3{font-family:"Archivo",system-ui,sans-serif;font-size:1.32rem;font-weight:600;margin-bottom:12px;letter-spacing:-.015em}
 .pri p:last-child{margin-bottom:0}
 .pri ol{margin:.8em 0 0;padding-left:1.25em}
 .pri ol li{margin-bottom:.45em}
@@ -275,7 +274,7 @@ td.ind{padding-left:44px;color:var(--ink-soft)}
 /* ---------- patička ---------- */
 footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 .foot{padding:56px 0 34px;font-size:.92rem;max-width:66ch}
-.foot h3{font-family:"Fraunces",serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
+.foot h3{font-family:"Archivo",system-ui,sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
 .foot p:last-child{margin-bottom:0}
 .foot-rule{
   border-top:1px solid var(--rule-2);padding:18px 0 44px;
@@ -339,77 +338,60 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
        preserveAspectRatio="xMidYMax meet">
 
     <!-- ===== POZADÍ ===== -->
-    <g stroke="currentColor" fill="none" stroke-linejoin="round" stroke-linecap="round" opacity=".82">
 
-      <!-- vyšší kostelní budova (vlevo) -->
-      <path d="M300 158 v-40 M552 158 v-40" stroke-width="1.4"/>
-      <path d="M292 118 L 326 52 H 526 L 560 118 Z" stroke-width="1.6"/>
-      <path d="M326 52 H 526" stroke-width="1.9"/>
-      <path d="M292 118 H 560" stroke-width="1.1" opacity=".55"/>
-      <g stroke-width="1.05" opacity=".7">
-        <path d="M330 158 v-24 q10 -14 20 0 v24"/>
-        <path d="M386 158 v-24 q10 -14 20 0 v24"/>
-        <path d="M442 158 v-24 q10 -14 20 0 v24"/>
-        <path d="M498 158 v-24 q10 -14 20 0 v24"/>
-      </g>
+    <!-- prostřední, nižší kostelní budova — vzadu, bez mezer -->
+    <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round" opacity=".72">
+      <path d="M520 146 L 546 96 H 690 L 716 146 Z" stroke-width="1.45"/>
+      <path d="M528 146 v22 H 708 v-22" stroke-width="1.35"/>
+    </g>
 
-      <!-- nižší kostelní budova (uprostřed) -->
-      <path d="M566 158 v-28 M694 158 v-28" stroke-width="1.4"/>
-      <path d="M558 130 L 584 86 H 676 L 702 130 Z" stroke-width="1.5"/>
-      <path d="M584 86 H 676" stroke-width="1.7"/>
-      <path d="M558 130 H 702" stroke-width="1.1" opacity=".55"/>
-      <g stroke-width="1.05" opacity=".7">
-        <path d="M596 158 v-18 q9 -12 18 0 v18"/>
-        <path d="M648 158 v-18 q9 -12 18 0 v18"/>
-      </g>
+    <!-- vyšší kostelní budova (vlevo) — vpředu před prostřední -->
+    <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round" opacity=".86">
+      <path d="M288 122 L 322 58 H 528 L 562 122 Z" stroke-width="1.6"/>
+      <path d="M300 122 v46 H 550 v-46" stroke-width="1.5"/>
+      <path d="M322 58 H 528" stroke="currentColor" stroke-width="1.9" fill="none"/>
+    </g>
 
-      <!-- věž (vpravo) -->
-      <path d="M708 158 v-60 M764 158 v-60" stroke-width="1.5"/>
-      <path d="M702 98 h68" stroke-width="1.8"/>
-      <g stroke-width="1.05" opacity=".78">
-        <path d="M717 132 v-16 a8 8 0 0 1 16 0 v16 z"/>
-        <path d="M740 132 v-16 a8 8 0 0 1 16 0 v16 z"/>
-      </g>
-      <!-- cibulová báň -->
-      <path d="M706 98 C 703 79, 712 63, 727 54 C 732 51, 741 48, 745 45
-               C 749 48, 758 51, 763 54 C 778 63, 787 79, 784 98 Z" stroke-width="1.7"/>
-      <path d="M706 98 C 725 92, 765 92, 784 98" stroke-width="1" opacity=".32"/>
-      <!-- lucerna, makovice, křížek -->
-      <path d="M732 45 v-16 h26 v16"/>
-      <path d="M727 29 h36" stroke-width="1.5"/>
-      <path d="M739 27 v-8 a6 6 0 0 1 12 0 v8" stroke-width=".95" opacity=".65"/>
-      <path d="M732 29 C 737 19, 753 19, 758 29" stroke-width="1.5"/>
-      <circle cx="745" cy="15" r="3.4" stroke-width="1.5"/>
-      <path d="M745 11.6 V 1 M740 6 h10" stroke-width="1.5"/>
+    <!-- věž (vpravo) — vpředu před prostřední, bez mezery -->
+    <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round" opacity=".86">
+      <!-- báň -->
+      <path d="M690 100 C 687 80, 696 64, 712 55 C 717 52, 726 49, 730 46
+               C 734 49, 743 52, 748 55 C 764 64, 773 80, 770 100 Z" stroke-width="1.65"/>
+      <!-- hranol věže -->
+      <path d="M694 100 v68 H 766 v-68" stroke-width="1.5"/>
+      <path d="M686 100 h88" stroke="currentColor" stroke-width="1.8" fill="none"/>
+      <!-- jediné okno uprostřed -->
+      <path d="M718 150 v-22 a12 12 0 0 1 24 0 v22 z" stroke-width="1.15" fill="none" opacity=".85"/>
+      <!-- makovice a jednoduchý křížek přímo na bani -->
+      <circle cx="730" cy="40" r="3.6" stroke-width="1.5" fill="var(--paper)"/>
+      <path d="M730 36.4 V 20 M723.5 26.5 h13" stroke-width="1.5" fill="none"/>
     </g>
 
     <!-- ===== POPŘEDÍ: konventní křídlo ===== -->
     <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
-      <!-- jednoduchá valbová střecha, bez vikýřů -->
-      <path d="M192 186 L 226 152 H 854 L 888 186 Z" fill="var(--paper)" stroke-width="1.6"/>
-      <path d="M226 152 H 854" stroke-width="1.8"/>
+      <!-- jednoduchá valbová střecha -->
+      <path d="M192 172 L 226 138 H 854 L 888 172 Z" fill="var(--paper)" stroke-width="1.6"/>
+      <path d="M226 138 H 854" stroke-width="1.8"/>
       <!-- stěna, dvě patra -->
-      <path d="M202 186 v68 H 878 v-68" fill="var(--paper)" stroke-width="1.6"/>
-      <path d="M202 186 H 878" stroke-width="1.3"/>
-      <path d="M202 221 H 878" stroke-width="1" opacity=".4"/>
+      <path d="M202 172 v82 H 878 v-82" fill="var(--paper)" stroke-width="1.6"/>
+      <path d="M202 172 H 878" stroke-width="1.3"/>
+      <path d="M202 214 H 878" stroke-width="1" opacity=".38"/>
       <!-- horní patro -->
-      <g stroke-width="1.05" opacity=".72" fill="none">
-        <path d="M226 213 v-19 h13 v19 z M268 213 v-19 h13 v19 z M310 213 v-19 h13 v19 z
-                 M352 213 v-19 h13 v19 z M394 213 v-19 h13 v19 z M436 213 v-19 h13 v19 z
-                 M478 213 v-19 h13 v19 z M520 213 v-19 h13 v19 z M562 213 v-19 h13 v19 z
-                 M604 213 v-19 h13 v19 z M646 213 v-19 h13 v19 z M688 213 v-19 h13 v19 z
-                 M730 213 v-19 h13 v19 z M772 213 v-19 h13 v19 z M814 213 v-19 h13 v19 z"/>
+      <g stroke-width="1.05" opacity=".7" fill="none">
+        <path d="M230 205 v-16 h11 v16 z M272 205 v-16 h11 v16 z M314 205 v-16 h11 v16 z
+                 M356 205 v-16 h11 v16 z M398 205 v-16 h11 v16 z M440 205 v-16 h11 v16 z
+                 M482 205 v-16 h11 v16 z M524 205 v-16 h11 v16 z M566 205 v-16 h11 v16 z
+                 M608 205 v-16 h11 v16 z M650 205 v-16 h11 v16 z M692 205 v-16 h11 v16 z
+                 M734 205 v-16 h11 v16 z M776 205 v-16 h11 v16 z M818 205 v-16 h11 v16 z"/>
       </g>
       <!-- přízemí -->
-      <g stroke-width="1.05" opacity=".72" fill="none">
-        <path d="M226 248 v-19 h13 v19 z M268 248 v-19 h13 v19 z M310 248 v-19 h13 v19 z
-                 M352 248 v-19 h13 v19 z M394 248 v-19 h13 v19 z M436 248 v-19 h13 v19 z
-                 M562 248 v-19 h13 v19 z M604 248 v-19 h13 v19 z M646 248 v-19 h13 v19 z
-                 M688 248 v-19 h13 v19 z M730 248 v-19 h13 v19 z M772 248 v-19 h13 v19 z
-                 M814 248 v-19 h13 v19 z"/>
+      <g stroke-width="1.05" opacity=".7" fill="none">
+        <path d="M230 246 v-16 h11 v16 z M272 246 v-16 h11 v16 z M314 246 v-16 h11 v16 z
+                 M356 246 v-16 h11 v16 z M398 246 v-16 h11 v16 z M440 246 v-16 h11 v16 z
+                 M482 246 v-16 h11 v16 z M524 246 v-16 h11 v16 z M566 246 v-16 h11 v16 z
+                 M608 246 v-16 h11 v16 z M650 246 v-16 h11 v16 z M692 246 v-16 h11 v16 z
+                 M734 246 v-16 h11 v16 z M776 246 v-16 h11 v16 z M818 246 v-16 h11 v16 z"/>
       </g>
-      <!-- portál -->
-      <path d="M482 254 v-27 a13 13 0 0 1 26 0 v27" stroke-width="1.3" fill="none"/>
 
       <!-- břeh a hladina -->
       <path d="M0 254 H 1000" stroke-width="1.1" opacity=".5"/>
@@ -421,13 +403,13 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 
     <!-- ===== STROMY A KEŘE ===== -->
     <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round"
-       stroke-width="1.3" opacity=".48">
+       stroke-width="1.3" opacity=".46">
       <path d="M74 254 v-38" fill="none"/>
       <path d="M74 224 c-29 0 -37 -21 -22 -33 c-5 -19 27 -29 39 -14 c17 -7 33 10 23 27 c8 14 -12 23 -40 20z"/>
       <path d="M934 254 v-28" fill="none"/>
       <path d="M934 232 c-21 0 -26 -16 -16 -24 c-3 -14 19 -21 28 -10 c12 -5 24 7 17 19 c6 10 -8 18 -29 15z"/>
     </g>
-    <g stroke="currentColor" fill="none" stroke-width="1.1" opacity=".3" stroke-linecap="round">
+    <g stroke="currentColor" fill="none" stroke-width="1.1" opacity=".28" stroke-linecap="round">
       <path d="M256 254 v-16 M250 246 l6 -6 l6 6 M252 238 l4 -5 l4 5"/>
       <path d="M420 254 v-14 M415 247 l5 -5 l5 5"/>
       <path d="M600 254 v-15 M594 246 l6 -6 l6 6"/>
