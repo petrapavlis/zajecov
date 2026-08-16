@@ -2,7 +2,7 @@
 
 **Analýza situace obce a návrh dlouhodobých priorit.** Občanský podnět zpracovaný z veřejně dostupných dat.
 
-📄 **[Číst studii](https://UZIVATEL.github.io/zajecov-2046/)**
+📄 **[Číst studii](https://petrapavlis.github.io/zajecov/)**
 
 ---
 
@@ -16,20 +16,20 @@ Tato studie se zaměřuje na ně.
 
 ## Co v ní najdete
 
-| Sekce | Obsah |
-|---|---|
-| Datový profil | Obyvatelstvo, krajina, územní plán, hospodaření, bydlení a sociální služby — sedm tabulek se čtyřmi grafy |
-| Čtyři strukturální rizika | Voda, stárnutí a péče, bytový fond a pozemky, rozpočtová expozice |
-| Šest priorit | Seřazeno podle nevratnosti, tedy podle toho, jak dlouho platí důsledky dnešního rozhodnutí |
-| Akční plán | Čtyři fáze s odhady nákladů u té první |
-| Co jsem nezjistila | Otevřené otázky a datové mezery, přiznané |
-| Zdroje | Všechny podklady s odkazy a spisovými značkami |
+| Sekce                     | Obsah                                                                                                     |
+| ------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Datový profil             | Obyvatelstvo, krajina, územní plán, hospodaření, bydlení a sociální služby — sedm tabulek se čtyřmi grafy |
+| Čtyři strukturální rizika | Voda, stárnutí a péče, bytový fond a pozemky, rozpočtová expozice                                         |
+| Šest priorit              | Seřazeno podle nevratnosti, tedy podle toho, jak dlouho platí důsledky dnešního rozhodnutí                |
+| Akční plán                | Čtyři fáze s odhady nákladů u té první                                                                    |
+| Co jsem nezjistila        | Otevřené otázky a datové mezery, přiznané                                                                 |
+| Zdroje                    | Všechny podklady s odkazy a spisovými značkami                                                            |
 
 ## Vybraná zjištění
 
 - Počet seniorů v obci vzrostl mezi lety 2001 a 2023 o **52 %**. Chybějící zázemí pro ně označila obec sama jako slabou stránku už ve strategickém plánu z roku 2016 — a do seznamu záměrů na deset let se pak nedostal jediný krok, který by se toho týkal.
 - Dluh obce dosáhl k 31. 12. 2025 **97,99 % průměru příjmů** za poslední čtyři roky. Zákonná hranice je 60 %. V roce 2016 obec neměla žádný úvěr.
-- V katastrech Zaječov a Kvaň **běží komplexní pozemkové úpravy** (zpracovatel AGROPLAN, termín 2024–2027). Jejich součástí bude plán společných zařízení, do kterého lze na náklady státu vepsat opatření proti suchu. Když se obdobný plán naposledy schvaloval — pro lesní katastr v Brdech — neobsahoval podle rozhodnutí SPÚ *„žádná nová opatření"*.
+- V katastrech Zaječov a Kvaň **běží komplexní pozemkové úpravy** (zpracovatel AGROPLAN, termín 2024–2027). Jejich součástí bude plán společných zařízení, do kterého lze na náklady státu vepsat opatření proti suchu. Když se obdobný plán naposledy schvaloval — pro lesní katastr v Brdech — neobsahoval podle rozhodnutí SPÚ _„žádná nová opatření"_.
 - **Strategický plán rozvoje obce 2017–2026 letos končí.** Nové zastupitelstvo nastoupí bez platné dlouhodobé koncepce.
 
 ## Metodika
@@ -48,7 +48,7 @@ Kompletní seznam je v závěru studie a v adresáři [`zdroje/`](zdroje/).
 **Zásady, kterých se držím:**
 
 - Kde jde o odhad nebo interpolaci, je to výslovně uvedeno.
-- Kde se něco nepodařilo zjistit, je to napsáno — sekce *Co jsem nezjistila* není formalita.
+- Kde se něco nepodařilo zjistit, je to napsáno — sekce _Co jsem nezjistila_ není formalita.
 - Kde se zdroje rozcházejí, uvádím oba a zdůvodňuji, kterému dávám přednost.
 - Kde jsem se sama zmýlila, opravuji to a chyba zůstává v [CHANGELOG.md](CHANGELOG.md).
 

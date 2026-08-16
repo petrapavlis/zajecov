@@ -2,12 +2,13 @@
 
 ## 1. Repozitář
 
-Nový veřejný repozitář, doporučený název `zajecov-2046`.
+Nový veřejný repozitář, doporučený název `zajecov`.
 
 **Description** (pole nahoře vpravo, klik na ozubené kolo):
+
 > Analýza situace obce Zaječov a návrh dlouhodobých priorit. Občanský podnět z veřejných dat.
 
-**Website:** `https://UZIVATEL.github.io/zajecov-2046/`
+**Website:** `https://petrapavlis.github.io/zajecov/`
 
 **Topics:** `zajecov` `obec` `komunalni-politika` `otevrena-data` `csu` `brdy` `verejna-sprava`
 
@@ -27,9 +28,9 @@ zdroje/*.pdf        stažené dokumenty
 
 ## 3. Zapnout Pages
 
-Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, složka `/ (root)` → Save.
+Settings → Pages → Source: _Deploy from a branch_ → Branch: `main`, složka `/ (root)` → Save.
 
-Za minutu běží na `https://UZIVATEL.github.io/zajecov-2046/`.
+Za minutu běží na `https://petrapavlis.github.io/zajecov/`.
 
 ## 4. Náhledový obrázek
 
@@ -40,7 +41,7 @@ Bez něj se odkaz na Facebooku i v Messengeru zobrazí jako holý text.
 
 ## 5. Nahradit zástupný text
 
-V `index.html`, `README.md` a `NASAZENI.md` je na několika místech `UZIVATEL`.
+V `index.html`, `README.md` a `NASAZENI.md` je na několika místech `petrapavlis`.
 Nahraďte svým GitHub jménem — jinak nebudou fungovat odkazy v meta tagách
 ani náhledový obrázek.
 
@@ -48,7 +49,7 @@ ani náhledový obrázek.
 
 Máte-li volnou doménu, `Settings → Pages → Custom domain`. Adresa typu
 `zajecov2046.cz` působí na obecním úřadě důvěryhodněji než github.io.
-U poskytovatele nastavte CNAME na `UZIVATEL.github.io`.
+U poskytovatele nastavte CNAME na `petrapavlis.github.io`.
 
 ## 7. Kam to poslat
 
