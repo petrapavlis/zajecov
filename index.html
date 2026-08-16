@@ -171,6 +171,24 @@ tr.hi td:first-child{color:var(--green)}
 td.ind{padding-left:44px;color:var(--ink-soft)}
 .tbl-note{padding:18px 26px 22px;border-top:1px solid var(--rule);font-size:.89rem;margin:0}
 
+/* ---------- grafy ---------- */
+.chart{padding:26px 26px 22px;border-top:1px solid var(--rule);background:#fff}
+.chart svg{display:block;width:100%;height:auto}
+.chart figcaption{
+  font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-soft);margin:0 0 16px;
+}
+.c-grid{stroke:var(--rule);stroke-width:1}
+.c-axis{stroke:var(--rule-2);stroke-width:1.2}
+.c-lbl{font-family:"JetBrains Mono",monospace;font-size:12px;fill:var(--ink-soft)}
+.c-val{font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700}
+.c-name{font-family:"Libre Franklin",sans-serif;font-size:13px;fill:var(--ink)}
+.c-green{fill:var(--green-soft)}
+.c-dark{fill:var(--green)}
+.c-rust{fill:var(--rust)}
+.c-legend{font-family:"Libre Franklin",sans-serif;font-size:12.5px;fill:var(--ink-soft)}
+@media print{.chart{break-inside:avoid}}
+
 /* ---------- rizika ---------- */
 .risk{padding:28px 0;border-top:1px solid var(--rule)}
 .risk:first-child{border-top:0;padding-top:0}
@@ -437,19 +455,19 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 <section class="wrap rv" id="shrnuti">
   <div class="sec-head">
     <span class="eyebrow">Shrnutí</span>
-    <h2>Obec je vybavená, roste a investuje. Tři věci ale nikdo neřeší.</h2>
+    <h2>Obec je vybavená, roste a investuje. Čtyři čísla přesto stojí za pozornost.</h2>
   </div>
 
   <div class="grid g4">
     <div class="stat">
       <span class="num">+52 %</span>
       <b>Seniorů za 20 let</b>
-      <span class="t">206 osob (2001) → 314 osob (2023). Sociální služba pro ně v obci žádná.</span>
+      <span class="t">206 osob (2001) → 314 osob (2023). Chybějící zázemí pro seniory obec sama pojmenovala už v roce 2016.</span>
     </div>
     <div class="stat">
       <span class="num">0,7 %</span>
       <b>Vodních ploch v katastru</b>
-      <span class="t">Rok 2025 byl na Podbrdsku nejsušší v paměti, prameny nejslabší za 30 let.</span>
+      <span class="t">Rok 2025 byl na Podbrdsku nejsušší v paměti. V krajině není co vodu zadrží.</span>
     </div>
     <div class="stat">
       <span class="num">1</span>
@@ -457,17 +475,22 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <span class="t">Přitom čtvrtina bytů v obci není trvale obydlená.</span>
     </div>
     <div class="stat">
-      <span class="num">13×</span>
-      <b>Rozpočet vs. vlastní daně</b>
-      <span class="t">Schválené výdaje 2024: 194 mil. Kč. Daňový příjem: cca 15 mil. Kč.</span>
+      <span class="num">98 %</span>
+      <b>Dluh proti fiskálnímu pravidlu</b>
+      <span class="t">Zákonná hranice je 60 % průměru příjmů. Obec je na 97,99 %.</span>
     </div>
   </div>
 
   <div class="flag">
     <h3>A jedna příležitost, která nepočká</h3>
-    <p>Právě běží <strong>komplexní pozemkové úpravy</strong> v katastrech Zaječov a Kvaň. Rozhoduje se v nich
-    o cestách, mezích, tůních, protierozních opatřeních — a o tom, jaké pozemky bude obec vlastnit.
-    Opakuje se to jednou za desítky let.</p>
+    <p>V katastrech Zaječov a Kvaň běží <strong>komplexní pozemkové úpravy</strong>, zpracovatelem je
+    firma AGROPLAN, termín prací 2024 až 2027. Jejich součástí bude plán společných zařízení — nástroj,
+    kterým lze do krajiny na náklady státu vepsat tůně, zasakovací pásy, meze a protierozní opatření.
+    Právě teď se tvoří.</p>
+    <p>Souběžně skončilo řízení pro lesní katastr Zaječov v Brdech. Rozhodnutí Státního pozemkového úřadu
+    ze 7. 8. 2025 o jeho plánu společných zařízení konstatuje: <strong>„V rámci zpracování PSZ nebyla
+    navržena žádná nová opatření.“</strong> Zastupitelstvo ho v této podobě schválilo 5. 9. 2024.
+    To je precedens, ne osud.</p>
   </div>
 </section>
 
@@ -492,6 +515,45 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         </tbody>
       </table>
     </div>
+    <figure class="chart">
+      <figcaption>Děti do 14 let a senioři nad 65 let · počet osob</figcaption>
+      <svg viewBox="0 0 700 250" role="img" aria-label="Sloupcový graf: v roce 2001 bylo v obci 223 dětí a 206 seniorů, v roce 2023 už 227 dětí a 314 seniorů">
+        <g class="c-grid">
+          <line x1="60" y1="210" x2="680" y2="210"/><line x1="60" y1="154" x2="680" y2="154"/>
+          <line x1="60" y1="98" x2="680" y2="98"/><line x1="60" y1="42" x2="680" y2="42"/>
+        </g>
+        <g class="c-lbl" text-anchor="end">
+          <text x="50" y="214">0</text><text x="50" y="158">100</text>
+          <text x="50" y="102">200</text><text x="50" y="46">300</text>
+        </g>
+        <g class="c-green">
+          <rect x="88" y="85" width="44" height="125"/><rect x="243" y="110" width="44" height="100"/>
+          <rect x="398" y="74" width="44" height="136"/><rect x="553" y="82" width="44" height="128"/>
+        </g>
+        <g class="c-rust">
+          <rect x="144" y="94" width="44" height="116"/><rect x="299" y="76" width="44" height="134"/>
+          <rect x="454" y="36" width="44" height="174"/><rect x="609" y="33" width="44" height="177"/>
+        </g>
+        <g class="c-val" text-anchor="middle" fill="var(--green)">
+          <text x="110" y="79">223</text><text x="265" y="104">178</text>
+          <text x="420" y="68">241</text><text x="575" y="76">227</text>
+        </g>
+        <g class="c-val" text-anchor="middle" fill="var(--rust)">
+          <text x="166" y="88">206</text><text x="321" y="70">238</text>
+          <text x="476" y="30">309</text><text x="631" y="27">314</text>
+        </g>
+        <line x1="60" y1="210" x2="680" y2="210" class="c-axis"/>
+        <g class="c-lbl" text-anchor="middle">
+          <text x="137" y="230">2001</text><text x="292" y="230">2011</text>
+          <text x="447" y="230">2021</text><text x="602" y="230">2023</text>
+        </g>
+        <g><rect x="60" y="240" width="14" height="10" class="c-green"/>
+        <text x="82" y="249" class="c-legend">děti do 14 let</text>
+        <rect x="200" y="240" width="14" height="10" class="c-rust"/>
+        <text x="222" y="249" class="c-legend">senioři nad 65 let</text></g>
+      </svg>
+    </figure>
+
     <p class="tbl-note">Obec roste <strong>výhradně migrací</strong>. V roce 2023 se narodilo 13 dětí a zemřelo 14;
     přistěhovalo se 45 lidí, odstěhovalo 11. K 1. 1. 2025 měla obec 1 502 obyvatel.
     Části: Zaječov 783, Kvaň 451, Nová Ves 211.</p>
@@ -510,29 +572,176 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
           <tr><td>Ostatní plochy</td><td>310</td><td>13,9 %</td></tr>
           <tr><td>Zastavěné plochy</td><td>24</td><td>1,1 %</td></tr>
           <tr class="hi"><td>Vodní plochy</td><td>15</td><td>0,7 %</td></tr>
+          <tr class="hi"><td>Z toho lesy ve vlastnictví obce</td><td>70</td><td>3,1 %</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-note">Zaječov je <strong>lesní obec, ne zemědělská</strong>. Jižní část území leží v CHKO Brdy,
-    nejvyšší bod je Jordán (826 m). Koeficient ekologické stability 2,82.</p>
+    <figure class="chart">
+      <figcaption>Struktura katastru · 2 225 ha = 100 %</figcaption>
+      <svg viewBox="0 0 700 175" role="img" aria-label="Skládaný pruh: lesní půda 60,6 procenta, zemědělská 23,7, ostatní plochy 13,9, zastavěné 1,1 a vodní plochy 0,7 procenta katastru">
+        <g>
+          <rect x="40" y="30" width="376" height="48" fill="var(--green)"/>
+          <rect x="416" y="30" width="147" height="48" fill="var(--green-soft)"/>
+          <rect x="563" y="30" width="86" height="48" fill="#C7CFC3"/>
+          <rect x="649" y="30" width="7" height="48" fill="#9AA396"/>
+          <rect x="656" y="30" width="4" height="48" fill="var(--rust)"/>
+        </g>
+        <text x="52" y="60" class="c-val" fill="#fff">60,6 % lesní půda</text>
+        <text x="428" y="60" class="c-val" fill="#fff">23,7 %</text>
+        <g stroke="var(--rule-2)" stroke-width="1">
+          <path d="M606 78 v18" fill="none"/><path d="M652 78 v34" fill="none"/><path d="M658 78 v50" fill="none"/>
+        </g>
+        <text x="606" y="112" class="c-lbl" text-anchor="middle">13,9 %</text>
+        <text x="596" y="127" class="c-name" text-anchor="middle" font-size="12">ostatní plochy</text>
+        <text x="664" y="118" class="c-lbl">1,1 % zastavěné plochy</text>
+        <text x="664" y="146" class="c-val" fill="var(--rust)">0,7 % vodní plochy</text>
+        <text x="40" y="168" class="c-name" font-size="12.5" fill="var(--ink-soft)">Z lesů vlastní obec 69,99 ha, tedy 3,1 % katastru. Z 91 % jde o jehličnany.</text>
+      </svg>
+    </figure>
+
+    <p class="tbl-note">Zaječov je <strong>lesní obec, nikoli zemědělská</strong>. Jižní část území leží
+    v CHKO Brdy, nejvyšším bodem je Jordán (826 m n. m.). Koeficient ekologické stability činí 2,82.
+    Většinu lesů spravují Vojenské lesy a statky ČR; obec sama vlastní 69,99 ha, z toho 48,39 ha
+    v katastru Kvaň a 21,60 ha v katastru Zaječov. Podle lesního hospodářského plánu tvoří
+    <strong>91 % porostu jehličnany a 9 % listnáče</strong>.</p>
   </div>
 
   <div class="tbl">
-    <div class="tbl-hd"><h3>Hospodaření obce</h3><p class="src">Ministerstvo financí ČR · skutečnost · mil. Kč</p></div>
+    <div class="tbl-hd"><h3>Dluh a fiskální pravidlo</h3><p class="src">Monitor státní pokladny · stav k 31. 12. 2025 · mil. Kč</p></div>
     <div class="scroller">
       <table>
-        <thead><tr><th>Rok</th><th>Příjmy</th><th>Výdaje</th><th>Půjčky</th><th>Dluh. služba</th></tr></thead>
         <tbody>
-          <tr><td>2020</td><td>37,3</td><td>35,8</td><td>0</td><td>0,4</td></tr>
-          <tr><td>2021</td><td>37,8</td><td>36,7</td><td>11,5</td><td>3,4</td></tr>
-          <tr><td>2022</td><td>42,2</td><td>45,7</td><td>0</td><td>3,4</td></tr>
-          <tr class="hi"><td>2023</td><td>51,8</td><td>75,7</td><td>31,7</td><td>4,8</td></tr>
-          <tr class="hi"><td>2024*</td><td>86,4</td><td>106,5</td><td>26,0</td><td>3,9</td></tr>
+          <tr><td>Příjem 2022</td><td>42,2</td></tr>
+          <tr><td>Příjem 2023</td><td>51,8</td></tr>
+          <tr><td>Příjem 2024</td><td>117,7</td></tr>
+          <tr><td>Příjem 2025</td><td>59,2</td></tr>
+          <tr><td>Průměr za čtyři roky</td><td>67,7</td></tr>
+          <tr class="hi"><td>Dluh celkem (dlouhodobé úvěry)</td><td>66,4</td></tr>
+          <tr class="hi"><td>Podíl dluhu k průměru příjmů</td><td>97,99 %</td></tr>
+          <tr><td>Zákonná hranice</td><td>60 %</td></tr>
+          <tr class="hi"><td>Povinné roční umoření</td><td>1,29</td></tr>
+          <tr><td>Dluhová služba 2025</td><td>8,2</td></tr>
+          <tr><td>Dluh na obyvatele</td><td>44 tis. Kč</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="tbl-note">*k 09/2024, poslední veřejně dostupný údaj. Schválený rozpočet 2024 počítal
-    se 194 mil. Kč výdajů. Rozpočtové určení daní 2022: 14,7 mil. Kč.</p>
+    <figure class="chart">
+      <figcaption>Dluh jako podíl průměru příjmů za čtyři roky</figcaption>
+      <svg viewBox="0 0 700 190" role="img" aria-label="Pruhový graf: dluh obce dosahuje 97,99 procenta průměru příjmů, zákonná hranice je 60 procent">
+        <rect x="50" y="46" width="600" height="40" fill="var(--paper-2)"/>
+        <rect x="50" y="46" width="360" height="40" fill="var(--green-soft)"/>
+        <rect x="410" y="46" width="228" height="40" fill="var(--rust)"/>
+        <line x1="410" y1="30" x2="410" y2="102" stroke="var(--green)" stroke-width="2"/>
+        <text x="404" y="24" class="c-val" fill="var(--green)" text-anchor="end">hranice 60 %</text>
+        <text x="638" y="24" class="c-val" fill="var(--rust)" text-anchor="end">97,99 %</text>
+        <g class="c-lbl">
+          <text x="50" y="118">0 %</text>
+          <text x="650" y="118" text-anchor="end">100 %</text>
+        </g>
+        <text x="50" y="146" class="c-name" font-size="13">Překročení hranice zakládá povinnost snižovat dluh
+        nejméně o <tspan font-weight="700">1 286 410 Kč ročně</tspan>.</text>
+        <text x="50" y="168" class="c-name" font-size="13" fill="var(--ink-soft)">Průměr táhne nahoru rok 2024
+        se 117,7 mil. Kč. Až vypadne z výpočtu, podíl vzroste i bez nového úvěru.</text>
+      </svg>
+    </figure>
+
+    <p class="tbl-note">Zákon o pravidlech rozpočtové odpovědnosti stanoví, že dluh obce nemá přesáhnout
+    60 % průměru příjmů za poslední čtyři roky. Při překročení vzniká povinnost snižovat jej nejméně
+    o 5 % rozdílu ročně; jinak ministerstvo financí pozastaví převod podílu na sdílených daních.
+    <strong>Pro Zaječov to znamená 1 286 410 Kč každý rok.</strong> Rozvaha k 30. 6. 2026 navíc vykazuje
+    <strong>150,8 mil. Kč nedokončeného dlouhodobého majetku</strong> — rozestavěné investice, které
+    zatím nejsou v užívání.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Co říká územní plán</h3><p class="src">ÚP Zaječov 2012 · změna č. 1 (2017) · změna č. 2 (2019) · úplné znění duben 2019</p></div>
+    <div class="scroller">
+      <table>
+        <tbody>
+          <tr><td>Zastavitelné plochy pro individuální bydlení (BI)</td><td>61</td></tr>
+          <tr class="hi"><td>Zastavitelné plochy občanského vybavení pro budovu</td><td>0</td></tr>
+          <tr><td>— z toho OZ 1 (přestavba klášterní zahrady)</td><td>park</td></tr>
+          <tr><td>— z toho OS 1 (hřiště pro jízdu na kolech)</td><td>bez budov</td></tr>
+          <tr><td>Kapacitní strop zdrojů podle ÚP 2019</td><td>1 600 EO</td></tr>
+          <tr><td>Kapacitní strop ČOV podle ÚP 2019</td><td>1 500 EO</td></tr>
+          <tr><td>Obyvatel k 1. 1. 2025</td><td>1 502</td></tr>
+          <tr class="hi"><td>Nová kapacita po rozšíření ČOV 2023–2025</td><td>nezveřejněna</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Regulativ ploch OV výslovně připouští <strong>stavby pro sociální péči, například domov pro
+    seniory</strong>. Plochy BK připouštějí byty s pečovatelskou službou. Právně to tedy jde — jen pro to
+    v plánu není vymezena jediná plocha. Zdroj pitné vody navíc leží <strong>mimo území obce</strong> —
+    voda se přivádí z úpravny od Záruby. Územní plán zároveň zakazuje komerční fotovoltaické i větrné
+    elektrárny na celém správním území. Údaje o kapacitních stropech pocházejí z plánu z roku 2019
+    a stavbou z let 2023–2025 se posunuly; o kolik, obec nezveřejnila.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Strategický plán rozvoje obce 2017–2026</h3><p class="src">Schválen v prosinci 2016 · platnost končí letos</p></div>
+    <div class="scroller">
+      <table>
+        <tbody>
+          <tr class="hi"><td>Slabá stránka pojmenovaná ve SWOT analýze</td><td>„Obec nemá k dispozici objekt k bydlení pro seniory a poskytnutí sociálního bydlení“</td></tr>
+          <tr class="hi"><td>Počet záměrů v plánu, které se této slabiny týkají</td><td>0</td></tr>
+          <tr><td>Hrozba pojmenovaná ve SWOT</td><td>Nedostatečné zásobování pitnou vodou celé obce</td></tr>
+          <tr><td>Hrozba pojmenovaná ve SWOT</td><td>Ohrožení lesního porostu — monokultura</td></tr>
+          <tr><td>Polosuchý poldr Hamburk</td><td>priorita 3</td></tr>
+          <tr><td>Obnova funkce příkopů</td><td>priorita 3</td></tr>
+          <tr><td>Naučná stezka s tůňkami za obecním úřadem</td><td>priorita 3</td></tr>
+          <tr><td>Vodovod Kvaň a úpravna vody — plánované náklady</td><td>40 mil. Kč</td></tr>
+          <tr class="hi"><td>Vodovod Kvaň a ČOV — skutečná cena</td><td>137,3 mil. Kč</td></tr>
+          <tr class="hi"><td>Úvěry obce v roce 2016</td><td>žádné</td></tr>
+          <tr class="hi"><td>Dluh obce k 31. 12. 2025</td><td>66,4 mil. Kč</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tbl-note">Obec strategický plán má a v úvodu se v něm píše, že jde o dokument, který
+    „není omezen pouze na jedno volební období zastupitelstva“. Letos jeho platnost končí. Nové
+    zastupitelstvo tak nastoupí do funkce bez platné dlouhodobé koncepce.</p>
+    <p class="tbl-note" style="border-top:0;padding-top:0">Stojí za pozornost, že chybějící zázemí
+    pro seniory obec sama označila jako slabou stránku už v roce 2016 — a do seznamu záměrů se
+    nedostalo. Všechna opatření pro zadržení vody v krajině dostala nejnižší prioritu, tedy
+    „uskuteční se pouze v případě dotace“.</p>
+  </div>
+
+  <div class="tbl">
+    <div class="tbl-hd"><h3>Komu obec posílá peníze</h3><p class="src">Monitor státní pokladny · dotace a transfery · 1. pololetí 2026 · tis. Kč</p></div>
+    <div class="scroller">
+      <table>
+        <tbody>
+          <tr><td>Základní škola a Mateřská škola Zaječov</td><td>3 021,07</td></tr>
+          <tr><td>DSO dopravní obslužnost Hořovicka</td><td>220,67</td></tr>
+          <tr class="hi"><td>TJ Zaječov</td><td>210,00</td></tr>
+          <tr><td>SDH Zaječov</td><td>87,00</td></tr>
+          <tr><td>Nohejbal klub Zaječov</td><td>70,00</td></tr>
+          <tr><td>Mikroregion Hořovicko</td><td>59,56</td></tr>
+          <tr><td>MAS Brdy</td><td>40,00</td></tr>
+          <tr><td>Česká tábornická unie · Spolek Zděná · Regionart</td><td>103,00</td></tr>
+          <tr><td>Včelaři, chovatelé, zahrádkáři, TJ Olešná</td><td>35,00</td></tr>
+          <tr class="hi"><td>Domov Na Výsluní, Hořovice</td><td>5,00</td></tr>
+          <tr class="hi"><td>Svaz tělesně postižených, Hořovice</td><td>5,00</td></tr>
+          <tr><td>Diakonie Broumov · Dobromysl · Centrum Hájek</td><td>3,00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="chart">
+      <figcaption>Transfery mimo školu · 1. pololetí 2026 · tis. Kč</figcaption>
+      <svg viewBox="0 0 700 175" role="img" aria-label="Porovnání: spolky, sport a volný čas dostaly zhruba 505 tisíc korun, sociální oblast 13 tisíc korun">
+        <text x="40" y="42" class="c-name">Spolky, sport a volný čas</text>
+        <rect x="40" y="52" width="583" height="30" fill="var(--green-soft)"/>
+        <text x="633" y="73" class="c-val" fill="var(--green)">505</text>
+        <text x="40" y="118" class="c-name">Sociální oblast</text>
+        <rect x="40" y="128" width="15" height="30" fill="var(--rust)"/>
+        <text x="65" y="149" class="c-val" fill="var(--rust)">13</text>
+        <text x="110" y="149" class="c-name" font-size="12.5" fill="var(--ink-soft)">Domov Na Výsluní 5 · Svaz tělesně postižených 5 · ostatní 3</text>
+      </svg>
+    </figure>
+
+    <p class="tbl-note">Bez školy vychází poměr zhruba takto: <strong>spolky, sport a volný čas asi 505 tisíc
+    korun, sociální oblast 13 tisíc.</strong> Domov Na Výsluní v Hořovicích je jediné zařízení pro seniory
+    na celém seznamu a dostává třiačtyřicetkrát méně než tělovýchovná jednota. Nejde o to, že by spolky
+    peníze nezasloužily — jde o to, že poměr 39:1 nikdo nikdy nezvolil vědomě. Prostě vznikl.</p>
   </div>
 
   <div class="tbl">
@@ -551,8 +760,11 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         </tbody>
       </table>
     </div>
-    <p class="tbl-note">Obec je zapojena do <strong>Taxíku Maxíka</strong> — svoz seniorů 70+ a držitelů ZTP
-    k lékaři a na úřady v rámci Mikroregionu Hořovicko za 30 Kč. To funguje a je na čem stavět.</p>
+    <p class="tbl-note">Údaje ČSÚ se týkají pobytových a obdobných zařízení, terénní pečovatelskou službu
+    nezachycují. Strategický plán z roku 2016 uvádí, že péči o seniory v obci zajišťuje firma Senior Care,
+    pečovatelská služba o. p. s. Zda a v jakém rozsahu funguje dnes, se z veřejných zdrojů zjistit nedá.
+    Obec je dále zapojena do <strong>Taxíku Maxíka</strong> — svozu seniorů nad 70 let a držitelů průkazu
+    ZTP k lékaři a na úřady v rámci Mikroregionu Hořovicko za 30 Kč.</p>
   </div>
 </section>
 
@@ -567,16 +779,34 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
     <div class="risk">
       <div class="risk-hd"><span class="n">01</span><h3>Voda</h3></div>
       <dl>
-        <dt>Zjištění</dt>
-        <dd>Obec plánuje obnovu vodovodního řadu Varta. To je oprava distribuce. Nikde není uvedeno,
-        jaká je vydatnost vlastních zdrojů, jaká je bilanční rezerva a zda existuje záložní propojení
-        na skupinový vodovod.</dd>
+        <dt>Co se udělalo</dt>
+        <dd>Obec v letech 2023 až 2025 realizovala akci <em>Rozšíření a intenzifikace ČOV, Horní Kvaň —
+        kanalizace a vodovod</em> za 137,3 mil. Kč bez DPH, s dotací z Operačního programu Životní
+        prostředí ve výši 84,5 mil. Kč. Přibyl vodojem na Kvani o objemu 160 m³, rozšířila se čistírna
+        odpadních vod a kvaňský řad byl propojen s kozojedským, takže při havárii lze Kozojedy zásobovat
+        z Kvaně. Jde o potřebnou investici; páteřní vodovod pochází z roku 1937 a je ze šedé litiny.</dd>
+        <dt>Co zůstává</dt>
+        <dd>Stavba řeší rozvod a čištění, nikoli vydatnost zdroje. Voda se stále přivádí z úpravny
+        od Záruby, tedy zvenčí obce. Kolik obyvatel nové zařízení unese, obec nezveřejnila; jediné
+        dostupné údaje jsou kapacitní stropy 1 600 a 1 500 EO z územního plánu z roku 2019, které
+        již neplatí.</dd>
+        <dt>Krajina</dt>
+        <dd>Vodní plochy tvoří 0,7 % katastru. Územní plán obsahuje od roku 2012 veřejně prospěšná
+        opatření pod hlavičkou „zvyšování retenčních schopností krajiny“ — rybníky VH 1 Rokyta
+        a VH 2 U obecního úřadu a poldr VH 3 v Kvani — a ukládá přednostní vsakování srážkových vod
+        v místě jejich vzniku. Ve strategickém plánu z roku 2016 mají poldr Hamburk, obnova funkce
+        příkopů i soustava tůněk za obecním úřadem shodně nejnižší prioritu, tedy „pouze v případě dotace“.</dd>
+        <dt>Lesy</dt>
+        <dd>Obec hospodaří na 69,99 ha vlastního lesa, z čehož 91 % tvoří jehličnany. Strategický plán
+        označil monokulturu za hrozbu a sliboval, že se při tvorbě nového lesního hospodářského plánu
+        v roce 2018 bude usilovat o přizpůsobení klimatickým poměrům. Zda se tak stalo, není veřejně doloženo.</dd>
         <dt>Kontext</dt>
-        <dd>Do poloviny srpna 2025 spadlo ve středních Čechách méně než 60 % běžného ročního úhrnu srážek,
-        vydatnost pramenů klesla na nejnižší úroveň za 30 let. Hořovice v dubnu 2026 vyzvaly občany
-        k šetření vodou. Sousední Bzová má zavedená omezení dodávek.</dd>
+        <dd>Do poloviny srpna 2025 spadlo ve středních Čechách méně než 60 % běžného ročního úhrnu srážek
+        a vydatnost pramenů klesla na nejnižší úroveň za třicet let. Hořovice v dubnu 2026 vyzvaly občany
+        k šetření vodou, sousední Bzová má zavedená omezení dodávek.</dd>
         <dt>Riziko</dt>
-        <dd>Že bude potrubí nové a voda v něm nebude.</dd>
+        <dd>Nikoli že by chybělo potrubí. Že v suchém roce nebude v krajině zadržená voda, kterou by
+        potrubí rozvádělo — a že o skutečné bilanci nikdo veřejně nemluví.</dd>
       </dl>
     </div>
 
@@ -584,7 +814,11 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <div class="risk-hd"><span class="n">02</span><h3>Stárnutí a péče</h3></div>
       <dl>
         <dt>Zjištění</dt>
-        <dd>Seniorů v obci přibylo za dvacet let o 52 %. Sociální služba pro ně v obci žádná není.</dd>
+        <dd>Seniorů v obci přibylo za dvacet let o 52 %. Podle evidence ČSÚ zde není žádné pobytové
+        zařízení ani dům s pečovatelskou službou. Strategický plán rozvoje obce z roku 2016 označil za
+        slabou stránku doslova to, že <em>„obec nemá k dispozici objekt k bydlení pro seniory a poskytnutí
+        sociálního bydlení“</em> — a do seznamu záměrů na následujících deset let se pak nedostal jediný
+        krok, který by se této slabiny týkal.</dd>
         <dt>Kontext</dt>
         <dd>V ČR chybí odhadem 45–50 tisíc lůžek v domovech pro seniory a domovech se zvláštním režimem.
         Čekací doby dosahují dvou až tří let a Středočeský kraj patří mezi nejhorší. Do roku 2035 bude
@@ -599,7 +833,11 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <div class="risk-hd"><span class="n">03</span><h3>Bytový fond a pozemky</h3></div>
       <dl>
         <dt>Zjištění</dt>
-        <dd>Obec vlastní jeden dům. Čtvrtina bytového fondu není trvale obydlená.</dd>
+        <dd>Obec vlastní jeden dům. Čtvrtina bytového fondu není trvale obydlená. Územní plán vymezuje
+        61 zastavitelných ploch pro rodinné domy a ani jednu plochu občanského vybavení, na které by
+        šlo postavit budovu — tedy ani zařízení sociální péče, které regulativ jinak výslovně
+        připouští. Pozemkové úpravy v zemědělských katastrech, které mohou obci scelit vhodný pozemek,
+        běží do roku 2027 — je to poslední taková příležitost na desítky let.</dd>
         <dt>Riziko</dt>
         <dd>Obec bez vlastních pozemků a bytů nemá jak nabídnout startovací byt mladé rodině,
         bezbariérový byt seniorovi, který už nezvládá dům, ani služební byt lékaři či pečovatelce.
@@ -611,11 +849,22 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <div class="risk-hd"><span class="n">04</span><h3>Rozpočtová expozice</h3></div>
       <dl>
         <dt>Zjištění</dt>
-        <dd>Roční daňový příjem cca 15 mil. Kč, schválené výdaje 2024 na 194 mil. Kč, přijaté půjčky
-        31,7 mil. (2023) a 26,0 mil. (do 09/2024), dluhová služba 4–5 mil. Kč ročně.</dd>
+        <dd>Dluh k 31. 12. 2025 činil 66,4 mil. Kč, tedy <strong>97,99 % průměru příjmů za poslední
+        čtyři roky</strong>. Zákonná hranice je 60 %. Dluhová služba za rok 2025 byla 8,2 mil. Kč,
+        dluh na obyvatele 44 tis. Kč.</dd>
+        <dt>Důsledek</dt>
+        <dd>Obec je ze zákona povinna snižovat dluh nejméně o 1 286 410 Kč ročně. Pokud to nedělá,
+        ministerstvo financí pozastaví převod podílu na sdílených daních — tedy hlavního příjmu obce.</dd>
+        <dt>Původ</dt>
+        <dd>Dluh není nahodilý. Vznikl stavbou vodovodu a ČOV za 137,3 mil. Kč bez DPH, na kterou obec
+        získala dotaci 84,5 mil. Kč. Vysvětluje to i skok příjmů roku 2024 na 117,7 mil. Kč, dohadné
+        účty aktivní ve výši 105 mil. Kč a 150,8 mil. Kč nedokončeného majetku.</dd>
         <dt>Riziko</dt>
-        <dd>Není v tom nic nezákonného — obce takto financují dotační investice. Ale nikde nezaznělo,
-        jaká bude dluhová služba v roce 2030 a co si obec kvůli ní nebude moci dovolit.</dd>
+        <dd>Není v tom nic nezákonného a obce takto běžně financují dotační investice. Ale znamená to,
+        že <strong>manévrovací prostor pro cokoliv nového je na roky dopředu velmi malý</strong>.
+        V rozpočtu na rok 2026 je na úroky vyčleněno 1,8 mil. Kč a na krizová opatření 50 tisíc.
+        A ve výkazech leží 150,8 mil. Kč nedokončených investic, které je nutné dokončit dřív,
+        než začnou cokoliv vynášet.</dd>
       </dl>
     </div>
   </div>
@@ -643,21 +892,31 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
     <article class="pri">
       <div class="yr"><span class="v">60</span><span class="u">let</span></div>
       <h3>Vodní bilance obce</h3>
-      <p>Zpracovat a zveřejnit pasport vodních zdrojů: počet a vydatnost jímacích objektů, kapacita
-      vodojemů, roční bilance, chování zdrojů v suchých letech 2015, 2018, 2022 a 2025, existence
-      záložního propojení na skupinový vodovod.</p>
-      <p>Souběžně: povinné vsakování srážkových vod u nových staveb v regulativech územního plánu,
-      odpojení dešťových svodů od kanalizace, hospodaření se srážkovou vodou na obecních objektech.</p>
+      <p>Obec do vodovodu a ČOV investovala 137,3 mil. Kč. Zbývá to, co se za peníze nekoupí:
+      zveřejnit novou kapacitu po rozšíření, vydatnost zdroje u Záruby, chování zdrojů v suchých letech
+      2015, 2018, 2022 a 2025 a smluvní jistotu dodávek zvenčí obce.</p>
+      <p>Povinné vsakování srážkových vod je v územním plánu od roku 2012 a stejně tak retenční opatření
+      VH 1, VH 2 a VH 3. Úkolem tedy není je zavést, ale <strong>realizovat je</strong>. Vodní plochy
+      tvoří 0,7 % katastru — potrubí je nové, ale v krajině není co zadržet.</p>
     </article>
 
     <article class="pri urgent">
       <div class="yr"><span class="v">30</span><span class="u">let</span></div>
-      <span class="warn">Běží teď · nelze odložit</span>
-      <h3>Aktivní role v pozemkových úpravách</h3>
-      <p>Do plánu společných zařízení prosadit tůně a retenční prvky, zasakovací pásy, obnovu polních
-      cest s doprovodnou zelení, prvky ÚSES. Zároveň usilovat o scelení obecních pozemků do ploch
-      využitelných pro bydlení a případně pro budoucí zařízení sociálních služeb.</p>
-      <p>Ze všech bodů této analýzy je tenhle jediný, u kterého rozhoduje kalendář, ne vůle.</p>
+      <span class="warn">Běží teď · termín 2024–2027</span>
+      <h3>Plán společných zařízení v katastrech Zaječov a Kvaň</h3>
+      <p>V zemědělských katastrech obce probíhají komplexní pozemkové úpravy. Zpracovatelem je firma
+      AGROPLAN, spol. s r. o.; pověření ke vstupu na pozemky vydal Státní pozemkový úřad 1. 11. 2024
+      s platností po celou dobu prací, tedy do roku 2027.</p>
+      <p>Jejich součástí je <strong>plán společných zařízení</strong> — v podstatě územní plán krajiny.
+      Lze do něj na náklady státu vepsat tůně a retenční prvky, zasakovací pásy, meze, obnovu polních cest
+      s doprovodnou zelení a prvky územního systému ekologické stability. Zároveň je to jediná chvíle,
+      kdy může obec při scelování parcel získat souvislý vlastní pozemek. Plán schvaluje zastupitelstvo.</p>
+      <p><strong>Jak dopadl minulý pokus.</strong> V lesním katastru Zaječov v Brdech skončily pozemkové
+      úpravy rozhodnutím ze 7. 8. 2025. Zpracovatelem byla firma GEPARD s.r.o., řešená výměra 1 522 ha,
+      účastníky pouze Vojenské lesy a statky ČR a obec. O plánu společných zařízení rozhodnutí říká
+      doslova: <em>„V rámci zpracování PSZ nebyla navržena žádná nová opatření. Byly pouze vymezeny
+      zábory pozemků pod stávajícími lesními cestami.“</em> Zastupitelstvo ho schválilo 5. 9. 2024.</p>
+      <p>Ze všech bodů této analýzy je tento jediný, u něhož rozhoduje kalendář, nikoli vůle.</p>
     </article>
 
     <article class="pri">
@@ -667,6 +926,9 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       předkupní právo na strategických plochách. Připravit projekt malometrážních obecních bytů —
       kombinace startovacích bytů pro mladé a bezbariérových pro seniory v jednom objektu je dotačně
       podporovaná a v obci této velikosti provozně schůdná.</p>
+      <p><strong>Předpokladem je změna územního plánu.</strong> Ten dnes nevymezuje jedinou zastavitelnou
+      plochu občanského vybavení, na které by šlo postavit budovu. Bez ní zůstane domov pro seniory
+      jen teoretickou možností v textu regulativu.</p>
     </article>
 
     <article class="pri">
@@ -696,11 +958,17 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
     <article class="pri">
       <div class="yr"><span class="v">5</span><span class="u">let</span></div>
       <h3>Provozní témata s tvrdým rozpočtovým dopadem</h3>
+      <p>Při dluhu na 98 % průměru příjmů a povinném ročním umoření 1,29 mil. Kč platí u všeho
+      následujícího jedno: buď to sníží provozní náklady, nebo na to nebudou peníze.</p>
       <p><strong>Odpady:</strong> od roku 2030 platí zákaz skládkování využitelných odpadů, poplatky
       rostou už teď, v obci chybí sběrný dvůr. <strong>Energetika:</strong> od roku 2024 lze zakládat
-      energetická společenství — FVE na obecních budovách se sdílením přebytků je provozní úspora.
+      energetická společenství, ale územní plán zakazuje komerční fotovoltaiku na celém správním území —
+      bez jeho změny to nejde.
       <strong>Krizová odolnost:</strong> záložní zdroj pro školu, úřad a vodárnu, systém obvolání seniorů.
-      <strong>Turismus:</strong> obec by měla mít pozici k parkování a erozi tras dřív, než ji tlak převálcuje.</p>
+      <strong>Turismus:</strong> obec by měla mít pozici k parkování a erozi tras dříve, než ji tlak převálcuje.
+      <strong>Kamenolom:</strong> podle plánu z roku 2001 má těžba diabasu skončit v roce 2042 a rekultivace
+      na vodní plochu proběhnout do roku 2047. Strategický plán z roku 2016 označil za hrozbu neexistenci
+      útlumového plánu; lom leží nedaleko základní školy i kláštera.</p>
     </article>
   </div>
 </section>
@@ -722,22 +990,28 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         <li><span>Pasport vodních zdrojů a bilance</span><span class="cost k">do 100 tis.</span></li>
         <li><span>Pasport obecního nemovitého majetku</span><span class="cost">vlastní silou</span></li>
         <li><span>Ověření sociálních služeb v Registru MPSV a přehled pro občany</span><span class="cost">vlastní silou</span></li>
-        <li><span>Pracovní skupina pro pozemkové úpravy</span><span class="cost">0 Kč</span></li>
-        <li><span>Zveřejnění projekce dluhové služby do roku 2032</span><span class="cost">0 Kč</span></li>
+        <li><span>Navázat kontakt s SPÚ Beroun a AGROPLANem k plánu společných zařízení</span><span class="cost k">první krok</span></li>
+        <li><span>Zveřejnění stavu realizace opatření VH 1, VH 2 a VH 3 z územního plánu</span><span class="cost">0 Kč</span></li>
+        <li><span>Zveřejnit novou kapacitu ČOV a vodovodu po rozšíření a bilanci zdroje u Záruby</span><span class="cost k">nutné</span></li>
+        <li><span>Plán umořování dluhu do návratu pod 60 % a jeho zveřejnění</span><span class="cost k">zákonná povinnost</span></li>
+        <li><span>Vyhodnotit plnění strategického plánu 2017–2026, jehož platnost letos končí</span><span class="cost">vlastní silou</span></li>
+        <li><span>Revize poměru dotací spolkům a sociální oblasti jako vědomé rozhodnutí</span><span class="cost">0 Kč</span></li>
       </ul>
     </div>
 
     <div class="phase">
       <div class="phase-hd"><span class="tag">FÁZE B</span><span class="when">6–24 měsíců</span></div>
       <ul class="tasks">
-        <li><span>Prosazení vodohospodářských prvků do plánu společných zařízení</span><span class="cost k">nelze odložit</span></li>
-        <li><span>Získání scelených obecních pozemků v rámci úprav</span><span class="cost k">nelze odložit</span></li>
-        <li><span>Regulativy hospodaření se srážkovou vodou do územního plánu</span></li>
+        <li><span>Prosadit do plánu společných zařízení tůně, zasakovací pásy, meze a prvky ÚSES</span><span class="cost k">nelze odložit</span></li>
+        <li><span>Usilovat o souvislý obecní pozemek při scelování parcel</span><span class="cost k">nelze odložit</span></li>
+        <li><span>Vyhodnotit, proč PSZ pro katastr v Brdech neobsahoval žádná opatření</span></li>
         <li><span>Rozšíření Taxíku Maxíka, zajištění rozvozu obědů</span></li>
         <li><span>Studie proveditelnosti obecních malometrážních bytů</span></li>
         <li><span>Jednání o sdílené kapacitě pobytových služeb v mikroregionu</span></li>
         <li><span>Jednání o optickém připojení obce</span></li>
-        <li><span>Strategický plán rozvoje obce do roku 2045 s veřejným projednáním</span></li>
+        <li><span>Změna územního plánu: vymezení plochy OV pro sociální péči</span><span class="cost k">klíčové</span></li>
+        <li><span>Změna územního plánu: uvolnění komerční fotovoltaiky na obecních budovách</span></li>
+        <li><span>Nový strategický plán rozvoje obce do roku 2045 s veřejným projednáním</span><span class="cost k">navazuje na 2026</span></li>
       </ul>
     </div>
 
@@ -761,6 +1035,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         <li><span>Vyhodnocování vodní bilance</span></li>
         <li><span>Pravidelná veřejná projednání strategického plánu</span></li>
         <li><span>Aktivní zastoupení obce vůči VLS ČR a AOPK v otázkách lesů a CHKO</span></li>
+        <li><span>Sledovat útlum těžby v kamenolomu a přípravu rekultivace na vodní plochu</span></li>
       </ul>
     </div>
   </div>
@@ -781,9 +1056,11 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       skupiny. Bez detailu nelze určit, kolik bude v Zaječově lidí 80+ v roce 2035 a 2045. Hrubým
       přepočtem podle celostátní dynamiky vychází ~360 seniorů v roce 2035 a 400–420 v roce 2045 —
       ale je to odhad, ne projekce.</li>
-      <li><strong>Rozsah lesních a zemědělských pozemků ve vlastnictví obce.</strong></li>
-      <li><strong>Počet a vydatnost vodních zdrojů</strong>, bilance, existence záložního propojení.</li>
-      <li><strong>Aktuální zadlužení k roku 2026</strong> — poslední veřejný údaj je k 09/2024.</li>
+      <li><strong>Zda byla realizována retenční opatření VH 1, VH 2 a VH 3</strong> a zda nový lesní
+      hospodářský plán z roku 2018 skutečně změnil druhovou skladbu obecních lesů.</li>
+      <li><strong>Vydatnost vodních zdrojů a bilance.</strong> Územní plán uvádí strop 1 600 EO a zdroj
+      ve vojenském újezdu, ale ne aktuální vydatnost ani smluvní zajištění dodávek.</li>
+      <li><strong>Zda byla realizována retenční opatření VH 1, VH 2 a VH 3</strong> z územního plánu z roku 2012.</li>
       <li><strong>Skutečná existence zdravotně-sociálních zařízení v obci.</strong> Evidence ČSÚ uvádí nulu;
       terénní šetření SMS ČR tvrdí opak, ale totéž šetření tvrdí, že je v obci bankomat a policejní
       stanice. Vycházím z ČSÚ.</li>
@@ -810,8 +1087,37 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         (sčítání 2001/2011/2021, bilance obyvatel, pozemky, vybavenost, sociální zařízení),
         Ministerstva financí (hospodaření 2010–2024) a terénní šetření SMS ČR.
         <span class="u">risy.cz/cs/vyhledavace/obce/detail?Zuj=531995</span></li>
-        <li>Oficiální web obce Zaječov — Taxík Maxík, sociální pomoc <span class="u">zajecov.cz</span></li>
-        <li>Úřední deska obce Zaječov — komplexní pozemkové úpravy, střednědobý výhled rozpočtu <span class="u">zajecov.cz/uredni-deska</span></li>
+        <li>Strategický plán rozvoje obce Zaječov 2017–2026, schválen v prosinci 2016. Ověřeno:
+        SWOT analýza, kapitoly Občanská vybavenost, Obecní lesy, Vodní plochy a vodoteče, Vodovod,
+        Kamenolom Zaječov, Ekonomika obce a Příloha č. 1 — Plán záměrů pro období 2017–2026.</li>
+        <li>Oficiální web obce Zaječov — Taxík Maxík, sociální pomoc; rubrika <em>Kvaň — voda, kanalizace, ČOV</em>
+        (cena stavby 137 275 709,21 Kč bez DPH, zhotovitel sdružení BAGGER BS s.r.o. a POHL CZ a.s.,
+        dotace OPŽP 48 093 800,47 Kč na vodovod a 36 455 506,33 Kč na ČOV a kanalizaci, vodojem Kvaň 160 m³;
+        poslední aktualizace 9. 5. 2024) <span class="u">zajecov.cz/kvan-voda-kanalizace-cov</span></li>
+        <li>Územní plán Zaječov — úplné znění po změně č. 2, duben 2019 (základ 2012, změny 2017 a 2019).
+        Pořizovatel MěÚ Hořovice. Ověřeno v textové části: kap. 2.1 koncepce rozvoje, 3.3.3 plochy občanského
+        vybavení, 4.2.2 zásobování pitnou vodou, 6.1 zákaz komerčních FVE, 6.2.4 regulativ ploch OV,
+        7.2.2 veřejně prospěšná opatření vodního režimu, 9. územní rezervy.
+        <span class="u">zajecov.cz/formular/zajecov-text-uplne-zneni.pdf</span></li>
+        <li>Státní pozemkový úřad, pobočka Beroun: <em>Komplexní pozemkové úpravy v k. ú. Zaječov, Kvaň —
+        pověření ke vstupu a vjezdu na pozemky</em>, č. j. SPU 436279/2024/37/Pro z 1. 11. 2024,
+        spisová značka SP2339/2023-537203. Zpracovatel AGROPLAN, spol. s r. o., termín prací 2024–2027.
+        <span class="u">zajecov.cz — příloha úřední desky</span></li>
+        <li>Státní pozemkový úřad, Krajský pozemkový úřad pro Středočeský kraj a hl. m. Praha, pobočka Beroun:
+        <em>Rozhodnutí o schválení návrhu komplexních pozemkových úprav v k. ú. Zaječov v Brdech</em>,
+        č. j. SPU 274827/2025/37/Pro ze 7. 8. 2025. Zpracovatel GEPARD s.r.o. Řízení zahájeno 29. 7. 2016,
+        řešená výměra 1 522 ha, plán společných zařízení schválen zastupitelstvem obce 5. 9. 2024.
+        <span class="u">zajecov.cz — příloha úřední desky, dokument z 5. 11. 2024</span></li>
+        <li>Úřední deska obce Zaječov — závěrečný účet obce za rok 2025 a závěrečný účet Mikroregionu
+        Hořovicka za rok 2025 (oba vyvěšeny v červnu 2026); volby do zastupitelstva 9. a 10. října 2026
+        <span class="u">zajecov.cz/uredni-deska</span></li>
+        <li>Monitor státní pokladny, Ministerstvo financí ČR — obec Zaječov, IČO 00234044.
+        Rozvaha a účetní ukazatele k 30. 6. 2026, druhový rozpočet pro výdaje 2026, přehled poskytnutých
+        dotací za 1. pololetí 2026, soustava informativních a monitorujících ukazatelů (SIMU)
+        a rozpočtová odpovědnost k 31. 12. 2025.
+        <span class="u">monitor.statnipokladna.gov.cz/ucetni-jednotka/00234044</span></li>
+        <li>Zákon č. 23/2017 Sb., o pravidlech rozpočtové odpovědnosti — hranice 60 % průměru příjmů
+        a mechanismus pozastavení převodu podílu na sdílených daních</li>
         <li>Český statistický úřad <span class="u">csu.gov.cz</span></li>
       </ul>
     </div>
@@ -867,7 +1173,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
     </div>
     <div class="foot-rule">
       <span>Obec se plánuje na desetiletí, ne na volební období</span>
-      <span>1263 → 2046</span>
+      <span>Volby do zastupitelstva 9.–10. října 2026</span>
     </div>
   </div>
 </footer>
