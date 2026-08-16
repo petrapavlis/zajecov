@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>OG karta — otevřít a vyfotit ve 1200×630</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#555;display:grid;place-items:center;min-height:100vh;font-family:"Archivo",sans-serif}
+  .card{
+    width:1200px;height:630px;background:#F7F6F1;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:center;padding:0 84px;box-sizing:border-box;
+  }
+  .stamp{
+    font-family:"JetBrains Mono",monospace;font-size:17px;letter-spacing:.22em;text-transform:uppercase;
+    color:#666B64;margin:0 0 26px;
+  }
+  h1{font-size:132px;font-weight:700;letter-spacing:-.045em;color:#2E4A39;margin:0;line-height:1}
+  h1 .a{color:#A8613F;font-family:"JetBrains Mono",monospace;font-weight:400;font-size:.45em;vertical-align:.2em;padding:0 .1em}
+  p{font-size:31px;color:#5A6157;margin:30px 0 0;max-width:20ch;line-height:1.35;font-weight:500}
+  p b{color:#2E4A39;font-weight:700}
+  .by{
+    position:absolute;left:84px;bottom:50px;font-family:"JetBrains Mono",monospace;
+    font-size:16px;letter-spacing:.15em;text-transform:uppercase;color:#666B64;
+  }
+  svg.art{position:absolute;right:-40px;bottom:0;width:640px;height:auto;color:#2E4A39;opacity:.16}
+  .note{position:fixed;top:14px;left:14px;color:#fff;font-size:13px;font-family:monospace}
+</style>
+</head>
+<body>
+<div class="note">Vyfotit jen bílou kartu — přesně 1200×630 px → uložit jako assets/og-image.png</div>
+
+<div class="card">
+  <p class="stamp">Zaječov · Kvaň · Nová Ves</p>
+  <h1>1263 <span class="a">→</span> 2046</h1>
+  <p>Klášter tu stojí <b>763 let</b>.<br>Nejdelší plán obce sahá do roku 2030.</p>
+  <div class="by">Analýza z veřejných dat · Petra Pavlisová</div>
+
+  <svg class="art" viewBox="0 0 700 300" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
+    <path d="M300 120 L340 30 H560 L600 120 Z"/>
+    <path d="M320 120 v40 H580 v-40"/>
+    <path d="M470 118 C466 82 480 58 505 44 C530 58 544 82 540 118 Z"/>
+    <path d="M478 118 v70 H532 v-70"/>
+    <path d="M470 118 h70"/>
+    <circle cx="505" cy="34" r="6"/>
+    <path d="M505 28 V6 M496 15 h18"/>
+    <path d="M120 190 L170 140 H660 L700 190 Z"/>
+    <path d="M136 190 v110 H680 v-110"/>
+    <g stroke-width="2.2" opacity=".8">
+      <path d="M170 240 v-26 h18 v26 z M226 240 v-26 h18 v26 z M282 240 v-26 h18 v26 z
+               M338 240 v-26 h18 v26 z M394 240 v-26 h18 v26 z M450 240 v-26 h18 v26 z
+               M506 240 v-26 h18 v26 z M562 240 v-26 h18 v26 z M618 240 v-26 h18 v26 z"/>
+    </g>
+  </svg>
+</div>
+</body>
+</html>
