@@ -1,0 +1,3099 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1263 → 2046 · Zaječov · Analýza a dlouhodobé priority obce</title>
+    <meta
+      name="description"
+      content="Nezávislá analýza situace obce Zaječov na základě veřejných dat: voda, demografie, bydlení, péče o seniory, rozpočet. S doporučeními a akčním plánem."
+    />
+    <meta name="author" content="Petra Pavlisová" />
+    <link rel="canonical" href="https://petrapavlis.github.io/zajecov/" />
+
+    <!-- náhled při sdílení -->
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:site_name" content="Zaječov 2026–2046" />
+    <meta property="og:title" content="Zaječov 2026–2046" />
+    <meta
+      property="og:description"
+      content="Klášter Svatá Dobrotivá stojí v Zaječově 763 let. Nejdelší plán, který dnes obec veřejně má, sahá do roku 2030. Analýza z veřejných dat."
+    />
+    <meta property="og:url" content="https://petrapavlis.github.io/zajecov/" />
+    <meta
+      property="og:image"
+      content="https://petrapavlis.github.io/zajecov/assets/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Linkový obrys kláštera Svatá Dobrotivá s titulem 1263 až 2046"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zaječov 2026–2046" />
+    <meta
+      name="twitter:description"
+      content="Klášter stojí 763 let. Nejdelší plán obce sahá do roku 2030. Analýza z veřejných dat."
+    />
+    <meta
+      name="twitter:image"
+      content="https://petrapavlis.github.io/zajecov/assets/og-image.png"
+    />
+    <meta name="theme-color" content="#2E4A39" />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        /* dvě barvy + neutrály */
+        --green: #2e4a39; /* Brdy — nadpisy, linie, tmavé prvky */
+        --green-soft: #7a9484; /* oslabená zeleň — ilustrace, popisky */
+        --rust: #a8613f; /* pálená krytina — jediný akcent */
+
+        --paper: #f7f6f1;
+        --paper-2: #efeee6;
+        --rule: #dcdbd1;
+        --rule-2: #c9c8bc;
+        --ink: #2e332f;
+        --ink-soft: #666b64;
+
+        --maxw: 940px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Libre Franklin", system-ui, sans-serif;
+        font-size: 16.5px;
+        line-height: 1.68;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 26px;
+      }
+
+      /* ---------- typografie ---------- */
+      h1,
+      h2 {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.018em;
+        margin: 0;
+        color: var(--green);
+      }
+      h1 {
+        font-size: clamp(2.6rem, 8vw, 5rem);
+        font-weight: 700;
+        letter-spacing: -0.035em;
+      }
+      h2 {
+        font-size: clamp(1.55rem, 3.8vw, 2.3rem);
+      }
+      h2.fit-lines {
+        font-size: clamp(0.82rem, 4vw, 2.3rem);
+        line-height: 1.3;
+      }
+      #shrnuti .sec-head {
+        max-width: none;
+      }
+      h3 {
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 1.12rem;
+        font-weight: 600;
+        color: var(--green);
+        margin: 0;
+        letter-spacing: -0.005em;
+      }
+      p {
+        margin: 0 0 1em;
+      }
+      a {
+        color: var(--rust);
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1px;
+      }
+      a:hover {
+        color: var(--green);
+      }
+      strong {
+        font-weight: 600;
+        color: var(--green);
+      }
+
+      .mono {
+        font-family: "JetBrains Mono", ui-monospace, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+      .eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--rust);
+        display: block;
+        margin: 0 0 1.4em;
+      }
+      .lede {
+        font-size: 1.08rem;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- navigace ---------- */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(247, 246, 241, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--rule);
+      }
+      .nav-in {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 26px;
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        height: 52px;
+      }
+      .nav-mark {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: var(--green);
+        text-decoration: none;
+        white-space: nowrap;
+        flex: none;
+      }
+      .nav-mark span {
+        color: var(--rust);
+      }
+      .nav-links {
+        display: flex;
+        gap: 22px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        margin-left: auto;
+        min-width: 0;
+      }
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-links a {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.67rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        text-decoration: none;
+        white-space: nowrap;
+        padding: 18px 0;
+        border-bottom: 2px solid transparent;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--green);
+      }
+      .nav-links a.on {
+        color: var(--rust);
+        border-bottom-color: var(--rust);
+      }
+      /* ---- sekundarni prepinac stranek serie ---- */
+      .nav-sep {
+        flex: none;
+        width: 1px;
+        align-self: center;
+        height: 22px;
+        background: var(--rule-2);
+      }
+      .nav-sib {
+        flex: none;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .nav-cta {
+        flex: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--rust);
+        text-decoration: none;
+        white-space: nowrap;
+        border: 1px solid var(--rust);
+        border-radius: 3px;
+        padding: 7px 11px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .nav-cta:hover,
+      .nav-cta:focus-visible {
+        background: var(--rust);
+        color: var(--paper);
+      }
+      /* mobil: skryj kotvy sekci, nech nazev stranky vlevo + prepinac vpravo */
+      @media (max-width: 720px) {
+        .nav-in {
+          gap: 12px;
+          padding: 0 18px;
+        }
+        .nav-mark {
+          font-size: 0.68rem;
+        }
+        .nav-links {
+          display: none;
+        }
+        .nav-sep {
+          display: none;
+        }
+        .nav-sib {
+          margin-left: auto;
+          gap: 8px;
+        }
+        .nav-cta {
+          padding: 8px 11px;
+          font-size: 0.62rem;
+          letter-spacing: 0.08em;
+        }
+      }
+      @media (max-width: 380px) {
+        .nav-cta {
+          padding: 7px 9px;
+          font-size: 0.58rem;
+          letter-spacing: 0.06em;
+        }
+      }
+      @media (max-width: 700px) {
+        section.wrap {
+          padding-top: 78px;
+          padding-bottom: 64px;
+        }
+      }
+
+      section[id] {
+        scroll-margin-top: 52px;
+      }
+
+      /* ---------- hlavička ---------- */
+      .hero {
+        padding: 44px 26px 0;
+      }
+      .stamp {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin: 0 0 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+      }
+      .stamp i {
+        font-style: normal;
+        color: var(--rule-2);
+      }
+      h1 .arrow {
+        color: var(--rust);
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 400;
+        font-size: 0.5em;
+        vertical-align: 0.16em;
+        padding: 0 0.12em;
+      }
+      .thesis {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-weight: 400;
+        font-size: clamp(1.2rem, 3vw, 1.7rem);
+        line-height: 1.45;
+        color: var(--ink-soft);
+        max-width: 31ch;
+        margin: 28px 0 0;
+      }
+      .thesis b {
+        color: var(--green);
+        font-weight: 600;
+      }
+
+      .hero-art {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 34px 0 0;
+        color: var(--green);
+      }
+      .art-cap {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        text-align: center;
+        margin: 6px 0 0;
+      }
+
+      .byline {
+        border-top: 1px solid var(--rule);
+        margin-top: 34px;
+        padding: 42px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 32px;
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+      }
+      .byline b {
+        color: var(--green);
+        font-weight: 600;
+      }
+      .notice {
+        border-left: 3px solid var(--rust);
+        padding: 2px 0 2px 16px;
+        margin: 30px 0 8px;
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+      }
+      .notice p {
+        margin: 0;
+      }
+
+      /* ---------- sekce ---------- */
+      section.wrap {
+        padding-top: 118px;
+        padding-bottom: 96px;
+      }
+      section + section {
+        border-top: 1px solid var(--rule);
+      }
+      .sec-head {
+        margin-bottom: 46px;
+        max-width: 60ch;
+      }
+      .sec-head p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ---------- bloky ---------- */
+      .block {
+        background: #fff;
+        border: 1px solid var(--rule);
+        padding: 28px 30px;
+      }
+      .grid {
+        display: grid;
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+      .g4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .grid > * {
+        background: #fff;
+        padding: 26px;
+      }
+      @media (max-width: 820px) {
+        .g4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .g4 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .stat .num {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-weight: 700;
+        color: var(--rust);
+        font-size: 2.6rem;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        display: block;
+        margin-bottom: 12px;
+      }
+      .stat b {
+        display: block;
+        color: var(--green);
+        font-size: 0.94rem;
+        margin-bottom: 5px;
+      }
+      .stat span.t {
+        font-size: 0.87rem;
+        color: var(--ink-soft);
+        line-height: 1.55;
+      }
+
+      .flag {
+        background: var(--paper-2);
+        border: 1px solid var(--rule);
+        border-left: 3px solid var(--rust);
+        padding: 26px 28px;
+        margin-top: 24px;
+      }
+      .flag h3 {
+        margin-bottom: 7px;
+      }
+      .flag p:last-child {
+        margin: 0;
+      }
+
+      /* ---------- tabulky ---------- */
+      .tbl {
+        border: 1px solid var(--rule);
+        background: #fff;
+        margin-bottom: 24px;
+      }
+      .tbl:last-child {
+        margin-bottom: 0;
+      }
+      .tbl-hd {
+        padding: 22px 26px 0;
+      }
+      .tbl-hd h3 {
+        margin-bottom: 4px;
+      }
+      .tbl-hd .src {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.66rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin: 0;
+      }
+      .scroller {
+        overflow-x: auto;
+        padding-top: 16px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        min-width: 420px;
+      }
+      th,
+      td {
+        padding: 9px 26px;
+        text-align: left;
+        border-top: 1px solid var(--rule);
+      }
+      th {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+        font-size: 0.66rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+      td:not(:first-child),
+      th:not(:first-child) {
+        text-align: right;
+      }
+      td:not(:first-child) {
+        font-family: "JetBrains Mono", monospace;
+        font-variant-numeric: tabular-nums;
+        font-size: 0.85rem;
+      }
+      tr.hi td {
+        color: var(--rust);
+        font-weight: 700;
+      }
+      tr.hi td:first-child {
+        color: var(--green);
+      }
+      td.ind {
+        padding-left: 44px;
+        color: var(--ink-soft);
+      }
+      .tbl-note {
+        padding: 18px 26px 22px;
+        border-top: 1px solid var(--rule);
+        font-size: 0.89rem;
+        margin: 0;
+      }
+
+      /* ---------- grafy ---------- */
+      .chart {
+        padding: 26px 26px 22px;
+        border-top: 1px solid var(--rule);
+        background: #fff;
+      }
+      .chart svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .chart figcaption {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.66rem;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin: 0 0 16px;
+      }
+      .c-grid {
+        stroke: var(--rule);
+        stroke-width: 1;
+      }
+      .c-axis {
+        stroke: var(--rule-2);
+        stroke-width: 1.2;
+      }
+      .c-lbl {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        fill: var(--ink-soft);
+      }
+      .c-val {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .c-name {
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 13px;
+        fill: var(--ink);
+      }
+      .c-green {
+        fill: var(--green-soft);
+      }
+      .c-dark {
+        fill: var(--green);
+      }
+      .c-rust {
+        fill: var(--rust);
+      }
+      .c-legend {
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 12.5px;
+        fill: var(--ink-soft);
+      }
+      @media print {
+        .chart {
+          break-inside: avoid;
+        }
+      }
+
+      /* ---------- rizika ---------- */
+      .risk {
+        padding: 28px 0;
+        border-top: 1px solid var(--rule);
+      }
+      .risk:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .risk:last-child {
+        padding-bottom: 0;
+      }
+      .risk-hd {
+        display: flex;
+        gap: 16px;
+        align-items: baseline;
+        margin-bottom: 16px;
+      }
+      .risk-hd .n {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        color: var(--rust);
+        font-weight: 700;
+      }
+      .risk dl {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 2px 22px;
+      }
+      .risk dt {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding-top: 0.42em;
+      }
+      .risk dd {
+        margin: 0 0 12px;
+      }
+      @media (max-width: 640px) {
+        .risk dl {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+        .risk dt {
+          margin-top: 12px;
+        }
+      }
+
+      /* ---------- teze ---------- */
+      .pull {
+        padding: 26px 0 30px;
+        text-align: center;
+      }
+      .pull q {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.66rem, 3.4vw, 2.3rem);
+        line-height: 1.3;
+        display: block;
+        max-width: 46ch;
+        margin: 0 auto;
+        quotes: none;
+        color: var(--green);
+      }
+      .pull q .blk {
+        display: block;
+      }
+      .pull q .o {
+        display: block;
+        color: var(--rust);
+      }
+      .pull p {
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+        margin: 24px auto 0;
+        max-width: 54ch;
+      }
+
+      /* ---------- osa horizontů ---------- */
+      .spine {
+        position: relative;
+        padding-left: 154px;
+      }
+      .spine::before {
+        content: "";
+        position: absolute;
+        left: 98px;
+        top: 8px;
+        bottom: 8px;
+        width: 1px;
+        background: var(--rule-2);
+      }
+      .pri {
+        position: relative;
+        padding: 0 0 52px;
+      }
+      .pri:last-child {
+        padding-bottom: 0;
+      }
+      .pri .yr {
+        position: absolute;
+        left: -154px;
+        top: -2px;
+        width: 74px;
+        text-align: right;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .pri .yr .v {
+        display: block;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--green);
+        line-height: 1;
+        letter-spacing: -0.05em;
+      }
+      .pri .yr .u {
+        display: block;
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-top: 6px;
+      }
+      .pri::before {
+        content: "";
+        position: absolute;
+        left: -61px;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        background: var(--paper);
+        border: 2px solid var(--green-soft);
+        border-radius: 50%;
+      }
+      .pri.urgent::before {
+        background: var(--rust);
+        border-color: var(--rust);
+      }
+      .pri h3 {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-size: 1.32rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.015em;
+      }
+      .pri p:last-child {
+        margin-bottom: 0;
+      }
+      .pri ol {
+        margin: 0.8em 0 0;
+        padding-left: 1.25em;
+      }
+      .pri ol li {
+        margin-bottom: 0.45em;
+      }
+      .pri li::marker {
+        color: var(--green-soft);
+      }
+      .pri .warn {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.63rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--rust);
+        border: 1px solid var(--rust);
+        padding: 3px 9px;
+        margin-bottom: 13px;
+      }
+      @media (max-width: 700px) {
+        .spine {
+          padding-left: 0;
+        }
+        .spine::before {
+          display: none;
+        }
+        .pri {
+          padding: 0 0 0 20px;
+          border-left: 2px solid var(--rule-2);
+          margin-bottom: 36px;
+        }
+        .pri.urgent {
+          border-left-color: var(--rust);
+        }
+        .pri::before {
+          display: none;
+        }
+        .pri .yr {
+          position: static;
+          width: auto;
+          text-align: left;
+          margin-bottom: 10px;
+          display: flex;
+          gap: 7px;
+          align-items: baseline;
+        }
+        .pri .yr .v {
+          font-size: 1.15rem;
+        }
+        .pri .yr .u {
+          margin-top: 0;
+        }
+      }
+
+      /* ---------- akční plán ---------- */
+      .phase {
+        border-top: 1px solid var(--rule);
+        padding: 26px 0;
+      }
+      .phase:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .phase:last-of-type {
+        padding-bottom: 0;
+      }
+      .phase-hd {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        align-items: baseline;
+        margin-bottom: 16px;
+      }
+      .tag {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+        color: var(--green);
+        border: 1px solid var(--green);
+        padding: 4px 11px;
+      }
+      .phase:first-of-type .tag {
+        background: var(--green);
+        color: var(--paper);
+      }
+      .when {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        color: var(--ink-soft);
+      }
+      .tasks {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .tasks li {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 22px;
+        align-items: baseline;
+        padding: 9px 0;
+        border-top: 1px solid var(--rule);
+        font-size: 0.92rem;
+      }
+      .tasks li:first-child {
+        border-top: 0;
+      }
+      .cost {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--ink-soft);
+        white-space: nowrap;
+      }
+      .cost.k {
+        color: var(--rust);
+        font-weight: 700;
+      }
+      @media (max-width: 560px) {
+        .tasks li {
+          grid-template-columns: 1fr;
+        }
+        .cost {
+          margin-top: -4px;
+        }
+      }
+
+      /* ---------- mezery ---------- */
+      .gaps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        counter-reset: g;
+      }
+      .gaps li {
+        counter-increment: g;
+        position: relative;
+        padding: 14px 0 14px 46px;
+        border-top: 1px solid var(--rule);
+      }
+      .gaps li:first-child {
+        border-top: 0;
+      }
+      .gaps li::before {
+        content: counter(g, decimal-leading-zero);
+        position: absolute;
+        left: 0;
+        top: 16px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--rust);
+      }
+
+      /* ---------- zdroje ---------- */
+      .srcgrp {
+        margin-bottom: 26px;
+      }
+      .srcgrp:last-child {
+        margin-bottom: 0;
+      }
+      .srcgrp h3 {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.67rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--rust);
+        margin-bottom: 10px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--rule);
+      }
+      .srcgrp ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .srcgrp li {
+        padding: 9px 0;
+        font-size: 0.87rem;
+        border-top: 1px solid var(--rule);
+        line-height: 1.55;
+      }
+      .srcgrp li:first-child {
+        border-top: 0;
+      }
+      .srcgrp .u {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        color: var(--ink-soft);
+        word-break: break-all;
+        margin-top: 3px;
+      }
+
+      /* ---------- patička ---------- */
+      footer {
+        background: var(--paper-2);
+        border-top: 1px solid var(--rule);
+      }
+      .foot {
+        padding: 56px 0 34px;
+        font-size: 0.92rem;
+        max-width: 66ch;
+      }
+      .foot h3 {
+        font-family: "Archivo", system-ui, sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        letter-spacing: -0.015em;
+      }
+      .foot p:last-child {
+        margin-bottom: 0;
+      }
+      .foot-rule {
+        border-top: 1px solid var(--rule-2);
+        padding: 18px 0 44px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        justify-content: space-between;
+      }
+
+      /* ---------- reveal ---------- */
+      .rv {
+        opacity: 0;
+        transform: translateY(10px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+      :focus-visible {
+        outline: 2px solid var(--rust);
+        outline-offset: 3px;
+      }
+
+      /* ---------- tisk ---------- */
+      @media print {
+        body {
+          background: #fff;
+          font-size: 10pt;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+        section {
+          padding: 14pt 0;
+          break-inside: avoid;
+        }
+        .block,
+        .tbl,
+        .pri,
+        .phase,
+        .pull {
+          break-inside: avoid;
+        }
+        footer {
+          background: #fff;
+        }
+        a {
+          color: var(--ink);
+          text-decoration: none;
+        }
+        .tag {
+          background: #fff !important;
+          color: var(--green) !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav" aria-label="Obsah studie">
+      <div class="nav-in">
+        <a class="nav-mark" href="#top">1263 <span>→</span> 2046</a>
+        <div class="nav-links">
+          <a href="#shrnuti">Shrnutí</a>
+          <a href="#data">Data</a>
+          <a href="#rizika">Rizika</a>
+          <a href="#priority">Priority</a>
+          <a href="#plan">Plán</a>
+          <a href="#mezery">Co chybí</a>
+          <a href="#zdroje">Zdroje</a>
+        </div>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <div class="nav-sib">
+          <a class="nav-cta" href="prostory.html">Prostory&nbsp;→</a>
+          <a class="nav-cta" href="inspirace.html">Inspirace&nbsp;→</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HLAVIČKA ================= -->
+    <header class="wrap hero" id="top">
+      <p class="stamp">
+        <span>Zaječov · Kvaň · Nová Ves</span><i>/</i> <span>Okres Beroun</span
+        ><i>/</i>
+        <span>Srpen 2026</span>
+      </p>
+
+      <h1>1263 <span class="arrow">→</span> 2046</h1>
+
+      <p class="thesis">
+        Klášter Svatá Dobrotivá stojí v Zaječově <b>763 let</b>. Nejdelší plán,
+        který dnes obec veřejně má, sahá do roku 2030.
+      </p>
+
+      <svg
+        class="hero-art"
+        viewBox="0 0 1000 268"
+        fill="none"
+        role="img"
+        aria-label="Klášter Svatá Dobrotivá v Zaječově — konventní křídlo v popředí, za ním kostel a věž"
+        preserveAspectRatio="xMidYMax meet"
+      >
+        <!-- ===== POZADÍ ===== -->
+
+        <!-- prostřední, nižší kostelní budova — vzadu, bez mezer -->
+        <g
+          stroke="currentColor"
+          fill="var(--paper)"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          opacity=".72"
+        >
+          <path d="M520 146 L 546 96 H 690 L 716 146 Z" stroke-width="1.45" />
+          <path d="M528 146 v22 H 708 v-22" stroke-width="1.35" />
+        </g>
+
+        <!-- vyšší kostelní budova (vlevo) — vpředu před prostřední -->
+        <g
+          stroke="currentColor"
+          fill="var(--paper)"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          opacity=".86"
+        >
+          <path d="M288 122 L 322 58 H 528 L 562 122 Z" stroke-width="1.6" />
+          <path d="M300 122 v46 H 550 v-46" stroke-width="1.5" />
+          <path
+            d="M322 58 H 528"
+            stroke="currentColor"
+            stroke-width="1.9"
+            fill="none"
+          />
+        </g>
+
+        <!-- věž (vpravo) — vpředu před prostřední, bez mezery -->
+        <g
+          stroke="currentColor"
+          fill="var(--paper)"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          opacity=".86"
+        >
+          <!-- báň -->
+          <path
+            d="M690 100 C 687 80, 696 64, 712 55 C 717 52, 726 49, 730 46
+               C 734 49, 743 52, 748 55 C 764 64, 773 80, 770 100 Z"
+            stroke-width="1.65"
+          />
+          <!-- hranol věže -->
+          <path d="M694 100 v68 H 766 v-68" stroke-width="1.5" />
+          <path
+            d="M686 100 h88"
+            stroke="currentColor"
+            stroke-width="1.8"
+            fill="none"
+          />
+          <!-- jediné okno uprostřed -->
+          <path
+            d="M718 150 v-22 a12 12 0 0 1 24 0 v22 z"
+            stroke-width="1.15"
+            fill="none"
+            opacity=".85"
+          />
+          <!-- makovice a jednoduchý křížek přímo na bani -->
+          <circle
+            cx="730"
+            cy="40"
+            r="3.6"
+            stroke-width="1.5"
+            fill="var(--paper)"
+          />
+          <path
+            d="M730 36.4 V 20 M723.5 26.5 h13"
+            stroke-width="1.5"
+            fill="none"
+          />
+        </g>
+
+        <!-- ===== POPŘEDÍ: konventní křídlo ===== -->
+        <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+          <!-- jednoduchá valbová střecha -->
+          <path
+            d="M192 172 L 226 138 H 854 L 888 172 Z"
+            fill="var(--paper)"
+            stroke-width="1.6"
+          />
+          <path d="M226 138 H 854" stroke-width="1.8" />
+          <!-- stěna, dvě patra -->
+          <path
+            d="M202 172 v82 H 878 v-82"
+            fill="var(--paper)"
+            stroke-width="1.6"
+          />
+          <path d="M202 172 H 878" stroke-width="1.3" />
+          <path d="M202 214 H 878" stroke-width="1" opacity=".38" />
+          <!-- horní patro -->
+          <g stroke-width="1.05" opacity=".7" fill="none">
+            <path
+              d="M230 205 v-16 h11 v16 z M272 205 v-16 h11 v16 z M314 205 v-16 h11 v16 z
+                 M356 205 v-16 h11 v16 z M398 205 v-16 h11 v16 z M440 205 v-16 h11 v16 z
+                 M482 205 v-16 h11 v16 z M524 205 v-16 h11 v16 z M566 205 v-16 h11 v16 z
+                 M608 205 v-16 h11 v16 z M650 205 v-16 h11 v16 z M692 205 v-16 h11 v16 z
+                 M734 205 v-16 h11 v16 z M776 205 v-16 h11 v16 z M818 205 v-16 h11 v16 z"
+            />
+          </g>
+          <!-- přízemí -->
+          <g stroke-width="1.05" opacity=".7" fill="none">
+            <path
+              d="M230 246 v-16 h11 v16 z M272 246 v-16 h11 v16 z M314 246 v-16 h11 v16 z
+                 M356 246 v-16 h11 v16 z M398 246 v-16 h11 v16 z M440 246 v-16 h11 v16 z
+                 M482 246 v-16 h11 v16 z M524 246 v-16 h11 v16 z M566 246 v-16 h11 v16 z
+                 M608 246 v-16 h11 v16 z M650 246 v-16 h11 v16 z M692 246 v-16 h11 v16 z
+                 M734 246 v-16 h11 v16 z M776 246 v-16 h11 v16 z M818 246 v-16 h11 v16 z"
+            />
+          </g>
+
+          <!-- břeh a hladina -->
+          <path d="M0 254 H 1000" stroke-width="1.1" opacity=".5" />
+          <g stroke-width="1" opacity=".26">
+            <path
+              d="M70 261 H 300 M340 261 H 520 M560 261 H 700 M740 261 H 940"
+            />
+            <path d="M140 267 H 430 M480 267 H 650 M700 267 H 890" />
+          </g>
+        </g>
+
+        <!-- ===== STROMY A KEŘE ===== -->
+        <g
+          stroke="currentColor"
+          fill="var(--paper)"
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="1.3"
+          opacity=".46"
+        >
+          <path d="M74 254 v-38" fill="none" />
+          <path
+            d="M74 224 c-29 0 -37 -21 -22 -33 c-5 -19 27 -29 39 -14 c17 -7 33 10 23 27 c8 14 -12 23 -40 20z"
+          />
+          <path d="M934 254 v-28" fill="none" />
+          <path
+            d="M934 232 c-21 0 -26 -16 -16 -24 c-3 -14 19 -21 28 -10 c12 -5 24 7 17 19 c6 10 -8 18 -29 15z"
+          />
+        </g>
+        <g
+          stroke="currentColor"
+          fill="none"
+          stroke-width="1.1"
+          opacity=".28"
+          stroke-linecap="round"
+        >
+          <path d="M256 254 v-16 M250 246 l6 -6 l6 6 M252 238 l4 -5 l4 5" />
+          <path d="M420 254 v-14 M415 247 l5 -5 l5 5" />
+          <path d="M600 254 v-15 M594 246 l6 -6 l6 6" />
+          <path d="M760 254 v-13 M755 247 l5 -5 l5 5" />
+          <path d="M860 254 v-16 M854 246 l6 -6 l6 6 M856 238 l4 -5 l4 5" />
+        </g>
+      </svg>
+
+      <p class="art-cap">
+        Klášter Svatá Dobrotivá · založen 1263 · první augustiniánský klášter v
+        českých zemích
+      </p>
+
+      <div class="byline">
+        <span><b>Analýza situace obce a návrh dlouhodobých priorit</b></span>
+        <span>Petra Pavlisová</span>
+        <span>Zpracováno z veřejných dat</span>
+      </div>
+
+      <div class="notice">
+        <p>
+          Občanský podnět. Není to materiál obce Zaječov ani žádného volebního
+          uskupení.
+        </p>
+      </div>
+    </header>
+
+    <!-- ================= SHRNUTÍ ================= -->
+    <section class="wrap rv" id="shrnuti">
+      <div class="sec-head">
+        <span class="eyebrow">Shrnutí</span>
+        <h2 class="fit-lines">
+          <span>Obec je vybavená, roste a investuje.</span><br />
+          <span>Čtyři čísla přesto stojí za pozornost.</span>
+        </h2>
+      </div>
+
+      <div class="grid g4">
+        <div class="stat">
+          <span class="num">+52 %</span>
+          <b>Seniorů za 20 let</b>
+          <span class="t"
+            >206 osob (2001) → 314 osob (2023). Chybějící zázemí pro seniory
+            obec sama pojmenovala už v roce 2016.</span
+          >
+        </div>
+        <div class="stat">
+          <span class="num">0,7 %</span>
+          <b>Vodních ploch v katastru</b>
+          <span class="t"
+            >Rok 2025 byl na Podbrdsku nejsušší v paměti. V krajině není co vodu
+            zadrží.</span
+          >
+        </div>
+        <div class="stat">
+          <span class="num">1</span>
+          <b>Dům ve vlastnictví obce</b>
+          <span class="t"
+            >Přitom čtvrtina bytů v obci není trvale obydlená.</span
+          >
+        </div>
+        <div class="stat">
+          <span class="num">98 %</span>
+          <b>Dluh proti fiskálnímu pravidlu</b>
+          <span class="t"
+            >Zákonná hranice je 60 % průměru příjmů. Obec je na 97,99 %.</span
+          >
+        </div>
+      </div>
+
+      <div class="flag">
+        <h3>A jedna příležitost, která nepočká</h3>
+        <p>
+          V katastrech Zaječov a Kvaň běží
+          <strong>komplexní pozemkové úpravy</strong>, zpracovatelem je firma
+          AGROPLAN, termín prací 2024 až 2027. Jejich součástí bude plán
+          společných zařízení — nástroj, kterým lze do krajiny na náklady státu
+          vepsat tůně, zasakovací pásy, meze a protierozní opatření. Právě teď
+          se tvoří.
+        </p>
+        <p>
+          Souběžně skončilo řízení pro lesní katastr Zaječov v Brdech.
+          Rozhodnutí Státního pozemkového úřadu ze 7. 8. 2025 o jeho plánu
+          společných zařízení konstatuje:
+          <strong
+            >„V rámci zpracování PSZ nebyla navržena žádná nová
+            opatření.“</strong
+          >
+          Zastupitelstvo ho v této podobě schválilo 5. 9. 2024. To je precedens,
+          ne osud.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= DATA ================= -->
+    <section class="wrap rv" id="data">
+      <div class="sec-head">
+        <span class="eyebrow">Datový profil</span>
+        <h2>Jak je na tom Zaječov</h2>
+        <p class="lede">
+          Vše z veřejných zdrojů — ČSÚ, Ministerstvo financí, úřední deska obce.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Obyvatelstvo</h3>
+          <p class="src">ČSÚ · sčítání 2001 / 2011 / 2021 · bilance 2023</p>
+        </div>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr>
+                <th>Ukazatel</th>
+                <th>2001</th>
+                <th>2011</th>
+                <th>2021</th>
+                <th>2023</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Obyvatel celkem</td>
+                <td>1 345</td>
+                <td>1 407</td>
+                <td>1 445</td>
+                <td>1 481</td>
+              </tr>
+              <tr>
+                <td>0–14 let</td>
+                <td>223</td>
+                <td>178</td>
+                <td>241</td>
+                <td>227</td>
+              </tr>
+              <tr>
+                <td>65 a více let</td>
+                <td>206</td>
+                <td>238</td>
+                <td>309</td>
+                <td>314</td>
+              </tr>
+              <tr class="hi">
+                <td>Podíl 65+</td>
+                <td>15,3 %</td>
+                <td>16,9 %</td>
+                <td>21,4 %</td>
+                <td>21,2 %</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="chart">
+          <figcaption>
+            Děti do 14 let a senioři nad 65 let · počet osob
+          </figcaption>
+          <svg
+            viewBox="0 0 700 250"
+            role="img"
+            aria-label="Sloupcový graf: v roce 2001 bylo v obci 223 dětí a 206 seniorů, v roce 2023 už 227 dětí a 314 seniorů"
+          >
+            <g class="c-grid">
+              <line x1="60" y1="210" x2="680" y2="210" />
+              <line x1="60" y1="154" x2="680" y2="154" />
+              <line x1="60" y1="98" x2="680" y2="98" />
+              <line x1="60" y1="42" x2="680" y2="42" />
+            </g>
+            <g class="c-lbl" text-anchor="end">
+              <text x="50" y="214">0</text>
+              <text x="50" y="158">100</text>
+              <text x="50" y="102">200</text>
+              <text x="50" y="46">300</text>
+            </g>
+            <g class="c-green">
+              <rect x="88" y="85" width="44" height="125" />
+              <rect x="243" y="110" width="44" height="100" />
+              <rect x="398" y="74" width="44" height="136" />
+              <rect x="553" y="82" width="44" height="128" />
+            </g>
+            <g class="c-rust">
+              <rect x="144" y="94" width="44" height="116" />
+              <rect x="299" y="76" width="44" height="134" />
+              <rect x="454" y="36" width="44" height="174" />
+              <rect x="609" y="33" width="44" height="177" />
+            </g>
+            <g class="c-val" text-anchor="middle" fill="var(--green)">
+              <text x="110" y="79">223</text>
+              <text x="265" y="104">178</text>
+              <text x="420" y="68">241</text>
+              <text x="575" y="76">227</text>
+            </g>
+            <g class="c-val" text-anchor="middle" fill="var(--rust)">
+              <text x="166" y="88">206</text>
+              <text x="321" y="70">238</text>
+              <text x="476" y="30">309</text>
+              <text x="631" y="27">314</text>
+            </g>
+            <line x1="60" y1="210" x2="680" y2="210" class="c-axis" />
+            <g class="c-lbl" text-anchor="middle">
+              <text x="137" y="230">2001</text>
+              <text x="292" y="230">2011</text>
+              <text x="447" y="230">2021</text>
+              <text x="602" y="230">2023</text>
+            </g>
+            <g>
+              <rect x="60" y="240" width="14" height="10" class="c-green" />
+              <text x="82" y="249" class="c-legend">děti do 14 let</text>
+              <rect x="200" y="240" width="14" height="10" class="c-rust" />
+              <text x="222" y="249" class="c-legend">senioři nad 65 let</text>
+            </g>
+          </svg>
+        </figure>
+
+        <p class="tbl-note">
+          Obec roste <strong>výhradně migrací</strong>. V roce 2023 se narodilo
+          13 dětí a zemřelo 14; přistěhovalo se 45 lidí, odstěhovalo 11. K 1. 1.
+          2025 měla obec 1 502 obyvatel. Části: Zaječov 783, Kvaň 451, Nová Ves
+          211.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Krajina</h3>
+          <p class="src">ČSÚ · struktura pozemků · katastr 2 225 ha</p>
+        </div>
+        <div class="scroller">
+          <table>
+            <thead>
+              <tr>
+                <th>Kategorie</th>
+                <th>ha</th>
+                <th>Podíl</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hi">
+                <td>Lesní půda</td>
+                <td>1 348</td>
+                <td>60,6 %</td>
+              </tr>
+              <tr>
+                <td>Zemědělská půda</td>
+                <td>527</td>
+                <td>23,7 %</td>
+              </tr>
+              <tr>
+                <td class="ind">z toho orná</td>
+                <td>248</td>
+                <td>11,1 %</td>
+              </tr>
+              <tr>
+                <td class="ind">z toho louky a pastviny</td>
+                <td>265</td>
+                <td>11,9 %</td>
+              </tr>
+              <tr>
+                <td>Ostatní plochy</td>
+                <td>310</td>
+                <td>13,9 %</td>
+              </tr>
+              <tr>
+                <td>Zastavěné plochy</td>
+                <td>24</td>
+                <td>1,1 %</td>
+              </tr>
+              <tr class="hi">
+                <td>Vodní plochy</td>
+                <td>15</td>
+                <td>0,7 %</td>
+              </tr>
+              <tr class="hi">
+                <td>Z toho lesy ve vlastnictví obce</td>
+                <td>70</td>
+                <td>3,1 %</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="chart">
+          <figcaption>Struktura katastru · 2 225 ha = 100 %</figcaption>
+          <svg
+            viewBox="0 0 700 175"
+            role="img"
+            aria-label="Skládaný pruh: lesní půda 60,6 procenta, zemědělská 23,7, ostatní plochy 13,9, zastavěné 1,1 a vodní plochy 0,7 procenta katastru"
+          >
+            <g>
+              <rect x="40" y="30" width="376" height="48" fill="var(--green)" />
+              <rect
+                x="416"
+                y="30"
+                width="147"
+                height="48"
+                fill="var(--green-soft)"
+              />
+              <rect x="563" y="30" width="86" height="48" fill="#C7CFC3" />
+              <rect x="649" y="30" width="7" height="48" fill="#9AA396" />
+              <rect x="656" y="30" width="4" height="48" fill="var(--rust)" />
+            </g>
+            <text x="52" y="60" class="c-val" fill="#fff">
+              60,6 % lesní půda
+            </text>
+            <text x="428" y="60" class="c-val" fill="#fff">23,7 %</text>
+            <g stroke="var(--rule-2)" stroke-width="1">
+              <path d="M606 78 v18" fill="none" />
+              <path d="M652 78 v34" fill="none" />
+              <path d="M658 78 v50" fill="none" />
+            </g>
+            <text x="606" y="112" class="c-lbl" text-anchor="middle">
+              13,9 %
+            </text>
+            <text
+              x="596"
+              y="127"
+              class="c-name"
+              text-anchor="middle"
+              font-size="12"
+            >
+              ostatní plochy
+            </text>
+            <text x="664" y="118" class="c-lbl">1,1 % zastavěné plochy</text>
+            <text x="664" y="146" class="c-val" fill="var(--rust)">
+              0,7 % vodní plochy
+            </text>
+            <text
+              x="40"
+              y="168"
+              class="c-name"
+              font-size="12.5"
+              fill="var(--ink-soft)"
+            >
+              Z lesů vlastní obec 69,99 ha, tedy 3,1 % katastru. Z 91 % jde o
+              jehličnany.
+            </text>
+          </svg>
+        </figure>
+
+        <p class="tbl-note">
+          Zaječov je <strong>lesní obec, nikoli zemědělská</strong>. Jižní část
+          území leží v CHKO Brdy, nejvyšším bodem je Jordán (826 m n. m.).
+          Koeficient ekologické stability činí 2,82. Většinu lesů spravují
+          Vojenské lesy a statky ČR; obec sama vlastní 69,99 ha, z toho 48,39 ha
+          v katastru Kvaň a 21,60 ha v katastru Zaječov. Podle lesního
+          hospodářského plánu tvoří
+          <strong>91 % porostu jehličnany a 9 % listnáče</strong>.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Dluh a fiskální pravidlo</h3>
+          <p class="src">
+            Monitor státní pokladny · stav k 31. 12. 2025 · mil. Kč
+          </p>
+        </div>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr>
+                <td>Příjem 2022</td>
+                <td>42,2</td>
+              </tr>
+              <tr>
+                <td>Příjem 2023</td>
+                <td>51,8</td>
+              </tr>
+              <tr>
+                <td>Příjem 2024</td>
+                <td>117,7</td>
+              </tr>
+              <tr>
+                <td>Příjem 2025</td>
+                <td>59,2</td>
+              </tr>
+              <tr>
+                <td>Průměr za čtyři roky</td>
+                <td>67,7</td>
+              </tr>
+              <tr class="hi">
+                <td>Dluh celkem (dlouhodobé úvěry)</td>
+                <td>66,4</td>
+              </tr>
+              <tr class="hi">
+                <td>Podíl dluhu k průměru příjmů</td>
+                <td>97,99 %</td>
+              </tr>
+              <tr>
+                <td>Zákonná hranice</td>
+                <td>60 %</td>
+              </tr>
+              <tr class="hi">
+                <td>Povinné roční umoření</td>
+                <td>1,29</td>
+              </tr>
+              <tr>
+                <td>Dluhová služba 2025</td>
+                <td>8,2</td>
+              </tr>
+              <tr>
+                <td>Dluh na obyvatele</td>
+                <td>44 tis. Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="chart">
+          <figcaption>Dluh jako podíl průměru příjmů za čtyři roky</figcaption>
+          <svg
+            viewBox="0 0 700 190"
+            role="img"
+            aria-label="Pruhový graf: dluh obce dosahuje 97,99 procenta průměru příjmů, zákonná hranice je 60 procent"
+          >
+            <rect x="50" y="46" width="600" height="40" fill="var(--paper-2)" />
+            <rect
+              x="50"
+              y="46"
+              width="360"
+              height="40"
+              fill="var(--green-soft)"
+            />
+            <rect x="410" y="46" width="228" height="40" fill="var(--rust)" />
+            <line
+              x1="410"
+              y1="30"
+              x2="410"
+              y2="102"
+              stroke="var(--green)"
+              stroke-width="2"
+            />
+            <text
+              x="404"
+              y="24"
+              class="c-val"
+              fill="var(--green)"
+              text-anchor="end"
+            >
+              hranice 60 %
+            </text>
+            <text
+              x="638"
+              y="24"
+              class="c-val"
+              fill="var(--rust)"
+              text-anchor="end"
+            >
+              97,99 %
+            </text>
+            <g class="c-lbl">
+              <text x="50" y="118">0 %</text>
+              <text x="650" y="118" text-anchor="end">100 %</text>
+            </g>
+            <text x="50" y="146" class="c-name" font-size="13">
+              Překročení hranice zakládá povinnost snižovat dluh nejméně o
+              <tspan font-weight="700">1 286 410 Kč ročně</tspan>
+              .
+            </text>
+            <text
+              x="50"
+              y="168"
+              class="c-name"
+              font-size="13"
+              fill="var(--ink-soft)"
+            >
+              Průměr táhne nahoru rok 2024 se 117,7 mil. Kč. Až vypadne z
+              výpočtu, podíl vzroste i bez nového úvěru.
+            </text>
+          </svg>
+        </figure>
+
+        <p class="tbl-note">
+          Zákon o pravidlech rozpočtové odpovědnosti stanoví, že dluh obce nemá
+          přesáhnout 60 % průměru příjmů za poslední čtyři roky. Při jeho
+          překročení v roce T vzniká obci povinnost snížit přebytek nejméně o 5
+          % v roce T+1; teprve pokud to nesplní, ministerstvo financí v roce T+2
+          pozastaví převod podílu na sdílených daních.
+          <strong
+            >Pro Zaječov to znamená povinnost snížit dluh do konce roku 2026
+            nejméně o 1 286 410 Kč</strong
+          >
+          — sankce by přišla až v roce 2027. Rozvaha k 30. 6. 2026 navíc
+          vykazuje
+          <strong>150,8 mil. Kč nedokončeného dlouhodobého majetku</strong> —
+          rozestavěné investice, které zatím nejsou v užívání.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Co říká územní plán</h3>
+          <p class="src">
+            ÚP Zaječov 2012 · změna č. 1 (2017) · změna č. 2 (2019) · úplné
+            znění duben 2019
+          </p>
+        </div>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr>
+                <td>Zastavitelné plochy pro individuální bydlení (BI)</td>
+                <td>61</td>
+              </tr>
+              <tr class="hi">
+                <td>Zastavitelné plochy občanského vybavení pro budovu</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>— z toho OZ 1 (přestavba klášterní zahrady)</td>
+                <td>park</td>
+              </tr>
+              <tr>
+                <td>— z toho OS 1 (hřiště pro jízdu na kolech)</td>
+                <td>bez budov</td>
+              </tr>
+              <tr>
+                <td>Kapacitní strop zdrojů podle ÚP 2019</td>
+                <td>1 600 EO</td>
+              </tr>
+              <tr>
+                <td>Kapacitní strop ČOV podle ÚP 2019</td>
+                <td>1 500 EO</td>
+              </tr>
+              <tr>
+                <td>Obyvatel k 1. 1. 2025</td>
+                <td>1 502</td>
+              </tr>
+              <tr class="hi">
+                <td>Nová kapacita po rozšíření ČOV 2023–2025</td>
+                <td>nezveřejněna</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">
+          Regulativ ploch OV výslovně připouští
+          <strong>stavby pro sociální péči, například domov pro seniory</strong
+          >. Plochy BK připouštějí byty s pečovatelskou službou. Právně to tedy
+          jde — jen pro to v plánu není vymezena jediná plocha. Zdroj pitné vody
+          navíc leží <strong>mimo území obce</strong> — voda se přivádí z
+          úpravny od Záruby. Územní plán zároveň zakazuje komerční fotovoltaické
+          i větrné elektrárny na celém správním území. Údaje o kapacitních
+          stropech pocházejí z plánu z roku 2019 a stavbou z let 2023–2025 se
+          posunuly; o kolik, obec nezveřejnila.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Strategický plán rozvoje obce 2017–2026</h3>
+          <p class="src">Schválen v prosinci 2016 · platnost končí letos</p>
+        </div>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr class="hi">
+                <td>Slabá stránka pojmenovaná ve SWOT analýze</td>
+                <td>
+                  „Obec nemá k dispozici objekt k bydlení pro seniory a
+                  poskytnutí sociálního bydlení“
+                </td>
+              </tr>
+              <tr class="hi">
+                <td>Počet záměrů v plánu, které se této slabiny týkají</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Hrozba pojmenovaná ve SWOT</td>
+                <td>Nedostatečné zásobování pitnou vodou celé obce</td>
+              </tr>
+              <tr>
+                <td>Hrozba pojmenovaná ve SWOT</td>
+                <td>Ohrožení lesního porostu — monokultura</td>
+              </tr>
+              <tr>
+                <td>Polosuchý poldr Hamburk</td>
+                <td>priorita 3</td>
+              </tr>
+              <tr>
+                <td>Obnova funkce příkopů</td>
+                <td>priorita 3</td>
+              </tr>
+              <tr>
+                <td>Naučná stezka s tůňkami za obecním úřadem</td>
+                <td>priorita 3</td>
+              </tr>
+              <tr>
+                <td>Vodovod Kvaň a úpravna vody — plánované náklady</td>
+                <td>40 mil. Kč</td>
+              </tr>
+              <tr class="hi">
+                <td>Vodovod Kvaň a ČOV — skutečná cena</td>
+                <td>137,3 mil. Kč</td>
+              </tr>
+              <tr class="hi">
+                <td>Úvěry obce v roce 2016</td>
+                <td>žádné</td>
+              </tr>
+              <tr class="hi">
+                <td>Dluh obce k 31. 12. 2025</td>
+                <td>66,4 mil. Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">
+          Obec strategický plán má a v úvodu se v něm píše, že jde o dokument,
+          který „není omezen pouze na jedno volební období zastupitelstva“.
+          Letos jeho platnost končí. Nové zastupitelstvo tak nastoupí do funkce
+          bez platné dlouhodobé koncepce.
+        </p>
+        <p class="tbl-note" style="border-top: 0; padding-top: 0">
+          Stojí za pozornost, že chybějící zázemí pro seniory obec sama označila
+          jako slabou stránku už v roce 2016 — a do seznamu záměrů se nedostalo.
+          Všechna opatření pro zadržení vody v krajině dostala nejnižší
+          prioritu, tedy „uskuteční se pouze v případě dotace“.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Komu obec posílá peníze</h3>
+          <p class="src">
+            Monitor státní pokladny · dotace a transfery · 1. pololetí 2026 ·
+            tis. Kč
+          </p>
+        </div>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr>
+                <td>Základní škola a Mateřská škola Zaječov</td>
+                <td>3 021,07</td>
+              </tr>
+              <tr>
+                <td>DSO dopravní obslužnost Hořovicka</td>
+                <td>220,67</td>
+              </tr>
+              <tr class="hi">
+                <td>TJ Zaječov</td>
+                <td>210,00</td>
+              </tr>
+              <tr>
+                <td>SDH Zaječov</td>
+                <td>87,00</td>
+              </tr>
+              <tr>
+                <td>Nohejbal klub Zaječov</td>
+                <td>70,00</td>
+              </tr>
+              <tr>
+                <td>Mikroregion Hořovicko</td>
+                <td>59,56</td>
+              </tr>
+              <tr>
+                <td>MAS Brdy</td>
+                <td>40,00</td>
+              </tr>
+              <tr>
+                <td>Česká tábornická unie · Spolek Zděná · Regionart</td>
+                <td>103,00</td>
+              </tr>
+              <tr>
+                <td>Včelaři, chovatelé, zahrádkáři, TJ Olešná</td>
+                <td>35,00</td>
+              </tr>
+              <tr class="hi">
+                <td>Domov Na Výsluní, Hořovice</td>
+                <td>5,00</td>
+              </tr>
+              <tr class="hi">
+                <td>Svaz tělesně postižených, Hořovice</td>
+                <td>5,00</td>
+              </tr>
+              <tr>
+                <td>Diakonie Broumov · Dobromysl · Centrum Hájek</td>
+                <td>3,00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <figure class="chart">
+          <figcaption>
+            Transfery mimo školu · 1. pololetí 2026 · tis. Kč
+          </figcaption>
+          <svg
+            viewBox="0 0 700 175"
+            role="img"
+            aria-label="Porovnání: spolky, sport a volný čas dostaly zhruba 505 tisíc korun, sociální oblast 13 tisíc korun"
+          >
+            <text x="40" y="42" class="c-name">Spolky, sport a volný čas</text>
+            <rect
+              x="40"
+              y="52"
+              width="583"
+              height="30"
+              fill="var(--green-soft)"
+            />
+            <text x="633" y="73" class="c-val" fill="var(--green)">505</text>
+            <text x="40" y="118" class="c-name">Sociální oblast</text>
+            <rect x="40" y="128" width="15" height="30" fill="var(--rust)" />
+            <text x="65" y="149" class="c-val" fill="var(--rust)">13</text>
+            <text
+              x="110"
+              y="149"
+              class="c-name"
+              font-size="12.5"
+              fill="var(--ink-soft)"
+            >
+              Domov Na Výsluní 5 · Svaz tělesně postižených 5 · ostatní 3
+            </text>
+          </svg>
+        </figure>
+
+        <p class="tbl-note">
+          Bez školy vychází poměr zhruba takto:
+          <strong
+            >spolky, sport a volný čas asi 505 tisíc korun, sociální oblast 13
+            tisíc.</strong
+          >
+          Domov Na Výsluní v Hořovicích je jediné zařízení pro seniory na celém
+          seznamu a dostává třiačtyřicetkrát méně než tělovýchovná jednota.
+          Nejde o to, že by spolky peníze nezasloužily — jde o to, že poměr 39:1
+          nikdo nikdy nezvolil vědomě. Prostě vznikl.
+        </p>
+      </div>
+
+      <div class="tbl">
+        <div class="tbl-hd">
+          <h3>Bydlení a sociální služby</h3>
+          <p class="src">ČSÚ · sčítání 2021 · evidence sociálních služeb</p>
+        </div>
+        <div class="scroller">
+          <table>
+            <tbody>
+              <tr>
+                <td>Domy celkem</td>
+                <td>560</td>
+              </tr>
+              <tr class="hi">
+                <td>z toho neobydlené</td>
+                <td>121 · 21,6 %</td>
+              </tr>
+              <tr>
+                <td>Byty celkem</td>
+                <td>703</td>
+              </tr>
+              <tr class="hi">
+                <td>z toho neobydlené</td>
+                <td>176 · 25,0 %</td>
+              </tr>
+              <tr>
+                <td>Nájemní byty v obci</td>
+                <td>19</td>
+              </tr>
+              <tr class="hi">
+                <td>Domy ve vlastnictví obce či státu</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>Domovy pro seniory / se zvláštním režimem</td>
+                <td>0 / 0</td>
+              </tr>
+              <tr>
+                <td>Dům s pečovatelskou službou</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tbl-note">
+          Údaje ČSÚ se týkají pobytových a obdobných zařízení, terénní
+          pečovatelskou službu nezachycují. Strategický plán z roku 2016 uvádí,
+          že péči o seniory v obci zajišťuje firma Senior Care, pečovatelská
+          služba o. p. s. Zda a v jakém rozsahu funguje dnes, se z veřejných
+          zdrojů zjistit nedá. Obec je dále zapojena do
+          <strong>Taxíku Maxíka</strong> — svozu seniorů nad 70 let a držitelů
+          průkazu ZTP k lékaři a na úřady v rámci Mikroregionu Hořovicko za 30
+          Kč.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= RIZIKA ================= -->
+    <section class="wrap rv" id="rizika">
+      <div class="sec-head">
+        <span class="eyebrow">Analýza</span>
+        <h2>Čtyři strukturální rizika</h2>
+      </div>
+
+      <div class="block">
+        <div class="risk">
+          <div class="risk-hd">
+            <span class="n">01</span>
+            <h3>Voda</h3>
+          </div>
+          <dl>
+            <dt>Co se udělalo</dt>
+            <dd>
+              Obec v letech 2023 až 2025 realizovala akci
+              <em
+                >Rozšíření a intenzifikace ČOV, Horní Kvaň — kanalizace a
+                vodovod</em
+              >
+              za 137,3 mil. Kč bez DPH, s dotací z Operačního programu Životní
+              prostředí ve výši 84,5 mil. Kč. Přibyl vodojem na Kvani o objemu
+              160 m³, rozšířila se čistírna odpadních vod a kvaňský řad byl
+              propojen s kozojedským, takže při havárii lze Kozojedy zásobovat z
+              Kvaně. Jde o potřebnou investici; páteřní vodovod pochází z roku
+              1937 a je ze šedé litiny.
+            </dd>
+            <dt>Co zůstává</dt>
+            <dd>
+              Stavba řeší rozvod a čištění, nikoli vydatnost zdroje. Voda se
+              stále přivádí z úpravny od Záruby, tedy zvenčí obce. Kolik
+              obyvatel nové zařízení unese, obec nezveřejnila; jediné dostupné
+              údaje jsou kapacitní stropy 1 600 a 1 500 EO z územního plánu z
+              roku 2019, které již neplatí.
+            </dd>
+            <dt>Krajina</dt>
+            <dd>
+              Vodní plochy tvoří 0,7 % katastru. Územní plán obsahuje od roku
+              2012 veřejně prospěšná opatření pod hlavičkou „zvyšování
+              retenčních schopností krajiny“ — rybníky VH 1 Rokyta a VH 2 U
+              obecního úřadu a poldr VH 3 v Kvani — a ukládá přednostní
+              vsakování srážkových vod v místě jejich vzniku. Ve strategickém
+              plánu z roku 2016 mají poldr Hamburk, obnova funkce příkopů i
+              soustava tůněk za obecním úřadem shodně nejnižší prioritu, tedy
+              „pouze v případě dotace“.
+            </dd>
+            <dt>Lesy</dt>
+            <dd>
+              Obec hospodaří na 69,99 ha vlastního lesa, z čehož 91 % tvoří
+              jehličnany. Strategický plán označil monokulturu za hrozbu a
+              sliboval, že se při tvorbě nového lesního hospodářského plánu v
+              roce 2018 bude usilovat o přizpůsobení klimatickým poměrům. Zda se
+              tak stalo, není veřejně doloženo.
+            </dd>
+            <dt>Kontext</dt>
+            <dd>
+              Do poloviny srpna 2025 spadlo ve středních Čechách méně než 60 %
+              běžného ročního úhrnu srážek a vydatnost pramenů klesla na
+              nejnižší úroveň za třicet let. Hořovice v dubnu 2026 vyzvaly
+              občany k šetření vodou, sousední Bzová má zavedená omezení
+              dodávek.
+            </dd>
+            <dt>Riziko</dt>
+            <dd>
+              Nikoli že by chybělo potrubí. Že v suchém roce nebude v krajině
+              zadržená voda, kterou by potrubí rozvádělo — a že o skutečné
+              bilanci nikdo veřejně nemluví.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="risk">
+          <div class="risk-hd">
+            <span class="n">02</span>
+            <h3>Stárnutí a péče</h3>
+          </div>
+          <dl>
+            <dt>Zjištění</dt>
+            <dd>
+              Seniorů v obci přibylo za dvacet let o 52 %. Podle evidence ČSÚ
+              zde není žádné pobytové zařízení ani dům s pečovatelskou službou.
+              Strategický plán rozvoje obce z roku 2016 označil za slabou
+              stránku doslova to, že
+              <em
+                >„obec nemá k dispozici objekt k bydlení pro seniory a
+                poskytnutí sociálního bydlení“</em
+              >
+              — a do seznamu záměrů na následujících deset let se pak nedostal
+              jediný krok, který by se této slabiny týkal.
+            </dd>
+            <dt>Kontext</dt>
+            <dd>
+              V ČR chybí odhadem 45–50 tisíc lůžek v domovech pro seniory a
+              domovech se zvláštním režimem. Čekací doby dosahují dvou až tří
+              let a Středočeský kraj patří mezi nejhorší. Do roku 2035 bude
+              podle predikce MPSV a ÚZIS potřeba vybudovat 34 700 nových lůžek.
+            </dd>
+            <dt>Riziko</dt>
+            <dd>
+              Zátěž zůstane na rodinách — konkrétně na ženách ve věku 45–60 let,
+              které zároveň pracují. Tedy na skupině, kterou obec potřebuje
+              udržet v práci i v obci.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="risk">
+          <div class="risk-hd">
+            <span class="n">03</span>
+            <h3>Bytový fond a pozemky</h3>
+          </div>
+          <dl>
+            <dt>Zjištění</dt>
+            <dd>
+              Obec vlastní jeden dům. Čtvrtina bytového fondu není trvale
+              obydlená. Územní plán vymezuje 61 zastavitelných ploch pro rodinné
+              domy a ani jednu plochu občanského vybavení, na které by šlo
+              postavit budovu — tedy ani zařízení sociální péče, které regulativ
+              jinak výslovně připouští. Pozemkové úpravy v zemědělských
+              katastrech, které mohou obci scelit vhodný pozemek, běží do roku
+              2027 — je to poslední taková příležitost na desítky let.
+            </dd>
+            <dt>Riziko</dt>
+            <dd>
+              Obec bez vlastních pozemků a bytů nemá jak nabídnout startovací
+              byt mladé rodině, bezbariérový byt seniorovi, který už nezvládá
+              dům, ani služební byt lékaři či pečovatelce. Pozemek se koupit dá.
+              Čas na jeho koupi za rozumnou cenu ne.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="risk">
+          <div class="risk-hd">
+            <span class="n">04</span>
+            <h3>Rozpočtová expozice</h3>
+          </div>
+          <dl>
+            <dt>Zjištění</dt>
+            <dd>
+              Dluh k 31. 12. 2025 činil 66,4 mil. Kč, tedy
+              <strong>97,99 % průměru příjmů za poslední čtyři roky</strong>.
+              Zákonná hranice je 60 %. Dluhová služba za rok 2025 byla 8,2 mil.
+              Kč, dluh na obyvatele 44 tis. Kč.
+            </dd>
+            <dt>Důsledek</dt>
+            <dd>
+              Mechanismus má dva kroky, ne jeden. Za rok, kdy dluh 60 % překročí
+              — tedy 2025 — obec musí v následujícím roce (2026) snížit přebytek
+              nejméně o 5 %, u Zaječova <strong>1 286 410 Kč</strong>. Teprve
+              pokud to nesplní, ministerstvo financí v roce 2027 pozastaví
+              převod podílu na sdílených daních, tedy hlavního příjmu obce. Do
+              konce roku 2026 tedy obec dostává vše jako dosud; ukáže se až
+              účetní závěrka za rok 2026.
+            </dd>
+            <dt>Co obci zůstává</dt>
+            <dd>
+              Fiskální pravidlo neomezuje přístup k dotacím — naopak, projekty
+              spolufinancované z EU fondů jsou z podobných omezení výslovně
+              vyňaty. Dotace tak zůstávají hlavním nástrojem, jak obec může dál
+              investovat, aniž by prohlubovala dluh. Omezené jsou spíš nové
+              bankovní úvěry: nejsou zakázané, ale zdražují se a jdou proti
+              povinnému ročnímu poklesu.
+            </dd>
+            <dt>Původ</dt>
+            <dd>
+              Dluh není nahodilý. Vznikl stavbou vodovodu a ČOV za 137,3 mil. Kč
+              bez DPH, na kterou obec získala dotaci 84,5 mil. Kč. Vysvětluje to
+              i skok příjmů roku 2024 na 117,7 mil. Kč, dohadné účty aktivní ve
+              výši 105 mil. Kč — pravděpodobně dosud neproplacená část dotace —
+              a 150,8 mil. Kč nedokončeného majetku. Až se tato částka doplatí,
+              dluh se sníží bez nového úvěru.
+            </dd>
+            <dt>Riziko</dt>
+            <dd>
+              Není v tom nic nezákonného a obce takto běžně financují dotační
+              investice. Ale znamená to, že
+              <strong
+                >manévrovací prostor pro cokoliv nového je na roky dopředu velmi
+                malý</strong
+              >. V rozpočtu na rok 2026 je na úroky vyčleněno 1,8 mil. Kč a na
+              krizová opatření 50 tisíc. A ve výkazech leží 150,8 mil. Kč
+              nedokončených investic, které je nutné dokončit dřív, než začnou
+              cokoliv vynášet.
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEZE ================= -->
+    <section class="wrap rv">
+      <div class="pull">
+        <q
+          ><span class="blk"
+            >Všechny plánované projekty kandidujících uskupení mají horizont čtyř
+            let.</span
+          ><span class="o">Tyto věci mají horizont třiceti.</span></q
+        >
+        <p>
+          Není to výtka. Je to důsledek formátu, ve kterém komunální politika
+          tradičně mluví — formátu, do kterého se nevejde nic, co nejde na konci
+          období odškrtnout.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= PRIORITY ================= -->
+    <section class="wrap rv" id="priority">
+      <div class="sec-head">
+        <span class="eyebrow">Doporučení</span>
+        <h2>Sedm priorit, seřazených podle nevratnosti</h2>
+        <p class="lede">
+          Čísla vlevo nejsou pořadí. Je to
+          <strong>doba, po kterou platí důsledky dnešního rozhodnutí</strong> —
+          jediné kritérium, které v komunální politice nikdo nepoužívá.
+        </p>
+      </div>
+
+      <div class="spine">
+        <article class="pri">
+          <div class="yr">
+            <span class="v">60</span><span class="u">let</span>
+          </div>
+          <h3>Vodní bilance obce</h3>
+          <p>
+            Obec do vodovodu a ČOV investovala 137,3 mil. Kč. Zbývá to, co se za
+            peníze nekoupí: zveřejnit novou kapacitu po rozšíření, vydatnost
+            zdroje u Záruby, chování zdrojů v suchých letech 2015, 2018, 2022 a
+            2025 a smluvní jistotu dodávek zvenčí obce.
+          </p>
+          <p>
+            Povinné vsakování srážkových vod je v územním plánu od roku 2012 a
+            stejně tak retenční opatření VH 1, VH 2 a VH 3. Úkolem tedy není je
+            zavést, ale <strong>realizovat je</strong>. Vodní plochy tvoří 0,7 %
+            katastru — potrubí je nové, ale v krajině není co zadržet.
+          </p>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">40</span><span class="u">let</span>
+          </div>
+          <span class="warn">Návrh k diskusi · střecha vs. tělocvična</span>
+          <h3>Mládež a vzdělávání</h3>
+          <p>
+            Škola a školka jsou <strong>největší výdaj obce</strong> — ZŠ a MŠ
+            dostává přes tři miliony korun za pololetí, víc než všechny spolky
+            dohromady. A Zaječov má přitom něco vzácného: <strong>úplnou školu
+            1. až 9. třídy</strong> pro 170 žáků a školku pro 61 dětí, o které se
+            stará 36 zaměstnanců — a je spádová i pro okolní obce. Řada vesnic
+            tou dobou o druhý stupeň přichází a děti musí dojíždět.
+          </p>
+          <p>
+            Přesto ve volebních programech chybí koncepce vzdělávání. A přitom
+            obec roste <strong>výhradně migrací</strong>: mladá rodina si obec
+            vybírá i podle toho, jaká je škola. Plná devítiletka je proto páka na
+            jedinou růstovou mechaniku, kterou obec má — a aktivum, které je
+            snazší ztratit než získat zpět.
+          </p>
+          <p>
+            <strong>Střecha školy a nová tělocvična nejsou jeden problém.</strong>
+            Rekonstrukce střechy je nutná údržba, těžko zpochybnitelná a dobře
+            financovatelná — program Ministerstva financí pro obce do 3 000
+            obyvatel kryje obnovu střechy až ze 70 %. Nová tělocvična je
+            investice na desítky let a citlivější: sál Lidového domu dnes jako
+            tělocvična pro školu slouží a protočí se jím devět ročníků, sto
+            sedmdesát žáků. Otázka tedy není nula, ale zda kapacita stačí — a to
+            má zodpovědět demografická prognóza, ne pocit. Hlavní školní dotace
+            navíc novou tělocvičnu výslovně vylučují; jde jen přes Národní
+            sportovní agenturu (minimální dotace 1 mil. Kč) nebo program MMR
+            Školní hřiště a tělocvičny.
+          </p>
+          <p>
+            Chybí i <strong>„střed“</strong> — teenageři 13 až 18 let. Studie
+            i obec myslí na školku, školu i seniory, ale na tuto skupinu ne. Kde
+            jsou po škole, jak se dostanou domů z kroužku, kde mají být? Právě ti
+            se z obce ztrácejí nejdřív. Škola přitom už dnes táhne děti z okolních
+            obcí — to je regionální role, kterou stojí za to udržet, ne oslabit.
+          </p>
+        </article>
+
+        <article class="pri urgent">
+          <div class="yr">
+            <span class="v">30</span><span class="u">let</span>
+          </div>
+          <span class="warn">Běží teď · termín 2024–2027</span>
+          <h3>Plán společných zařízení v katastrech Zaječov a Kvaň</h3>
+          <p>
+            V zemědělských katastrech obce probíhají komplexní pozemkové úpravy.
+            Zpracovatelem je firma AGROPLAN, spol. s r. o.; pověření ke vstupu
+            na pozemky vydal Státní pozemkový úřad 1. 11. 2024 s platností po
+            celou dobu prací, tedy do roku 2027.
+          </p>
+          <p>
+            Jejich součástí je <strong>plán společných zařízení</strong> — v
+            podstatě územní plán krajiny. Lze do něj na náklady státu vepsat
+            tůně a retenční prvky, zasakovací pásy, meze, obnovu polních cest s
+            doprovodnou zelení a prvky územního systému ekologické stability.
+            Zároveň je to jediná chvíle, kdy může obec při scelování parcel
+            získat souvislý vlastní pozemek. Plán schvaluje zastupitelstvo.
+          </p>
+          <p>
+            <strong>Jak dopadl minulý pokus.</strong> V lesním katastru Zaječov
+            v Brdech skončily pozemkové úpravy rozhodnutím ze 7. 8. 2025.
+            Zpracovatelem byla firma GEPARD s.r.o., řešená výměra 1 522 ha,
+            účastníky pouze Vojenské lesy a statky ČR a obec. O plánu společných
+            zařízení rozhodnutí říká doslova:
+            <em
+              >„V rámci zpracování PSZ nebyla navržena žádná nová opatření. Byly
+              pouze vymezeny zábory pozemků pod stávajícími lesními
+              cestami.“</em
+            >
+            Zastupitelstvo ho schválilo 5. 9. 2024.
+          </p>
+          <p>
+            Ze všech bodů této analýzy je tento jediný, u něhož rozhoduje
+            kalendář, nikoli vůle.
+          </p>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">25</span><span class="u">let</span>
+          </div>
+          <h3>Pozemková a bytová politika</h3>
+          <p>
+            Pasport obecního majetku. Definovat, které pozemky obec nebude
+            prodávat a proč. Zvážit předkupní právo na strategických plochách.
+            Připravit projekt malometrážních obecních bytů — kombinace
+            startovacích bytů pro mladé a bezbariérových pro seniory v jednom
+            objektu je dotačně podporovaná a v obci této velikosti provozně
+            schůdná.
+          </p>
+          <p>
+            <strong>Předpokladem je změna územního plánu.</strong> Ten dnes
+            nevymezuje jedinou zastavitelnou plochu občanského vybavení, na
+            které by šlo postavit budovu. Bez ní zůstane domov pro seniory jen
+            teoretickou možností v textu regulativu.
+          </p>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">15</span><span class="u">let</span>
+          </div>
+          <h3>Péče o seniory po krocích</h3>
+          <p>
+            Vlastní domov se zvláštním režimem Zaječov nepostaví nikdy — nemá na
+            to velikost, rozpočet ani personál. Co v jeho možnostech je:
+          </p>
+          <ol>
+            <li>
+              Rozšířit Taxík Maxík o cesty na nákup a za rodinou, nejen k
+              lékaři.
+            </li>
+            <li>
+              Zajistit rozvoz obědů, které jsou kvalitní, cenově dostupné a
+              odpovídají potřebám seniorů, a základní pečovatelskou službu —
+              vlastní, nebo nákupem od poskytovatele, který tyto podmínky
+              splňuje.
+            </li>
+            <li>
+              Zavést odlehčovací službu, byť jen několik dní v měsíci. Pro
+              pečující rodinu je to rozdíl mezi únosným a neúnosným.
+            </li>
+            <li>
+              Otevřít v Mikroregionu Hořovicko jednání o sdílené kapacitě
+              pobytových služeb.
+            </li>
+            <li>
+              Zřídit koordinátora sociální pomoci, byť na částečný úvazek.
+              Rodiny dnes netuší, na co mají nárok.
+            </li>
+          </ol>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">10</span><span class="u">let</span>
+          </div>
+          <h3>Konektivita</h3>
+          <p>
+            Optické připojení do každé nemovitosti. Práce z domova je jediná
+            reálná odpověď na kombinaci „pečovat o rodiče a zároveň chodit do
+            práce" v obci bez železnice a bez silnice vyšší než III. třídy.
+            Souběžně vyhodnotit dopravní obslužnost — zejména zda se
+            středoškolák dostane po odpoledním kroužku domů.
+          </p>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">10</span><span class="u">let</span>
+          </div>
+          <h3>Živá obec: místní ekonomika</h3>
+          <p>
+            Strategický plán z roku 2016 označil za slabou stránku „nedostatek
+            obchodů s různě zaměřeným sortimentem“ a doporučil „vytvoření
+            místního tržiště“. O deset let později to není v žádném volebním
+            programu. Obec při dluhu na 98 % nemůže nic z tohoto sama
+            zafinancovat — může ale být zprostředkovatelem: dát prostor, snížit
+            nájem, propojit lidi, podat žádost za ně.
+          </p>
+          <ol>
+            <li>
+              Zavést pravidelný farmářský nebo místní trh na návsi — nejlevnější
+              krok, bez dotace proveditelný jako zkouška.
+            </li>
+            <li>
+              Zpřístupnit Lidový dům nebo Zděnou jako sdílenou pracovnu pro ty,
+              kdo pracují na dálku; navazuje přímo na prioritu konektivity výše.
+            </li>
+            <li>
+              Propojit klášter, CHKO Brdy a plánovaný Bike Hill drobnými
+              službami — občerstvení, průvodce, ubytování — namísto nechání
+              turistického potenciálu ležet ladem.
+            </li>
+            <li>
+              Nabídnout drobným podnikatelům výhodný nájem obecních prostor a
+              pomoc se žádostí u MAS Brdy, která má aktuálně otevřenou výzvu OP
+              TAK pro malé a střední podniky a chystá výzvu pro vlastníky
+              památek.
+            </li>
+            <li>
+              Využít Středočeský Fond obnovy venkova (2025–2028, až 1000 Kč na
+              obyvatele) mimo jiné na rychlé připojení k internetu, které je pro
+              cokoli z tohoto bodu podmínkou.
+            </li>
+          </ol>
+          <p style="margin-top:1em">
+            <strong>Podrobný rozpis podle jednotlivých míst</strong> — Zděná, kurty,
+            hřiště, Lidový dům, klášter a náves, včetně nákladů a dotačních titulů —
+            je na navazující stránce <a href="prostory.html">Prostory Zaječova</a>.
+          </p>
+        </article>
+
+        <article class="pri">
+          <div class="yr">
+            <span class="v">5</span><span class="u">let</span>
+          </div>
+          <h3>Provozní témata s tvrdým rozpočtovým dopadem</h3>
+          <p>
+            Při dluhu na 98 % průměru příjmů a povinném ročním umoření 1,29 mil.
+            Kč platí u všeho následujícího jedno: buď to sníží provozní náklady,
+            nebo na to nebudou peníze.
+          </p>
+          <p>
+            <strong>Odpady:</strong> obec má funkční sběrný dvůr, od roku 2030
+            ale platí zákaz skládkování využitelných odpadů a poplatky za
+            skládkování rostou už teď — bez systému „plať za to, co vyhodíš“ a
+            bez rozšířeného třídění bioodpadu dostanou účet obyvatelé.
+            <strong>Energetika:</strong> od roku 2024 lze zakládat energetická
+            společenství, ale územní plán zakazuje komerční fotovoltaiku na
+            celém správním území — bez jeho změny to nejde.
+            <strong>Krizová odolnost:</strong> záložní zdroj pro školu, úřad a
+            vodárnu, systém obvolání seniorů. <strong>Turismus:</strong> obec by
+            měla mít pozici k parkování a erozi tras dříve, než ji tlak
+            převálcuje. <strong>Kamenolom:</strong> podle plánu z roku 2001 má
+            těžba diabasu skončit v roce 2042 a rekultivace na vodní plochu
+            proběhnout do roku 2047. Strategický plán z roku 2016 označil za
+            hrozbu neexistenci útlumového plánu; lom leží nedaleko základní
+            školy i kláštera.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= AKČNÍ PLÁN ================= -->
+    <section class="wrap rv" id="plan">
+      <div class="sec-head">
+        <span class="eyebrow">Akční plán</span>
+        <h2>Čtyři fáze</h2>
+        <p class="lede">
+          První fáze stojí dohromady kolem 130–160 tisíc korun. To je záměr —
+          aby se první krok nedal odmítnout s odkazem na rozpočet.
+        </p>
+      </div>
+
+      <div class="block">
+        <div class="phase">
+          <div class="phase-hd">
+            <span class="tag">FÁZE A</span><span class="when">do 6 měsíců</span>
+          </div>
+          <ul class="tasks">
+            <li>
+              <span
+                >Demografická prognóza obce do roku 2045 podle pětiletých
+                kohort</span
+              ><span class="cost k">30–60 tis.</span>
+            </li>
+            <li>
+              <span>Pasport vodních zdrojů a bilance</span
+              ><span class="cost k">do 100 tis.</span>
+            </li>
+            <li>
+              <span>Pasport obecního nemovitého majetku</span
+              ><span class="cost">vlastní silou</span>
+            </li>
+            <li>
+              <span
+                >Ověření sociálních služeb v Registru MPSV a přehled pro
+                občany</span
+              ><span class="cost">vlastní silou</span>
+            </li>
+            <li>
+              <span
+                >Navázat kontakt s SPÚ Beroun a AGROPLANem k plánu společných
+                zařízení</span
+              ><span class="cost k">první krok</span>
+            </li>
+            <li>
+              <span
+                >Zveřejnění stavu realizace opatření VH 1, VH 2 a VH 3 z
+                územního plánu</span
+              ><span class="cost">0 Kč</span>
+            </li>
+            <li>
+              <span
+                >Zveřejnit novou kapacitu ČOV a vodovodu po rozšíření a bilanci
+                zdroje u Záruby</span
+              ><span class="cost k">nutné</span>
+            </li>
+            <li>
+              <span
+                >Plán umořování dluhu do návratu pod 60 % a jeho
+                zveřejnění</span
+              ><span class="cost k">zákonná povinnost</span>
+            </li>
+            <li>
+              <span
+                >Vyhodnotit plnění strategického plánu 2017–2026, jehož platnost
+                letos končí</span
+              ><span class="cost">vlastní silou</span>
+            </li>
+            <li>
+              <span
+                >Revize poměru dotací spolkům a sociální oblasti jako vědomé
+                rozhodnutí</span
+              ><span class="cost">0 Kč</span>
+            </li>
+            <li>
+              <span>Zkusmo uspořádat první farmářský trh na návsi</span
+              ><span class="cost">vlastní silou</span>
+            </li>
+            <li>
+              <span
+                >Zmapovat volné obecní i soukromé prostory vhodné pro drobné
+                podnikání</span
+              ><span class="cost">vlastní silou</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="phase">
+          <div class="phase-hd">
+            <span class="tag">FÁZE B</span><span class="when">6–24 měsíců</span>
+          </div>
+          <ul class="tasks">
+            <li>
+              <span
+                >Prosadit do plánu společných zařízení tůně, zasakovací pásy,
+                meze a prvky ÚSES</span
+              ><span class="cost k">nelze odložit</span>
+            </li>
+            <li>
+              <span
+                >Usilovat o souvislý obecní pozemek při scelování parcel</span
+              ><span class="cost k">nelze odložit</span>
+            </li>
+            <li>
+              <span
+                >Vyhodnotit, proč PSZ pro katastr v Brdech neobsahoval žádná
+                opatření</span
+              >
+            </li>
+            <li>
+              <span>Rozšíření Taxíku Maxíka, zajištění rozvozu obědů</span>
+            </li>
+            <li>
+              <span>Studie proveditelnosti obecních malometrážních bytů</span>
+            </li>
+            <li>
+              <span
+                >Jednání o sdílené kapacitě pobytových služeb v
+                mikroregionu</span
+              >
+            </li>
+            <li><span>Jednání o optickém připojení obce</span></li>
+            <li>
+              <span
+                >Změna územního plánu: vymezení plochy OV pro sociální
+                péči</span
+              ><span class="cost k">klíčové</span>
+            </li>
+            <li>
+              <span
+                >Změna územního plánu: uvolnění komerční fotovoltaiky na
+                obecních budovách</span
+              >
+            </li>
+            <li>
+              <span
+                >Nový strategický plán rozvoje obce do roku 2045 s veřejným
+                projednáním</span
+              ><span class="cost k">navazuje na 2026</span>
+            </li>
+            <li>
+              <span
+                >Žádost u MAS Brdy — OP TAK Technologie pro MAS II, uzávěrka 4.
+                9. 2026</span
+              ><span class="cost k">termín</span>
+            </li>
+            <li>
+              <span
+                >Žádost o Středočeský Fond obnovy venkova, mimo jiné na rychlé
+                připojení k internetu</span
+              ><span class="cost k">do 2028</span>
+            </li>
+            <li>
+              <span>Zřídit sdílenou pracovnu v Lidovém domě nebo ve Zděné</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="phase">
+          <div class="phase-hd">
+            <span class="tag">FÁZE C</span><span class="when">2–6 let</span>
+          </div>
+          <ul class="tasks">
+            <li>
+              <span>Realizace retenčních opatření z pozemkových úprav</span>
+            </li>
+            <li>
+              <span
+                >Výstavba obecních bytů — startovacích a bezbariérových</span
+              >
+            </li>
+            <li><span>Zavedení odlehčovací služby</span></li>
+            <li><span>Zřízení koordinátora sociální pomoci</span></li>
+            <li>
+              <span>FVE na obecních budovách, energetické společenství</span>
+            </li>
+            <li>
+              <span
+                >Zavést systém „plať za to, co vyhodíš“ a rozšířit třídění
+                bioodpadu</span
+              >
+            </li>
+            <li>
+              <span
+                >Záložní energetické zdroje pro kritickou infrastrukturu</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="phase">
+          <div class="phase-hd">
+            <span class="tag">FÁZE D</span><span class="when">trvale</span>
+          </div>
+          <ul class="tasks">
+            <li>
+              <span
+                >Každoroční aktualizace demografické prognózy proti
+                skutečnosti</span
+              >
+            </li>
+            <li><span>Vyhodnocování vodní bilance</span></li>
+            <li>
+              <span>Pravidelná veřejná projednání strategického plánu</span>
+            </li>
+            <li>
+              <span
+                >Aktivní zastoupení obce vůči VLS ČR a AOPK v otázkách lesů a
+                CHKO</span
+              >
+            </li>
+            <li>
+              <span
+                >Sledovat útlum těžby v kamenolomu a přípravu rekultivace na
+                vodní plochu</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MEZERY ================= -->
+    <section class="wrap rv" id="mezery">
+      <div class="sec-head">
+        <span class="eyebrow">Poctivě</span>
+        <h2>Co jsem nezjistila</h2>
+        <p class="lede">
+          Z veřejných zdrojů se mi nepodařilo dohledat následující. Jejich
+          doplnění je předpokladem pro seriózní plánování.
+        </p>
+      </div>
+
+      <div class="block">
+        <ol class="gaps">
+          <li>
+            <strong>Věkové složení po pětiletých skupinách.</strong> ČSÚ pro
+            obce publikuje jen základní skupiny. Bez detailu nelze určit, kolik
+            bude v Zaječově lidí 80+ v roce 2035 a 2045. Hrubým přepočtem podle
+            celostátní dynamiky vychází ~360 seniorů v roce 2035 a 400–420 v
+            roce 2045 — ale je to odhad, ne projekce.
+          </li>
+          <li>
+            <strong
+              >Zda byla realizována retenční opatření VH 1, VH 2 a VH 3</strong
+            >
+            a zda nový lesní hospodářský plán z roku 2018 skutečně změnil
+            druhovou skladbu obecních lesů.
+          </li>
+          <li>
+            <strong>Vydatnost vodních zdrojů a bilance.</strong> Územní plán
+            uvádí strop 1 600 EO a zdroj ve vojenském újezdu, ale ne aktuální
+            vydatnost ani smluvní zajištění dodávek.
+          </li>
+          <li>
+            <strong
+              >Zda byla realizována retenční opatření VH 1, VH 2 a VH 3</strong
+            >
+            z územního plánu z roku 2012.
+          </li>
+          <li>
+            <strong
+              >Skutečná existence zdravotně-sociálních zařízení v obci.</strong
+            >
+            Evidence ČSÚ uvádí nulu; terénní šetření SMS ČR tvrdí opak, ale
+            totéž šetření tvrdí, že je v obci bankomat a policejní stanice.
+            Vycházím z ČSÚ.
+          </li>
+          <li>
+            <strong>Počet příjemců příspěvku na péči</strong> s trvalým pobytem
+            v obci — dostupné přes ÚP ČR.
+          </li>
+        </ol>
+        <p
+          style="
+            margin: 24px 0 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--rule);
+          "
+        >
+          Bod 01 je zásadní:
+          <strong
+            >obec nemá vlastní demografickou prognózu a bez ní plánuje kapacity
+            poslepu.</strong
+          >
+          Její pořízení je zároveň nejlevnější položkou celého plánu.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= ZDROJE ================= -->
+    <section class="wrap rv" id="zdroje">
+      <div class="sec-head">
+        <span class="eyebrow">Ověřitelnost</span>
+        <h2>Zdroje</h2>
+      </div>
+
+      <div class="block">
+        <div class="srcgrp">
+          <h3>Data o obci</h3>
+          <ul>
+            <li>
+              RIS — Regionální informační servis, profil obce Zaječov (kód
+              531995). Agreguje data ČSÚ (sčítání 2001/2011/2021, bilance
+              obyvatel, pozemky, vybavenost, sociální zařízení), Ministerstva
+              financí (hospodaření 2010–2024) a terénní šetření SMS ČR.
+              <span class="u"
+                >risy.cz/cs/vyhledavace/obce/detail?Zuj=531995</span
+              >
+            </li>
+            <li>
+              Strategický plán rozvoje obce Zaječov 2017–2026, schválen v
+              prosinci 2016. Ověřeno: SWOT analýza, kapitoly Občanská
+              vybavenost, Obecní lesy, Vodní plochy a vodoteče, Vodovod,
+              Kamenolom Zaječov, Ekonomika obce a Příloha č. 1 — Plán záměrů pro
+              období 2017–2026.
+            </li>
+            <li>
+              Oficiální web obce Zaječov — Taxík Maxík, sociální pomoc; rubrika
+              <em>Kvaň — voda, kanalizace, ČOV</em> (cena stavby 137 275 709,21
+              Kč bez DPH, zhotovitel sdružení BAGGER BS s.r.o. a POHL CZ a.s.,
+              dotace OPŽP 48 093 800,47 Kč na vodovod a 36 455 506,33 Kč na ČOV
+              a kanalizaci, vodojem Kvaň 160 m³; poslední aktualizace 9. 5.
+              2024) <span class="u">zajecov.cz/kvan-voda-kanalizace-cov</span>
+            </li>
+            <li>
+              Územní plán Zaječov — úplné znění po změně č. 2, duben 2019
+              (základ 2012, změny 2017 a 2019). Pořizovatel MěÚ Hořovice.
+              Ověřeno v textové části: kap. 2.1 koncepce rozvoje, 3.3.3 plochy
+              občanského vybavení, 4.2.2 zásobování pitnou vodou, 6.1 zákaz
+              komerčních FVE, 6.2.4 regulativ ploch OV, 7.2.2 veřejně prospěšná
+              opatření vodního režimu, 9. územní rezervy.
+              <span class="u"
+                >zajecov.cz/formular/zajecov-text-uplne-zneni.pdf</span
+              >
+            </li>
+            <li>
+              Státní pozemkový úřad, pobočka Beroun:
+              <em
+                >Komplexní pozemkové úpravy v k. ú. Zaječov, Kvaň — pověření ke
+                vstupu a vjezdu na pozemky</em
+              >, č. j. SPU 436279/2024/37/Pro z 1. 11. 2024, spisová značka
+              SP2339/2023-537203. Zpracovatel AGROPLAN, spol. s r. o., termín
+              prací 2024–2027.
+              <span class="u">zajecov.cz — příloha úřední desky</span>
+            </li>
+            <li>
+              Státní pozemkový úřad, Krajský pozemkový úřad pro Středočeský kraj
+              a hl. m. Praha, pobočka Beroun:
+              <em
+                >Rozhodnutí o schválení návrhu komplexních pozemkových úprav v
+                k. ú. Zaječov v Brdech</em
+              >, č. j. SPU 274827/2025/37/Pro ze 7. 8. 2025. Zpracovatel GEPARD
+              s.r.o. Řízení zahájeno 29. 7. 2016, řešená výměra 1 522 ha, plán
+              společných zařízení schválen zastupitelstvem obce 5. 9. 2024.
+              <span class="u"
+                >zajecov.cz — příloha úřední desky, dokument z 5. 11. 2024</span
+              >
+            </li>
+            <li>
+              Úřední deska obce Zaječov — závěrečný účet obce za rok 2025 a
+              závěrečný účet Mikroregionu Hořovicka za rok 2025 (oba vyvěšeny v
+              červnu 2026); volby do zastupitelstva 9. a 10. října 2026
+              <span class="u">zajecov.cz/uredni-deska</span>
+            </li>
+            <li>
+              Monitor státní pokladny, Ministerstvo financí ČR — obec Zaječov,
+              IČO 00234044. Rozvaha a účetní ukazatele k 30. 6. 2026, druhový
+              rozpočet pro výdaje 2026, přehled poskytnutých dotací za 1.
+              pololetí 2026, soustava informativních a monitorujících ukazatelů
+              (SIMU) a rozpočtová odpovědnost k 31. 12. 2025.
+              <span class="u"
+                >monitor.statnipokladna.gov.cz/ucetni-jednotka/00234044</span
+              >
+            </li>
+            <li>
+              Zákon č. 23/2017 Sb., o pravidlech rozpočtové odpovědnosti —
+              hranice 60 % průměru příjmů a mechanismus pozastavení převodu
+              podílu na sdílených daních
+            </li>
+            <li>Český statistický úřad <span class="u">csu.gov.cz</span></li>
+          </ul>
+        </div>
+
+        <div class="srcgrp">
+          <h3>Demografie a stárnutí ČR</h3>
+          <ul>
+            <li>
+              ČSÚ — Senioři v datech
+              <span class="u"
+                >csu.gov.cz/seniori-v-datech/vekova-struktura</span
+              >
+            </li>
+            <li>
+              ČSÚ — Projekce obyvatelstva
+              <span class="u"
+                >csu.gov.cz/seniori-v-datech/projekce-obyvatelstva</span
+              >
+            </li>
+            <li>
+              ČSÚ — Počet, struktura a projekce obyvatel
+              <span class="u"
+                >csu.gov.cz/pocet-struktura-a-projekce-obyvatel</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="srcgrp">
+          <h3>Dlouhodobá péče</h3>
+          <ul>
+            <li>
+              MPSV — Predikce potřeb dlouhodobé péče, 14. 11. 2025
+              <span class="u"
+                >mpsv.gov.cz/predikce-potreb-dlouhodobe-pece-cesko-ceka-jeden-z-nejvetsich-ukolu-pristich-desetileti</span
+              >
+            </li>
+            <li>
+              ČSÚ — Sociální služby
+              <span class="u">csu.gov.cz/socialni-sluzby</span>
+            </li>
+            <li>
+              ČSÚ — Příspěvek na péči
+              <span class="u"
+                >csu.gov.cz/produkty/prispevek-na-peci-loni-vyuzivalo-vice-nez-370-tisic-lidi</span
+              >
+            </li>
+            <li>
+              Zdravé zprávy — Kapacity sociálních služeb nerostou, ale poptávka
+              ano, 15. 5. 2025
+              <span class="u"
+                >zdravezpravy.cz/2025/05/15/kapacity-socialnich-sluzeb-vyrazne-nerostou-ale-poptavka-ano</span
+              >
+            </li>
+            <li>
+              ČeskéNoviny — Studie Deloitte pro APSS ČR, 21. 7. 2026
+              <span class="u"
+                >ceskenoviny.cz/zpravy/studie-kvuli-starnuti-je-do-r-2035-treba-70-mld-kc-na-35000-luzek-v-domovech/2853301</span
+              >
+            </li>
+            <li>
+              Česká alzheimerovská společnost — odhady prevalence demence
+              <span class="u"
+                >alzheimer.cz/clanky/novinky-cals/nove-odhady-prevalence-ve-vyrocni-zprave</span
+              >
+            </li>
+            <li>
+              Registr poskytovatelů sociálních služeb MPSV
+              <span class="u">portal.gov.cz</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="srcgrp">
+          <h3>Voda a sucho</h3>
+          <ul>
+            <li>
+              Podbrdsko bez vody: Rok 2025 patří k nejsušším v historii regionu
+              <span class="u"
+                >pribram.cz/clanek/podbrdsko-bez-vody-rok-2025-patri-k-nejsussim-v-historii-regionu/32632</span
+              >
+            </li>
+            <li>
+              Město Hořovice — výzva k šetření pitnou vodou, 13. 4. 2026
+              <span class="u">mesto-horovice.eu/aktualne/aktuality</span>
+            </li>
+            <li>
+              Obec Bzová — úřední deska, omezení dodávek vody
+              <span class="u">bzova.cz/urad/uredni-deska</span>
+            </li>
+            <li>
+              Komunální ekologie — Oblasti Středočeského kraje ohrožené suchem
+              <span class="u">komunalniekologie.cz</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="srcgrp">
+          <h3>Financování místní ekonomiky</h3>
+          <ul>
+            <li>
+              MAS Brdy, z. ú. — 4. výzva v OP TAK „Technologie pro MAS II“,
+              vyhlášena 8. 6. 2026, příjem projektových záměrů do 4. 9. 2026,
+              pro malé a střední podniky na venkově; avizované připravované
+              výzvy pro vlastníky památek a pro obce zřizující JSDH
+              <span class="u">masbrdy.cz</span>
+            </li>
+            <li>
+              Středočeský kraj — Program 2025–2028 pro poskytování dotací na
+              rozvoj obcí do 2000 obyvatel ze Středočeského Fondu obnovy
+              venkova, 1000 Kč na obyvatele, spoluúčast 15 %, žádosti do 30. 6.
+              2028, lze mimo jiné na zavedení rychlého internetu
+              <span class="u"
+                >kr-stredocesky.cz/web/dotace/stredocesky-fond-obnovy-venkova</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PATIČKA ================= -->
+    <footer>
+      <div class="wrap">
+        <div class="foot">
+          <h3>Kdo to napsal a proč</h3>
+          <p>
+            Petra Pavlisová. V Zaječově zatím trvale nebydlím, ale posledních
+            dvacet let sem jezdím, manželova rodina je odtud a jednou tu chceme
+            být natrvalo.
+          </p>
+          <p>
+            Tento dokument vznikl jako odpověď na otázku „co byste v Zaječově
+            chtěli zlepšit". Není to kritika konkrétních lidí ani volebního
+            uskupení — všechno, co je v plánech obce, dává smysl. Jen mi přišlo,
+            že chybí věci, které se rozhodují teď a platí déle než jedno volební
+            období. Tak jsem si je dohledala.
+          </p>
+          <p>
+            Data jsou z veřejných zdrojů uvedených výše, stav k srpnu 2026. Kde
+            jde o odhad nebo interpolaci, je to označeno. Kde jsem něco
+            nezjistila, je to napsané. <strong>Opravy a doplnění vítám.</strong>
+          </p>
+        </div>
+        <div class="foot-rule">
+          <span>Obec se plánuje na desetiletí, ne na volební období</span>
+          <span>Volby do zastupitelstva 9.–10. října 2026</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var els = document.querySelectorAll(".rv");
+        if (
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+          !("IntersectionObserver" in window)
+        ) {
+          els.forEach(function (el) {
+            el.classList.add("in");
+          });
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -6% 0px", threshold: 0.04 },
+        );
+        els.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+
+      /* aktivní položka menu podle pozice ve stránce */
+      (function () {
+        var links = Array.prototype.slice.call(
+          document.querySelectorAll(".nav-links a"),
+        );
+        var secs = links
+          .map(function (a) {
+            return document.querySelector(a.getAttribute("href"));
+          })
+          .filter(Boolean);
+        if (!secs.length || !("IntersectionObserver" in window)) return;
+
+        var visible = {};
+        var spy = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0;
+            });
+            var best = null,
+              bestVal = 0;
+            secs.forEach(function (s) {
+              var v = visible[s.id] || 0;
+              if (v > bestVal) {
+                bestVal = v;
+                best = s.id;
+              }
+            });
+            links.forEach(function (a) {
+              a.classList.toggle(
+                "on",
+                best !== null && a.getAttribute("href") === "#" + best,
+              );
+            });
+          },
+          {
+            rootMargin: "-52px 0px -55% 0px",
+            threshold: [0, 0.15, 0.35, 0.6, 1],
+          },
+        );
+
+        secs.forEach(function (s) {
+          spy.observe(s);
+        });
+      })();
+    </script>
+  </body>
+</html>

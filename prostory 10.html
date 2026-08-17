@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prostory Zaječova · Co už stojí a jak to oživit</title>
+<meta name="description" content="Zděná, kurty, hřiště, Lidový dům, klášter, náves. Návrh využití existujících prostorů v Zaječově tak, aby sloužily místním a zároveň se zaplatily.">
+<meta name="author" content="Petra Pavlisová">
+<link rel="canonical" href="https://petrapavlis.github.io/zajecov/prostory.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Zaječov 2026–2046">
+<meta property="og:title" content="Prostory Zaječova: co už stojí a jak to oživit">
+<meta property="og:description" content="Šest míst, která už v obci jsou. Návrh, jak je využít tak, aby sloužila místním a zároveň něco vracela do rozpočtu.">
+<meta name="theme-color" content="#2E4A39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2e4a39; --green-soft:#7a9484; --rust:#a8613f;
+  --paper:#f7f6f1; --paper-2:#efeee6; --rule:#dcdbd1; --rule-2:#c9c8bc;
+  --ink:#2e332f; --ink-soft:#666b64; --maxw:940px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Libre Franklin",system-ui,sans-serif;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+h1,h2{font-family:"Archivo",system-ui,sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green)}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-family:"Libre Franklin",sans-serif;font-size:1.12rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
+p{margin:0 0 1em}
+a{color:var(--rust);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--green)}
+strong{font-weight:600;color:var(--green)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:block;margin:0 0 1.4em}
+.lede{font-size:1.08rem;color:var(--ink-soft)}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,241,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:20px;height:52px}
+.nav-mark{font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+.nav-mark span{color:var(--rust)}
+.nav-links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.on{color:var(--rust);border-bottom-color:var(--rust)}
+.nav-sep{flex:none;width:1px;align-self:center;height:22px;background:var(--rule-2)}
+.nav-sib{flex:none;display:flex;align-items:center;gap:9px}
+.nav-cta{flex:none;display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);text-decoration:none;white-space:nowrap;border:1px solid var(--rust);border-radius:3px;padding:7px 11px;transition:background .2s,color .2s}
+.nav-cta:hover,.nav-cta:focus-visible{background:var(--rust);color:var(--paper)}
+@media(max-width:720px){.nav-in{gap:12px}.nav-links{display:none}.nav-sep{display:none}.nav-sib{margin-left:auto;gap:8px}.nav-cta{padding:8px 11px;font-size:.62rem;letter-spacing:.08em}}@media(max-width:380px){.nav-cta{padding:7px 9px;font-size:.58rem;letter-spacing:.06em}}
+section[id]{scroll-margin-top:52px}
+
+.hero{padding:44px 26px 0}
+.stamp{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 30px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.stamp i{font-style:normal;color:var(--rule-2)}
+.thesis{font-family:"Archivo",system-ui,sans-serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.45;color:var(--ink-soft);max-width:40ch;margin:24px 0 0}
+.thesis b{color:var(--green);font-weight:700}
+.byline{border-top:1px solid var(--rule);margin-top:30px;padding:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 30px;font-size:.88rem;color:var(--ink-soft)}
+.byline b{color:var(--green);font-weight:600}
+.notice{border-left:3px solid var(--rust);padding:2px 0 2px 16px;margin:26px 0 8px;font-size:.88rem;color:var(--ink-soft)}
+.back{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin:24px 0 0}
+
+section.wrap{padding-top:88px;padding-bottom:72px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{margin-bottom:36px;max-width:62ch}
+
+.block{background:#fff;border:1px solid var(--rule);padding:26px 28px}
+.block+.block{margin-top:16px}
+
+/* karta lokality */
+.place{background:#fff;border:1px solid var(--rule);padding:0;margin-bottom:20px}
+.place-hd{padding:22px 28px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.place-hd .n{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--rust);font-weight:700}
+.place-hd h3{font-family:"Archivo",sans-serif;font-size:1.32rem;font-weight:600;letter-spacing:-.015em}
+.place-hd .who{font-family:"JetBrains Mono",monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
+.place-body{padding:16px 28px 26px}
+.place dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 20px}
+.place dt{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);padding-top:.42em}
+.place dd{margin:0 0 14px}
+.place dd:last-child{margin-bottom:0}
+.place ol,.place ul{margin:.4em 0 0;padding-left:1.2em}
+.place li{margin-bottom:.35em}
+.place li::marker{color:var(--green-soft)}
+@media(max-width:640px){.place dl{grid-template-columns:1fr;gap:0}.place dt{margin-top:14px}.place-hd .who{margin-left:0}.place-body{padding-left:20px;padding-right:20px}.place dl,.place dd{min-width:0}.place table,.block table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:6px}
+th,td{padding:9px 0;text-align:left;border-top:1px solid var(--rule)}
+th{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);border-top:0}
+td:last-child,th:last-child{text-align:right;font-family:"JetBrains Mono",monospace;font-size:.85rem;white-space:nowrap}
+tr.hi td{color:var(--rust);font-weight:700}
+tr.hi td:first-child{color:var(--green)}
+
+.grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.grid>*{background:#fff;padding:22px 24px}
+@media(max-width:720px){.g3{grid-template-columns:1fr}}
+.stat .num{font-family:"Archivo",sans-serif;font-weight:700;color:var(--rust);font-size:2.1rem;line-height:1;letter-spacing:-.03em;display:block;margin-bottom:9px}
+.stat b{display:block;color:var(--green);font-size:.9rem;margin-bottom:4px}
+.stat span.t{font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+
+.tag{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.63rem;letter-spacing:.12em;color:var(--green);border:1px solid var(--green);padding:3px 9px;display:inline-block}
+.tag.warn{color:var(--rust);border-color:var(--rust)}
+
+.srcgrp{margin-bottom:22px}
+.srcgrp:last-child{margin-bottom:0}
+.srcgrp h3{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.srcgrp ul{list-style:none;margin:0;padding:0}
+.srcgrp li{padding:8px 0;font-size:.87rem;border-top:1px solid var(--rule);line-height:1.5}
+.srcgrp li:first-child{border-top:0}
+.srcgrp .u{display:block;font-family:"JetBrains Mono",monospace;font-size:.71rem;color:var(--ink-soft);margin-top:2px}
+
+footer{background:var(--paper-2);border-top:1px solid var(--rule)}
+.foot{padding:50px 0 28px;font-size:.92rem;max-width:66ch}
+.foot h3{font-family:"Archivo",sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
+.foot-rule{border-top:1px solid var(--rule-2);padding:16px 0 40px;font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+@media print{.nav{display:none}.rv{opacity:1;transform:none}section.wrap{padding:14pt 0}.place{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Obsah stránky">
+  <div class="nav-in">
+    <a class="nav-mark" href="#top">Prostory <span>Zaječova</span></a>
+    <div class="nav-links">
+      <a href="#princip">Princip</a>
+      <a href="#zdena">Zděná</a>
+      <a href="#kurty">Kurty</a>
+      <a href="#hriste">Hřiště</a>
+      <a href="#lidovy-dum">Lidový dům</a>
+      <a href="#klaster">Klášter</a>
+      <a href="#naves">Náves</a>
+      <a href="#penize">Peníze</a>
+    </div>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <div class="nav-sib">
+      <a class="nav-cta" href="index.html">←&nbsp;Studie</a>
+      <a class="nav-cta" href="inspirace.html">Inspirace&nbsp;→</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap hero" id="top">
+  <p class="stamp"><span>Zaječov · Kvaň · Nová Ves</span><i>/</i><span>Navazuje na studii 1263 → 2046</span><i>/</i><span>Srpen 2026</span></p>
+  <h1>Prostory Zaječova</h1>
+  <p class="thesis">Obec nemusí nic stavět. Šest míst už tady <b>stojí a nevydělává</b> —
+  nebo vydělává někomu jinému. Toto je návrh, jak je využít tak, aby sloužila
+  především místním a zároveň něco vracela do obecního rozpočtu.</p>
+
+  <div class="byline">
+    <span><b>Návrh využití existujících prostorů</b></span>
+    <span>Petra Pavlisová</span>
+    <span>Zpracováno z veřejných dat</span>
+  </div>
+
+  <div class="notice">
+    Občanský návrh, ne stanovisko obce, spolků ani volebního uskupení. Vychází z veřejných zdrojů
+    a z ověřených příkladů z jiných obcí. Návrh k diskusi, ne hotové řešení.
+  </div>
+
+  <a class="back" href="index.html">← zpět na studii Zaječov 1263 → 2046</a>
+</header>
+
+<!-- PRINCIP -->
+<section class="wrap rv" id="princip">
+  <div class="sec-head">
+    <span class="eyebrow">Princip</span>
+    <h2>Klid je hodnota, ne překážka</h2>
+    <p class="lede">Cílem není přivést do Zaječova davy. Cílem je, aby z těch, kdo sem přijedou tak jako tak,
+    měla obec něco zpátky — a aby místní nebyli ve vlastní obci až druzí v pořadí.</p>
+  </div>
+
+  <div class="grid g3">
+    <div class="stat">
+      <span class="num">1.</span>
+      <b>Místní mají přednost</b>
+      <span class="t">Kde je kapacita omezená, má občan Zaječova jiné podmínky než návštěvník. Ne zákaz, jen jiná cena a jiné pořadí.</span>
+    </div>
+    <div class="stat">
+      <span class="num">2.</span>
+      <b>Málo lidí, vyšší hodnota</b>
+      <span class="t">Lepší deset lidí, kteří tu utratí a odjedou spokojení, než dvě stě, po kterých zůstane odpad a plné parkoviště.</span>
+    </div>
+    <div class="stat">
+      <span class="num">3.</span>
+      <b>Nejdřív provoz, pak stavba</b>
+      <span class="t">Obec má dluh na 98 % zákonné hranice. Nové budovy nejsou na stole. Využít to, co stojí, je jediná reálná cesta.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ZDĚNÁ -->
+<section class="wrap rv" id="zdena">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 01</span>
+    <h2>Zděná</h2>
+    <p class="lede">Budova z roku 1749 v centru obce. Spolek ji v roce 2013 koupil od obce za symbolickou
+    korunu, aby zabránil demolici. Rekonstrukce běží čtrnáct let, právě se dokončuje sociální zázemí.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">01</span><h3>Dobrotivá kavárna &amp; coworking</h3><span class="who">Spolek Zděná 2012</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Přízemí</dt>
+        <dd>Přední část s výhledem na náves — kavárna. Zadní část sálu variabilní: přes den čtyři až šest
+        míst k práci s wifi a zásuvkami, večer a o víkendech sál pro akce spolku. Kavárna a coworking se
+        navzájem živí — kavárna dává coworkingu zázemí, coworking dává kavárně stálý denní provoz mimo
+        víkendovou špičku. Samostatný coworking by ve vsi téhle velikosti neuživil sám sebe; jako přidaná
+        funkce ke kavárně ano.</dd>
+
+        <dt>Patro</dt>
+        <dd>Původní záměr spolku z roku 2012 — letní ubytovna a byt správce. Návaznost na cyklostezku č. 3
+        a plánovaný Bike Hill: úschovna kol, dobíjení elektrokol, sprcha.</dd>
+
+        <dt>Suroviny</dt>
+        <dd>Regionální spolupráce — káva z místní pražírny, pivo z minipivovarů v Brdech a okolí, med od
+        včelařů přímo ze Zaječova, pečivo od místní pekařky. Nejde o marketingové gesto: krátký řetězec
+        drží peníze v regionu a zároveň dává kavárně příběh, který síťová konkurence nemá.</dd>
+
+        <dt>Provoz</dt>
+        <dd>Spolek jako nezisková organizace by neměl sám dlouhodobě provozovat komerční kavárnu se ziskem.
+        Čistší model: samostatný provozní subjekt, kterému spolek prostor pronajme. <strong>Nájem jde do
+        fondu oprav zbytku budovy</strong> — provoz tak platí dostavbu.</dd>
+
+        <dt>Postup</dt>
+        <dd><ol>
+          <li>Po dokončení sálu a toalet spustit kavárnu o víkendech a coworking dva až tři dny v týdnu na zkoušku.</li>
+          <li>I skromný provoz vynese víc než čtrnáct let sbírky „na dobu neurčitou“.</li>
+          <li>Nájem od provozovatele jde na dokončení patra.</li>
+          <li>Patro se dodělá z vydělaných peněz, bez tlaku dostavět všechno naráz.</li>
+        </ol></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- KURTY -->
+<section class="wrap rv" id="kurty">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 02</span>
+    <h2>Tenisové a multisportovní kurty</h2>
+    <p class="lede">Kurty udržuje Nohejbal klub Zaječov, obec ho v roce 2026 podpořila 70 tisíci korunami.
+    Vstup je zdarma a bez rezervace — což v praxi znamená, že místní přijdou a kurt je obsazený někým
+    z Hořovic.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">02</span><h3>Rezervační systém a dvojí sazba</h3><span class="who">Obec + spolek</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Problém</dt>
+        <dd>Volně přístupné sportoviště bez rezervace funguje, dokud o něj nemá zájem okolí. Jakmile se
+        rozkřikne, že je zdarma, začne ho využívat širší region — a náklady na údržbu nese obec a místní
+        spolek, zatímco kapacitu spotřebují lidé odjinud.</dd>
+
+        <dt>Řešení</dt>
+        <dd>Rezervační systém s odlišnou sazbou pro obyvatele obce a pro ostatní. Není to výmysl — funguje
+        to v řadě obcí. <strong>Obec Buš</strong> má 50 Kč za hodinu pro své občany a 200 Kč pro ostatní.
+        <strong>Městys Drásov</strong> používá kreditní systém se 100 Kč za hodinu. <strong>TJ Červený
+        Kostelec</strong> nechává členy hrát zdarma a nečleny za 150 Kč.</dd>
+
+        <dt>Sazby</dt>
+        <dd>
+          <table>
+            <thead><tr><th>Návrh pro Zaječov</th><th>Kč / hod.</th></tr></thead>
+            <tbody>
+              <tr class="hi"><td>Občan s trvalým pobytem v obci</td><td>zdarma nebo 20</td></tr>
+              <tr><td>Člen místního spolku</td><td>zdarma</td></tr>
+              <tr><td>Chalupář platící poplatky v obci</td><td>50</td></tr>
+              <tr class="hi"><td>Návštěvník odjinud</td><td>150–200</td></tr>
+              <tr><td>Děti a mládež do 18 let z obce</td><td>zdarma</td></tr>
+            </tbody>
+          </table>
+          <p style="margin:14px 0 0;font-size:.9rem">Symbolická sazba pro místní má smysl i tam, kde by
+          mohla být nula: rezervace, která nic nestojí, se ruší mnohem hůř než ta za dvacet korun.</p>
+        </dd>
+
+        <dt>Systém</dt>
+        <dd>Technicky je to nejjednodušší bod celé stránky. Hotová řešení stojí od stovek korun měsíčně —
+        například <strong>SuperSaaS</strong> nabízí tarify od 150 Kč měsíčně, existují i české systémy
+        zaměřené přímo na kurty. Nastavení je otázka jednoho odpoledne: kdo se registruje, vidí obsazenost
+        a rezervuje si hodinu.
+          <table style="margin-top:10px">
+            <thead><tr><th>Nákladová položka</th><th>Ročně</th></tr></thead>
+            <tbody>
+              <tr><td>Rezervační systém</td><td>2 000 – 6 000 Kč</td></tr>
+              <tr><td>Chytrý zámek s kódem z rezervace</td><td>4 000 – 8 000 Kč jednorázově</td></tr>
+              <tr><td>Informační cedule s QR kódem</td><td>1 500 Kč jednorázově</td></tr>
+              <tr class="hi"><td>Celkem první rok</td><td>do 15 000 Kč</td></tr>
+            </tbody>
+          </table>
+        </dd>
+
+        <dt>Návratnost</dt>
+        <dd>Při dvou hodinách denně od návštěvníků mimo obec v sezóně od dubna do října se systém zaplatí
+        za několik týdnů. Zbytek jde na údržbu kurtů, kterou dnes platí obec a spolek ze svého.</dd>
+
+        <dt>Rozšíření</dt>
+        <dd>Stejný systém zvládne i další prostory — sál Lidového domu, hřiště, případně budoucí coworking
+        ve Zděné. Jeden účet, jedno rozhraní, jedna cedule s QR kódem u každého vchodu.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- HŘIŠTĚ -->
+<section class="wrap rv" id="hriste">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 03</span>
+    <h2>Fotbalové hřiště</h2>
+    <p class="lede">Spravuje TJ Zaječov, největší příjemce obecní podpory — 210 tisíc korun za první
+    pololetí 2026. Hřiště je využité při zápasech a trénincích, mimo ně stojí prázdné.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">03</span><h3>Využít volné časy, ne stavět nové</h3><span class="who">TJ Zaječov</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Turnaje</dt>
+        <dd>Firemní a amatérské turnaje v malé kopané o víkendech mimo soutěžní kalendář. Firmy z Hořovic
+        a Komárova jsou na dosah a za celodenní pronájem hřiště se zázemím se běžně platí několik tisíc.
+        Jeden turnaj měsíčně od jara do podzimu je reálný.</dd>
+
+        <dt>Soustředění</dt>
+        <dd>Mládežnická soustředění mimo sezónu — hřiště, ubytování v budoucí Zděné, strava z kavárny nebo
+        Lidového domu. To je model, kde se tři prostory doplňují a peníze zůstanou v obci. Vyžaduje ale
+        dokončené ubytování, takže je to horizont několika let.</dd>
+
+        <dt>Osvětlení</dt>
+        <dd>Prodlužuje využitelnost o několik hodin denně po většinu roku. Je to investice, ale právě na ni
+        míří <strong>dotace Národní sportovní agentury</strong> — program Regiony podporuje technické
+        zhodnocení sportovišť místního významu až do 70 % nákladů. Pozor na spodní hranici: minimální
+        dotace je 1 milion Kč, takže drobná akce se do programu nevejde a je nutné ji spojit s dalšími
+        úpravami areálu.</dd>
+
+        <dt>Zázemí</dt>
+        <dd>Kiosek s občerstvením při zápasech a akcích — provozovaný spolkem nebo pronajatý. Drobný,
+        ale pravidelný příjem, který dnes odchází mimo obec.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- LIDOVÝ DŮM -->
+<section class="wrap rv" id="lidovy-dum">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 04</span>
+    <h2>Lidový dům</h2>
+    <p class="lede">Jediná budova z celého seznamu, kterou obec sama vlastní a pronajímá. Sál slouží
+    zároveň jako tělocvična pro základní školu — což je zásadní, protože vlastní tělocvičnu obec nemá.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">04</span><h3>Vytížit prázdné hodiny</h3><span class="who">Obec Zaječov</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Dnes</dt>
+        <dd>Dopoledne škola, občas ples nebo obecní akce. Většinu odpolední a večerů stojí prázdný.</dd>
+
+        <dt>Kurzy</dt>
+        <dd>Pravidelný program v prázdných večerech — cvičení, jóga, taneční, kurzy pro seniory,
+        jazyky pro dospělé. Obec nemusí nic organizovat: stačí zveřejnit ceník pronájmu a rezervační
+        kalendář a nechat lektory, aby si sál pronajali sami. Z prázdné budovy se stane budova s programem
+        a s příjmem, aniž by obec cokoli řídila.</dd>
+
+        <dt>Soukromé akce</dt>
+        <dd>Svatby, oslavy, rodinné srazy. Pro místní za zvýhodněnou sazbu, pro ostatní za komerční —
+        stejná logika jako u kurtů.</dd>
+
+        <dt>Kino</dt>
+        <dd>Obec provozuje kino, což je dnes u vsi téhle velikosti rarita. Stojí za to ho využít jako
+        lákadlo, ne jen jako službu — tematické projekce, filmy o Brdech, letní promítání na zahradě
+        nebo na návsi.</dd>
+
+        <dt>Elektrokola</dt>
+        <dd>Nabíjecí stanice pro elektrokola u Lidového domu je už v plánech obce. Dává smysl ji doplnit
+        o důvod, proč u ní zastavit — automat s nápoji, lavička, stojan, informační mapa okolí.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- KLÁŠTER -->
+<section class="wrap rv" id="klaster">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 05</span>
+    <h2>Klášter Svatá Dobrotivá</h2>
+    <p class="lede">Nejstarší a nejcennější stavba v obci — založena 1263, první augustiniánský klášter
+    v českých zemích. Obec ji nevlastní; patří České provincii řádu svatého Augustina, které byla vrácena
+    v roce 1991.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">05</span><h3>Partnerství, ne vlastnictví</h3><span class="who">Řád sv. Augustina</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Realita</dt>
+        <dd>Obec zde nemůže rozhodovat ani investovat do cizího majetku. Vše závisí na tom, zda o spolupráci
+        stojí i řád. To je limit, který je nutné přiznat hned na začátku — všechny následující body jsou
+        podmíněné.</dd>
+
+        <dt>Koncerty</dt>
+        <dd>Akustika klášterních prostor je hodnota sama o sobě. Několik koncertů ročně — komorní hudba,
+        sborový zpěv, adventní a velikonoční program. Nízká frekvence, vysoká hodnota, přesně v duchu
+        principu na začátku stránky.</dd>
+
+        <dt>Expozice</dt>
+        <dd>Stálá expozice o historii obce a kláštera — 763 let na jednom místě, železářství, cvočkařství,
+        období vojenského újezdu, přezdívka obce z doby socialismu. Materiál na to v obci je, jen roztroušený
+        po rodinných albech.</dd>
+
+        <dt>Poutě</dt>
+        <dd>Mariánské poutě se v klášteře konají už dnes. Návaznost okolních služeb — občerstvení, prodej
+        místních výrobků, ubytování — je to, co dnes chybí a co by z jednodenní návštěvy udělalo přínos
+        pro obec.</dd>
+
+        <dt>Kurzy</dt>
+        <dd>Víkendové kurzy a soustředění v klidném prostředí — meditace, psaní, výtvarné dílny. Formát,
+        který přivede desítky lidí ročně, ne tisíce, a který se do klidné obce hodí líp než výletní ruch.</dd>
+
+        <dt>Peníze</dt>
+        <dd>Dotace na obnovu památek jsou dostupné vlastníkovi, tedy řádu, ne obci. Obec může přispět
+        propagací, koordinací akcí a napojením na vlastní služby. I to má hodnotu.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- NÁVES -->
+<section class="wrap rv" id="naves">
+  <div class="sec-head">
+    <span class="eyebrow">Lokalita 06</span>
+    <h2>Náves a park</h2>
+    <p class="lede">Park před obecním úřadem je jedno z mála míst odpočinku v centru. Strategický plán
+    z roku 2016 doporučoval zřídit místní tržiště — nestalo se to a v žádném současném volebním programu
+    to není.</p>
+  </div>
+
+  <div class="place">
+    <div class="place-hd"><span class="n">06</span><h3>Trhy a veřejný prostor</h3><span class="who">Obec Zaječov</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Trh</dt>
+        <dd>Nejlevnější položka z celé stránky. Nevyžaduje stavbu ani povolení k budově — stačí prostranství,
+        pravidelný termín a pár stánků. Jednou měsíčně, v sobotu dopoledne. Zelenina, med, pečivo, sýry,
+        řemeslo. Obec vybírá symbolické stánkovné, které pokryje úklid.</dd>
+
+        <dt>Co to řeší</dt>
+        <dd>Krátký řetězec pro místní producenty, důvod pro obyvatele potkat se, a pro chalupáře důvod
+        přijet dřív než v poledne. Zároveň to prověří poptávku dřív, než se investuje do čehokoli většího.</dd>
+
+        <dt>Mobiliář</dt>
+        <dd>Lavičky, stojany na kola, pitná fontánka, veřejné osvětlení, stín. Do plánů obce už patří
+        odpočinkové zóny — dává smysl je udělat tak, aby na nich šlo pořádat i trh, ne jen sedět.</dd>
+
+        <dt>Voda</dt>
+        <dd>Park je zároveň místo, kde jde ukázat, že obec myslí na sucho — vsakovací záhony, retenční
+        nádrž na dešťovou vodu ze střechy úřadu, stromy se závlahou z ní. Viditelné, levné a přesně to,
+        co studie navrhuje jako první prioritu.</dd>
+
+        <dt>Peníze</dt>
+        <dd>Na veřejná prostranství míří <strong>Středočeský Fond obnovy venkova</strong> — pro obce
+        do 2 000 obyvatel, 1 000 Kč na obyvatele, tedy pro Zaječov kolem 1,5 milionu Kč se spoluúčastí 15 %.
+        Žádosti do června 2028.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- PENÍZE -->
+<section class="wrap rv" id="penize">
+  <div class="sec-head">
+    <span class="eyebrow">Peníze</span>
+    <h2>Kde na to vzít a co to vrátí</h2>
+    <p class="lede">Obec je zadlužená na 97,99 % zákonné hranice a nemůže si dovolit velké vlastní
+    investice. Fiskální pravidlo ale neomezuje dotace — a většina návrhů na této stránce stojí buď málo,
+    nebo nic.</p>
+  </div>
+
+  <div class="block">
+    <h3 style="margin-bottom:14px">Co stojí skoro nic</h3>
+    <table>
+      <thead><tr><th>Opatření</th><th>Náklad</th></tr></thead>
+      <tbody>
+        <tr><td>Rezervační systém pro kurty, sál i hřiště</td><td>do 15 000 Kč</td></tr>
+        <tr><td>Ceník pronájmu Lidového domu a zveřejnění kalendáře</td><td>0 Kč</td></tr>
+        <tr><td>Měsíční trh na návsi</td><td>0 Kč</td></tr>
+        <tr><td>Přehled volných prostor pro drobné podnikání</td><td>0 Kč</td></tr>
+        <tr class="hi"><td>Dvojí sazba pro místní a návštěvníky</td><td>usnesení zastupitelstva</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3 style="margin-bottom:14px">Dotační tituly</h3>
+    <p><span class="tag">obec</span> &nbsp;<strong>Národní sportovní agentura — program Regiony.</strong>
+    Výstavba a technické zhodnocení sportovišť místního významu, až 70 % nákladů. Žadatelem může být obec
+    i spolek. Pozor: minimální dotace 1 mil. Kč, takže drobné akce je nutné spojit do jednoho projektu.
+    Výzvy se vyhlašují každoročně, obvykle s příjmem žádostí přes zimu.</p>
+    <p><span class="tag">obec</span> &nbsp;<strong>Středočeský Fond obnovy venkova.</strong> Obce do 2 000
+    obyvatel, 1 000 Kč na obyvatele, spoluúčast 15 %, žádosti do června 2028. Veřejná prostranství,
+    mobiliář, ale i rychlý internet.</p>
+    <p><span class="tag">spolek</span> &nbsp;<strong>Nadace Via — Místo kde žijeme.</strong> Do 100 000 Kč
+    na komunitní centra a místa k setkávání. Zrychlená varianta do 20 000 Kč. Uzávěrky v lednu, květnu a září.</p>
+    <p><span class="tag">spolek</span> &nbsp;<strong>MAS Brdy.</strong> Programové oblasti IROP, OP TAK
+    a OPZ+ — komunitní infrastruktura, vybavení pro drobné podnikání, sociální podnikání. MAS nabízí
+    bezplatné konzultace před podáním žádosti.</p>
+    <p style="margin-bottom:0"><span class="tag warn">pozor</span> &nbsp;<strong>Dotace na obnovu památek</strong>
+    jsou dostupné vlastníkovi. U kláštera je to řád, ne obec.</p>
+  </div>
+
+  <div class="block">
+    <h3 style="margin-bottom:14px">Co to může vracet</h3>
+    <p>Žádná z položek na této stránce neudělá z Zaječova bohatou obec. Dohromady ale jde o desítky
+    až nižší stovky tisíc korun ročně, které dnes buď nikdo nevybírá, nebo odcházejí mimo obec — a hlavně
+    o to, aby se náklady na údržbu sportovišť a budov nepřenášely výhradně na obecní rozpočet a spolky.</p>
+    <p style="margin-bottom:0">Druhý efekt je těžší vyčíslit, ale není menší: obec, kde je v sobotu trh,
+    v úterý večer cvičení a přes den kde si sednout k práci, je obec, ze které se lidem tolik nechce
+    odjíždět — a do které se chtějí přistěhovat. Zaječov dnes roste výhradně migrací. Toto je způsob,
+    jak v tom pokračovat.</p>
+  </div>
+</section>
+
+<!-- ZDROJE -->
+<section class="wrap rv" id="zdroje">
+  <div class="sec-head">
+    <span class="eyebrow">Ověřitelnost</span>
+    <h2>Zdroje</h2>
+  </div>
+
+  <div class="block">
+    <div class="srcgrp">
+      <h3>Příklady z jiných obcí</h3>
+      <ul>
+        <li>Obec Buš — tenisový kurt, 50 Kč/hod. pro občany obce, 200 Kč/hod. pro ostatní <span class="u">obecbus.cz/tenisovy-kurt-rezervace</span></li>
+        <li>Městys Drásov — rezervace kurtů, kreditní systém, 100 Kč/hod. <span class="u">drasov.cz/rezervace-tenisovych-kurtu</span></li>
+        <li>TJ Červený Kostelec — 150 Kč/hod., členové zdarma <span class="u">tenis-ck.cz</span></li>
+        <li>SuperSaaS — rezervační systém pro sportoviště, tarify od 150 Kč měsíčně <span class="u">supersaas.cz/info/rezervacni-system-tenisove-kurty</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Dotační tituly</h3>
+      <ul>
+        <li>Národní sportovní agentura — investiční výzvy, program Regiony <span class="u">nsa.gov.cz/dotace-investicni</span></li>
+        <li>Středočeský kraj — Fond obnovy venkova 2025–2028 <span class="u">kr-stredocesky.cz</span></li>
+        <li>Nadace Via — Místo kde žijeme <span class="u">nadacevia.cz</span></li>
+        <li>MAS Brdy — IROP, OP TAK, OPZ+ <span class="u">masbrdy.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Data o obci</h3>
+      <ul>
+        <li>Monitor státní pokladny — transfery obce Zaječov, 1. pololetí 2026 <span class="u">monitor.statnipokladna.gov.cz/ucetni-jednotka/00234044</span></li>
+        <li>Strategický plán rozvoje obce Zaječov 2017–2026 — doporučení zřídit místní tržiště</li>
+        <li>Spolek Zděná 2012 <span class="u">zdenazajecov.cz</span></li>
+        <li>Studie <a href="index.html">Zaječov 1263 → 2046</a> — demografie, hospodaření, územní plán</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <h3>Co to je a co to není</h3>
+      <p>Tato stránka navazuje na studii <a href="index.html">Zaječov 1263 → 2046</a>, konkrétně na prioritu
+      „živá obec: místní ekonomika“. Studie popisuje, co obec čeká. Tato stránka nabízí, co se s tím dá
+      dělat s tím, co už v obci stojí.</p>
+      <p>Není to stanovisko obce, spolků ani volebního uskupení. Je to návrh k diskusi, postavený na
+      veřejných datech a na ověřených příkladech z jiných obcí. Řada bodů závisí na souhlasu třetích stran —
+      spolků, řádu, vlastníků — a to je v textu vždy uvedeno.
+      <strong>Opravy a doplnění vítám.</strong></p>
+    </div>
+    <div class="foot-rule">
+      <span><a href="index.html">← Studie Zaječov 1263 → 2046</a></span>
+      <span>Volby do zastupitelstva 9.–10. října 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+  els.forEach(function(el){ io.observe(el); });
+})();
+/* aktivni polozka menu podle pozice */
+(function(){
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  if(!secs.length||!('IntersectionObserver' in window))return;
+  var vis={};
+  var spy=new IntersectionObserver(function(es){
+    es.forEach(function(e){vis[e.target.id]=e.isIntersecting?e.intersectionRatio:0;});
+    var best=null,bv=0;secs.forEach(function(s){var v=vis[s.id]||0;if(v>bv){bv=v;best=s.id;}});
+    links.forEach(function(a){a.classList.toggle('on',best!==null&&a.getAttribute('href')==='#'+best);});
+  },{rootMargin:'-52px 0px -55% 0px',threshold:[0,0.15,0.35,0.6,1]});
+  secs.forEach(function(s){spy.observe(s);});
+})();
+</script>
+</body>
+</html>

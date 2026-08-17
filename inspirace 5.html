@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Co funguje jinde · Inspirace pro Zaječov z jiných obcí</title>
+<meta name="description" content="Ověřené příklady z jiných českých obcí — voda, senioři, energetika, odpady, zapojení občanů. Co by se dalo převést do Zaječova, včetně zdrojů.">
+<meta name="author" content="Petra Pavlisová">
+<link rel="canonical" href="https://petrapavlis.github.io/zajecov/inspirace.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Zaječov 2026–2046">
+<meta property="og:title" content="Co funguje jinde: inspirace pro Zaječov">
+<meta property="og:description" content="Ověřené příklady z českých obcí — co funguje a co by se dalo převést do Zaječova.">
+<meta name="theme-color" content="#2E4A39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2e4a39; --green-soft:#7a9484; --rust:#a8613f;
+  --paper:#f7f6f1; --paper-2:#efeee6; --rule:#dcdbd1; --rule-2:#c9c8bc;
+  --ink:#2e332f; --ink-soft:#666b64; --maxw:940px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Libre Franklin",system-ui,sans-serif;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+h1,h2{font-family:"Archivo",system-ui,sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green)}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-family:"Libre Franklin",sans-serif;font-size:1.12rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
+p{margin:0 0 1em}
+a{color:var(--rust);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--green)}
+strong{font-weight:600;color:var(--green)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:block;margin:0 0 1.4em}
+.lede{font-size:1.08rem;color:var(--ink-soft)}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,241,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:20px;height:52px}
+.nav-mark{font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+.nav-mark span{color:var(--rust)}
+.nav-links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.on{color:var(--rust);border-bottom-color:var(--rust)}
+.nav-sep{flex:none;width:1px;align-self:center;height:22px;background:var(--rule-2)}
+.nav-sib{flex:none;display:flex;align-items:center;gap:9px}
+.nav-cta{flex:none;display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);text-decoration:none;white-space:nowrap;border:1px solid var(--rust);border-radius:3px;padding:7px 11px;transition:background .2s,color .2s}
+.nav-cta:hover,.nav-cta:focus-visible{background:var(--rust);color:var(--paper)}
+@media(max-width:720px){.nav-in{gap:12px}.nav-links{display:none}.nav-sep{display:none}.nav-sib{margin-left:auto;gap:8px}.nav-cta{padding:8px 11px;font-size:.62rem;letter-spacing:.08em}}@media(max-width:380px){.nav-cta{padding:7px 9px;font-size:.58rem;letter-spacing:.06em}}
+section[id]{scroll-margin-top:52px}
+
+.hero{padding:44px 26px 0}
+.stamp{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 30px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.stamp i{font-style:normal;color:var(--rule-2)}
+.thesis{font-family:"Archivo",system-ui,sans-serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.45;color:var(--ink-soft);max-width:40ch;margin:24px 0 0}
+.thesis b{color:var(--green);font-weight:700}
+.byline{border-top:1px solid var(--rule);margin-top:30px;padding:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 30px;font-size:.88rem;color:var(--ink-soft)}
+.byline b{color:var(--green);font-weight:600}
+.notice{border-left:3px solid var(--rust);padding:2px 0 2px 16px;margin:26px 0 8px;font-size:.88rem;color:var(--ink-soft)}
+.back{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin:24px 0 0}
+
+section.wrap{padding-top:88px;padding-bottom:72px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{margin-bottom:36px;max-width:62ch}
+
+.block{background:#fff;border:1px solid var(--rule);padding:26px 28px}
+.block+.block{margin-top:16px}
+
+/* karta lokality */
+.place{background:#fff;border:1px solid var(--rule);padding:0;margin-bottom:20px}
+.place-hd{padding:22px 28px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.place-hd .n{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--rust);font-weight:700}
+.place-hd h3{font-family:"Archivo",sans-serif;font-size:1.32rem;font-weight:600;letter-spacing:-.015em}
+.place-hd .who{font-family:"JetBrains Mono",monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
+.place-body{padding:16px 28px 26px}
+.place dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 20px}
+.place dt{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);padding-top:.42em}
+.place dd{margin:0 0 14px}
+.place dd:last-child{margin-bottom:0}
+.place ol,.place ul{margin:.4em 0 0;padding-left:1.2em}
+.place li{margin-bottom:.35em}
+.place li::marker{color:var(--green-soft)}
+@media(max-width:640px){.place dl{grid-template-columns:1fr;gap:0}.place dt{margin-top:14px}.place-hd .who{margin-left:0}.place-body{padding-left:20px;padding-right:20px}.place dl,.place dd{min-width:0}.place table,.block table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:6px}
+th,td{padding:9px 0;text-align:left;border-top:1px solid var(--rule)}
+th{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);border-top:0}
+td:last-child,th:last-child{text-align:right;font-family:"JetBrains Mono",monospace;font-size:.85rem;white-space:nowrap}
+tr.hi td{color:var(--rust);font-weight:700}
+tr.hi td:first-child{color:var(--green)}
+
+.grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.grid>*{background:#fff;padding:22px 24px}
+@media(max-width:720px){.g3{grid-template-columns:1fr}}
+.stat .num{font-family:"Archivo",sans-serif;font-weight:700;color:var(--rust);font-size:2.1rem;line-height:1;letter-spacing:-.03em;display:block;margin-bottom:9px}
+.stat b{display:block;color:var(--green);font-size:.9rem;margin-bottom:4px}
+.stat span.t{font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+
+.tag{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.63rem;letter-spacing:.12em;color:var(--green);border:1px solid var(--green);padding:3px 9px;display:inline-block}
+.tag.warn{color:var(--rust);border-color:var(--rust)}
+
+.srcgrp{margin-bottom:22px}
+.srcgrp:last-child{margin-bottom:0}
+.srcgrp h3{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.srcgrp ul{list-style:none;margin:0;padding:0}
+.srcgrp li{padding:8px 0;font-size:.87rem;border-top:1px solid var(--rule);line-height:1.5}
+.srcgrp li:first-child{border-top:0}
+.srcgrp .u{display:block;font-family:"JetBrains Mono",monospace;font-size:.71rem;color:var(--ink-soft);margin-top:2px}
+
+footer{background:var(--paper-2);border-top:1px solid var(--rule)}
+.foot{padding:50px 0 28px;font-size:.92rem;max-width:66ch}
+.foot h3{font-family:"Archivo",sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
+.foot-rule{border-top:1px solid var(--rule-2);padding:16px 0 40px;font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+@media print{.nav{display:none}.rv{opacity:1;transform:none}section.wrap{padding:14pt 0}.place{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Obsah stránky">
+  <div class="nav-in">
+    <a class="nav-mark" href="#top">Inspirace <span>odjinud</span></a>
+    <div class="nav-links">
+      <a href="#princip">Princip</a>
+      <a href="#voda">Voda</a>
+      <a href="#seniori">Senioři</a>
+      <a href="#energie">Energie</a>
+      <a href="#ekonomika">Ekonomika</a>
+      <a href="#odpady">Odpady</a>
+      <a href="#zapojeni">Zapojení</a>
+      <a href="#skoly">Škola</a>
+      <a href="#souteze">Soutěže</a>
+      <a href="#zdroje">Zdroje</a>
+    </div>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <div class="nav-sib">
+      <a class="nav-cta" href="index.html">←&nbsp;Studie</a>
+      <a class="nav-cta" href="prostory.html">Prostory&nbsp;→</a>
+    </div>
+  </div>
+</nav>
+<header class="wrap hero" id="top">
+  <p class="stamp"><span>Zaječov · Kvaň · Nová Ves</span><i>/</i><span>Navazuje na studii 1263 → 2046</span><i>/</i><span>Srpen 2026</span></p>
+  <h1>Co funguje jinde</h1>
+  <p class="thesis">Zaječov nemusí nic vymýšlet. Většina toho, co obec potřebuje — <b>voda v krajině, péče o seniory, živá škola, nižší účty za odpad</b> — už někde v Česku funguje. Toto je výběr ověřených příkladů a to, co z nich jde převést sem.</p>
+  <div class="byline">
+    <span><b>Inspirace z jiných obcí a dotačních programů</b></span>
+    <span>Petra Pavlisová</span>
+    <span>Zpracováno z veřejných zdrojů</span>
+  </div>
+  <div class="notice">
+    Občanský přehled, ne stanovisko obce ani volebního uskupení. Každý příklad odkazuje na konkrétní obec, program nebo zákon — zdroje jsou dole na stránce. Návrh k diskusi, ne hotové řešení.
+  </div>
+  <a class="back" href="index.html">← zpět na studii Zaječov 1263 → 2046</a>
+</header>
+<section class="wrap rv" id="princip">
+  <div class="sec-head">
+    <span class="eyebrow">Princip</span>
+    <h2>Přebírat, ne vymýšlet</h2>
+    <p class="lede">Cílem není zkopírovat cizí obec. Cílem je vzít to, co jinde prokázaně funguje, a přizpůsobit to tomu, na čem je Zaječov: malá lesní obec, zadlužená na 98 %, stárnoucí, s jedním obecním domem.</p>
+  </div>
+  <div class="grid g3">
+    <div class="stat">
+      <span class="num">1.</span>
+      <b>Ověřené před novým</b>
+      <span class="t">Každý nápad na této stránce už někde běží. Víme tedy, kolik stál a co přinesl — není to experiment na účet Zaječova.</span>
+    </div>
+    <div class="stat">
+      <span class="num">2.</span>
+      <b>Dotace, ne úvěry</b>
+      <span class="t">Při dluhu na 98 % zákonné hranice obec nemůže brát nové úvěry. Fiskální pravidlo ale <strong>neomezuje dotace</strong> — a většina příkladů stojí právě na nich.</span>
+    </div>
+    <div class="stat">
+      <span class="num">3.</span>
+      <b>Malé kroky, ne velké stavby</b>
+      <span class="t">Valašské Klobouky udělaly tůně za 70 tisíc, ne za miliony. Malá obec vyhrává tam, kde začne skromně a osvědčené pak rozšíří.</span>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="voda">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 01</span>
+    <h2>Voda a krajina</h2>
+    <p class="lede">Zaječov má vodní plochy na 0,7 % katastru a rok 2025 byl nejsušší v paměti. Navíc právě teď běží pozemkové úpravy (2024–2027), do jejichž plánu lze na náklady státu vepsat tůně a meze. Jinde to zvládli levně a rychle.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">01</span><h3>Soustava tůní za 70 tisíc</h3><span class="who">Valašské Klobouky</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Město si nechalo vytipovat riziková místa a v nivě potoka vybudovalo soustavu tří propojených tůní. Kromě zadržení vody mají i edukační a rekreační hodnotu.</dd>
+        <dt>Čísla</dt>
+        <dd>Celkové náklady jen <strong>70 600 Kč</strong>, z toho vlastní podíl obce pouhých <strong>14 334 Kč</strong> — zbytek pokryla dotace MŽP (Podpora obnovy přirozených funkcí krajiny). Objem vody v tůních 174 m³.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Přesně naplňuje opatření VH 1, VH 2 a VH 3, která jsou v územním plánu od roku 2012, ale nikdy se nerealizovala. Viditelný a levný projekt, který jde stihnout rychle.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">02</span><h3>Tůně, které drží přes 2000 m³</h3><span class="who">obec Páleč</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Ve dvou etapách přibylo v nivě potoka pět mokřadních tůní bez technických prvků — jen vyhloubení v zatravněné nivě.</dd>
+        <dt>Čísla</dt>
+        <dd>Tůně akumulují <strong>přes 2 000 m³ vody</strong> a v praxi drží víc, než počítal projektant — po nastoupání dokonce přetékají i v suchém období.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Ukazuje, že i bez drahých technických prvků (hráze, stavidla) vznikne funkční retence. Ideální model pro pozemky, které obec získá při scelování parcel.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">03</span><h3>14 tůní rukama správce lesa</h3><span class="who">Lesy ČR + AOPK</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Státní podnik Lesy ČR vytvořil ve středních a jižních Čechách 14 tůní a mokřadů ve spolupráci s Agenturou ochrany přírody, financí z OPŽP.</dd>
+        <dt>Čísla</dt>
+        <dd>Jednotlivé projekty stály <strong>431–575 tisíc Kč</strong>, jeden z nich přímo ve středočeské pramenné části povodí. Hladinu zvedaly zemními valy z vykopané zeminy.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>60 % katastru je les spravovaný převážně Vojenskými lesy. Obec sama nemusí investovat — může být iniciátorem a přizvat VLS či Lesy ČR jako partnera, který to zaplatí z dotace.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="seniori">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 02</span>
+    <h2>Senioři a péče</h2>
+    <p class="lede">Seniorů v Zaječově přibylo za dvacet let o 52 %, obec nemá žádné pobytové zařízení ani dům s pečovatelskou službou. Vlastní domov nikdy nepostaví — ale jinde ukázali, jak jinak.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">04</span><h3>Koncepce sociálního bydlení v malé obci</h3><span class="who">obec Křižánky</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Malá obec si zpracovala vlastní koncepci sociálního bydlení — analýzy, mapování potřeb a pilotní ověření v praxi, ve spolupráci s MPSV. Financováno z ESF / OP Zaměstnanost.</dd>
+        <dt>Čísla</dt>
+        <dd>Náklady na samotnou koncepci nese z většiny dotace; obec získá systémový plán, ne jen jednotlivé byty naslepo.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Přesně odpovídá tvému bodu „péče o seniory po krocích“. Kombinace startovacích bytů pro mladé a bezbariérových pro seniory v jednom objektu je dotačně podporovaná a provozně schůdná.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">05</span><h3>Každoroční dotace na aktivní stárnutí</h3><span class="who">MPSV — Obec přátelská seniorům</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Národní dotační titul financuje mezigenerační akce, poradenství, semináře a rozvoj míst přátelských seniorům. Vyhlašuje se každý rok.</dd>
+        <dt>Čísla</dt>
+        <dd>V roce 2025 se rozdělilo <strong>téměř 16 milionů Kč</strong> mezi 31 obcí. Existuje samostatná kategorie <strong>do 800 obyvatel</strong> i 801–5000 — uspívají i malé obce jako Javorek či Čepřovice.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Levný způsob, jak nastartovat odlehčovací službu, koordinátora sociální pomoci a rozvoz obědů, které navrhuje studie — bez zátěže obecního rozpočtu.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="energie">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 03</span>
+    <h2>Energetika a rozpočet</h2>
+    <p class="lede">Fiskální pravidlo neomezuje dotace, ale nové úvěry ano. Jak přesto investovat ukazuje nejznámější český příklad energetické soběstačnosti.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">06</span><h3>Energeticky soběstačná obec</h3><span class="who">obec Kněžice</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Obec s ~500 obyvateli si postavila bioplynovou stanici a kotelnu na biomasu. Vyrábí vlastní elektřinu i teplo, které odebírá 94 % domácností. Bioplynka navíc nahradila ČOV a zpracovává bioodpad.</dd>
+        <dt>Čísla</dt>
+        <dd>Investice 138 mil. Kč, z toho <strong>95 mil. dotace</strong> (ERDF + SFŽP), zbytek úvěr splácený z prodeje elektřiny. Odpočet ČOV a kanalizace ušetřil ~45 mil. Kč.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Celý rozsah Kněžic je nad síly Zaječova, ale platí z toho princip <strong>jedno řešení s více efekty</strong> (energie + odpad + příjem) a logika „dotace táhnou, úvěr splácí provoz“.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">07</span><h3>Sdílení elektřiny mezi obcí a občany</h3><span class="who">lex OZE II · ERÚ</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Od července 2024 lze v ČR zakládat energetická společenství (až 1000 členů) a sdílet elektřinu. Obec dá FVE na školu, úřad či vodárnu a výrobu sdílí s občany.</dd>
+        <dt>Čísla</dt>
+        <dd>Registrace u Energetického regulačního úřadu; existuje i veřejná mapa společenství (mapa.uken.cz), kde si obec najde nejbližší projekt.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Naplňuje tvůj bod „uvolnit komerční fotovoltaiku na obecních budovách“ — podmínkou je ale změna územního plánu, který ji dnes na celém území zakazuje. Konkrétní úkol pro nové zastupitelstvo.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="ekonomika">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 04</span>
+    <h2>Místní ekonomika</h2>
+    <p class="lede">Navazuje přímo na stránku <a href="prostory.html">Prostory Zaječova</a> — Zděná, Lidový dům, náves. Jak udržet obslužnost a oživit prostory ukazují dva nástroje.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">08</span><h3>Až 130 tisíc na záchranu prodejny</h3><span class="who">MPO — Obchůdek 2021+</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Provozní dotace pro jedinou prodejnu v obci do 1000 obyvatel — na mzdy, nájem, energie, internet i na bezobslužné (hybridní) prodejny 24/7. Program prodloužen až do roku 2028.</dd>
+        <dt>Čísla</dt>
+        <dd>Prodejna, která je v obci jediná, může získat <strong>až 130 000 Kč</strong>. Jen v poslední výzvě bylo podpořeno přes 600 obchodů.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Pojistka obslužnosti pro místní části Kvaň a Nová Ves. Hybridní automat řeší i lokality, kde by klasický obchod neuživil.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">09</span><h3>Peníze na komunitní prostory</h3><span class="who">MAS — metoda LEADER</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Místní akční skupiny rozdělují dotace „zdola“ na komunitní infrastrukturu a drobné sousedské projekty (OP TAK, IROP, OPZ+) a nabízejí bezplatné konzultace.</dd>
+        <dt>Čísla</dt>
+        <dd>Např. MAS Český sever přímo financuje drobné komunitní projekty; MAS Brdy má výzvy pro malé podniky i vlastníky památek.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Dotační rámec pro kavárnu a coworking ve Zděné a sdílenou pracovnu v Lidovém domě. Pro obec bez velkého úřadu nejsnazší cesta k penězům.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="odpady">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 05</span>
+    <h2>Odpady, které šetří rozpočet</h2>
+    <p class="lede">Od roku 2030 platí zákaz skládkování využitelných odpadů a poplatky rostou už teď. Jeden systém to řeší — a navíc šetří peníze, takže je průchozí i při dluhu.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">10</span><h3>Plať za to, co vyhodíš (PAYT)</h3><span class="who">např. Olomoucký kraj</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Každá popelnice dostane RFID čip, svozový vůz při výsypu automaticky zaznamená svoz. Domácnost platí podle skutečně vyprodukovaného směsného odpadu, ne paušál.</dd>
+        <dt>Čísla</dt>
+        <dd>Směsný odpad klesá v průměru o <strong>10–30 %</strong>, návratnost systému <strong>2–3 roky</strong>. Cena čipu jen desítky korun. V praxi zapojeno ~90 obcí Olomouckého kraje.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Tvůj bod „plať za to, co vyhodíš“ má teď tvrdá čísla pro argumentaci — a je to opatření, které <strong>šetří</strong> provozní rozpočet, tedy průchozí i při dluhu na 98 %.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="zapojeni">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 06</span>
+    <h2>Zapojení občanů a chytřejší řízení</h2>
+    <p class="lede">Zaječov má tři místní části a malý úřad. Tři nástroje pomáhají zapojit lidi a zvládnout administrativu — a v prvním z nich malé obce dokonce vedou.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">11</span><h3>Participativní rozpočet — a malé obce vedou</h3><span class="who">např. Vír, Ratměřice</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Obec vyčlení část rozpočtu a občané sami navrhují a hlasují, na co se použije (lavičky, hřiště, stromy). Posiluje důvěru a odhalí potřeby, o kterých obec nevěděla.</dd>
+        <dt>Čísla</dt>
+        <dd>V roce 2024 ho použilo <strong>94 obcí</strong>. Nejaktivnější jsou právě malé — v obci Vír a Bystřici n. P. hlasovalo <strong>až 13 % obyvatel</strong>, nejvíc návrhů na obyvatele měl Neustupov a Ratměřice.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Levný způsob, jak zapojit Kvaň a Novou Ves a otestovat, co lidé opravdu chtějí — ideální doplněk k novému strategickému plánu.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">12</span><h3>Sdílený úředník pro malé obce</h3><span class="who">Společenství obcí Čáslavsko</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Nová legislativa umožňuje transformovat svazek obcí na „společenství obcí“ se sdíleným úředníkem, který zvládá administrativu za menší obce.</dd>
+        <dt>Čísla</dt>
+        <dd>Čáslavsko takto spojilo přes 20 obcí a sdílí např. pověřence GDPR či financování dopravní obslužnosti.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Cesta, jak zvládnout rostoucí administrativu (odpady, sociálno) bez navýšení nákladů — přes Mikroregion Hořovicko.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">13</span><h3>Chytrá komunikace s občany</h3><span class="who">Mobilní rozhlas / Digiregion</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>SMS, mobilní aplikace a infokanál propojené s webem a úřední deskou. Občan vyfotí černou skládku či výmol, obec dostane hlášení; krizová upozornění dojdou okamžitě.</dd>
+        <dt>Čísla</dt>
+        <dd>Nasazení za 1–2 měsíce bez nutnosti nového zaměstnance; jedna informace se promítne na web, do mobilů i na úřední desku najednou.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Naplňuje tvůj bod „systém obvolání seniorů“ a krizovou odolnost; zároveň oživí spolkový život napříč třemi částmi obce.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="skoly">
+  <div class="sec-head">
+    <span class="eyebrow">Téma 07</span>
+    <h2>Mládež a vzdělávání</h2>
+    <p class="lede">Zaječov má vzácnost — úplnou školu 1. až 9. třídy i vlastní školku. Nejde tedy stavět, ale to, co obec má, udržet a chytře financovat. Kolem školy se teď vede debata o střeše a tělocvičně; tyto příklady a dotace pomůžou obě věci rozhodnout věcně.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">14</span><h3>Střecha a opravy školy</h3><span class="who">MF ČR · program pro obce do 3000</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Národní dotační program Ministerstva financí na opravy a modernizace ZŠ a MŠ zřizovaných obcemi — včetně <strong>obnovy či výměny střechy</strong>, oken, zateplení, kotelny a rozvodů.</dd>
+        <dt>Čísla</dt>
+        <dd>Pro obce do 3 000 obyvatel, dotace <strong>až 70 %</strong> nákladů, způsobilé výdaje 2–20 mil. Kč. Pozor: program novou tělocvičnu z této výzvy výslovně vylučuje.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Rekonstrukce střechy je nutná údržba, kterou lze dobře financovat. Klíčové je <strong>oddělit ji od tělocvičny</strong> — jsou to dva různé projekty s různou nutností i dotační cestou.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">15</span><h3>Tělocvična — kudy na ni</h3><span class="who">NSA · MMR Školní hřiště a tělocvičny</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Realita</dt>
+        <dd>Hlavní školní dotace (MF, MŠMT) novou tělocvičnu <strong>vylučují</strong>. Zůstávají dvě cesty: Národní sportovní agentura (programy Regionální / Kabina) a program MMR Školní hřiště a tělocvičny.</dd>
+        <dt>Čísla</dt>
+        <dd>MMR: dotace 500 tis.–5 mil. Kč, <strong>70–80 %</strong>, pro obce do 10 000 se školou — a důležité: financuje tělocvičnu, <strong>i když škola dnes využívá jinou obecní budovu</strong>. NSA má ale spodní hranici dotace 1 mil. Kč.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Sál Lidového domu dnes jako tělocvična pro školu slouží a protočí se jím devět ročníků, sto sedmdesát žáků. Otázka tedy není nula, ale <strong>zda kapacita stačí</strong>. To má zodpovědět demografická prognóza, ne pocit. Podmínka MMR: placené mimoškolní využití max. 20 % kapacity.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">16</span><h3>Úplná devítiletka — aktivum, které jiné obce ztrácejí</h3><span class="who">MŠMT · demografická data</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Ne každá vesnice má úplnou školu 1.–9. třídy. Na perifériích druhý stupeň ubývá, malé školy se slučují a děti dojíždějí za vzděláním jinam. MŠMT proto vede demografickou predikci kapacit škol pro každé ORP.</dd>
+        <dt>Čísla</dt>
+        <dd>Zaječovská škola má <strong>170 žáků</strong> v devíti ročnících a <strong>61 dětí ve školce</strong>, stará se o ně 36 zaměstnanců. Je spádová pro Olešnou a dojíždějí i děti z Jiviny, Tění, Komárova, Hořovic a Strašic.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>MŠ i ZŠ už stojí — <strong>stavět nové netřeba</strong>. Úkol je opačný: plnou školu udržet a modernizovat. Fond rozvoje kapacit MŠMT financuje i přístavby, nové třídy a rekonstrukce stávajících budov. Je to hotový magnet na mladé rodiny, který řada obcí nemá.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">17</span><h3>Náklady na dojíždějící žáky ať nese i okolí</h3><span class="who">školský zákon · mikroregion</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co to je</dt>
+        <dd>Když dítě chodí do školy v jiné obci, než kde bydlí, má jeho domovská obec přispívat na neinvestiční náklady školy. Svazková škola nebo dohody obcí tento vztah narovnají a zprůhlední.</dd>
+        <dt>Čísla</dt>
+        <dd>Zaječovská škola je spádová i pro okolí — část provozních nákladů proto logicky patří i obcím, odkud děti dojíždějí. Bez dohody je nese jen Zaječov.</dd>
+        <dt>Pro Zaječov</dt>
+        <dd>Škola už funguje jako regionální — chodí do ní děti z Olešné, Komárova, Hořovic i Strašic. Přes Mikroregion Hořovicko lze sdílení nákladů i budoucí investice (třeba tělocvičnu) rozložit na víc obcí.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="souteze">
+  <div class="sec-head">
+    <span class="eyebrow">Kde brát inspiraci dál</span>
+    <h2>Soutěže a katalogy dobré praxe</h2>
+    <p class="lede">Tři zdroje, odkud lze čerpat ověřené příklady — a v jednom případě i nemalé peníze a prestiž.</p>
+  </div>
+  <div class="block">
+    <div class="srcgrp">
+      <h3>Soutěž, která navíc platí</h3>
+      <ul>
+        <li><strong>Vesnice roku.</strong> Pro obce se strategickým dokumentem. Hodnotí spolkový život, podnikání, veřejná prostranství, zeleň a péči o seniory. <strong>Zlatá stuha = dotace 1,25 mil. Kč</strong>, Modrá stuha 800 tis., Bílá stuha za práci se seniory a mládeží. <span class="u">vesniceroku.cz</span></li>
+        <li><strong>Proč Zaječov:</strong> nový strategický plán je vstupenkou; soutěž je způsob, jak zviditelnit klášter a spolky a získat peníze mimo fiskální pravidlo.</li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Dotační titul pro seniory a rodiny</h3>
+      <ul>
+        <li><strong>Obec přátelská rodině a seniorům (MPSV).</strong> Každoročně, samostatná kategorie do 800 obyvatel. Financuje mezigenerační aktivity a poradenství. <span class="u">mpsv.gov.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Katalog ověřených řešení</h3>
+      <ul>
+        <li><strong>Databáze Dobrá praxe</strong> (Národní síť Zdravých měst). Prohledávatelný rozcestník projektů obcí podle témat — voda, senioři, energetika, odpady. <span class="u">dobrapraxe.cz</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="zdroje">
+  <div class="sec-head">
+    <span class="eyebrow">Ověřitelnost</span>
+    <h2>Zdroje</h2>
+  </div>
+  <div class="block">
+    <div class="srcgrp">
+      <h3>Voda a krajina</h3>
+      <ul>
+        <li>Valašské Klobouky — zadržování vody v krajině, soustava tůní <span class="u">zp.dobrapraxe.cz/valasske-klobouky-zadrzovani-vody-v-krajine</span></li>
+        <li>Pálečský statek — mokřadní tůně Páleč a Jarpice <span class="u">palecskystatek.cz/projekty/zadrzovani-vody-v-krajine-projekt</span></li>
+        <li>Lesy ČR — čtrnáct nových tůní a mokřadů <span class="u">lesycr.cz · vracimevodulesu.cz</span></li>
+        <li>Experti (VÚV TGM, PřF UK) — kombinace opatření v krajině a nádrží <span class="u">voda.tzb-info.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Senioři a bydlení</h3>
+      <ul>
+        <li>Křižánky — koncepce sociálního bydlení v malé obci <span class="u">socialni.dobrapraxe.cz/krizanky-3</span></li>
+        <li>MPSV — Obec přátelská rodině a seniorům 2025/2026 <span class="u">mpsv.gov.cz/obec-pratelska-rodine-a-seniorum-2026</span></li>
+        <li>MMR — Příběhy dostupného bydlení (portál Obec ON) <span class="u">mmr.gov.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Energetika</h3>
+      <ul>
+        <li>Obec Kněžice — bioplynová stanice a kotle na biomasu <span class="u">czechinvest.gov.cz · knezice.cz</span></li>
+        <li>MŽP — energetická společenství (komunitní energetika) <span class="u">mzp.gov.cz</span></li>
+        <li>ERÚ — sdílení elektřiny, lex OZE II <span class="u">eru.gov.cz/sdileni-elektriny-energeticka-spolecenstvi</span></li>
+        <li>Mapa energetických komunit ČR <span class="u">mapa.uken.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Škola a vzdělávání</h3>
+      <ul>
+        <li>ZŠ a MŠ Zaječov — počty žáků a spádová oblast <span class="u">zszajecov.cz</span></li>
+        <li>MF ČR — program na opravy a rozvoj ZŠ/MŠ pro obce do 3000 (vč. střechy) <span class="u">dotaceproobce.cz/dotace/materske-a-zakladni-skoly</span></li>
+        <li>MMR — Školní hřiště a tělocvičny (obce do 10 000 se školou) <span class="u">dotaceproobce.cz/dotace/skolni-hriste-a-telocvicny</span></li>
+        <li>Národní sportovní agentura — investiční výzvy (Regionální, Kabina) <span class="u">nsa.gov.cz/dotace-investicni</span></li>
+        <li>MŠMT — Fond rozvoje kapacit MŠ a ZŠ; demografická predikce kapacit škol <span class="u">msmt.gov.cz</span></li>
+        <li>Svazkové školy, spojená ředitelství a příspěvek na neinvestiční náklady <span class="u">edu.gov.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Místní ekonomika a odpady</h3>
+      <ul>
+        <li>MPO — program Obchůdek 2021+ <span class="u">mpo.gov.cz/program-obchudek-2021</span></li>
+        <li>MMR / NS MAS — komunitně vedený místní rozvoj (CLLD, LEADER) <span class="u">mmr.gov.cz · nsmascr.cz</span></li>
+        <li>PAYT — plať za to, co vyhodíš <span class="u">promestaobce.cz · meneodpadu.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Zapojení a soutěže</h3>
+      <ul>
+        <li>Agora CE — mapa participativních rozpočtů <span class="u">participativni-rozpocet.cz</span></li>
+        <li>Společenství obcí Čáslavsko — sdílený úředník <span class="u">kvalitavs.gov.cz</span></li>
+        <li>Mobilní rozhlas / Digiregion — chytrá komunikace <span class="u">digiregion.cz</span></li>
+        <li>Vesnice roku — o soutěži a ocenění <span class="u">vesniceroku.cz/o-soutezi</span></li>
+        <li>Databáze Dobrá praxe (NSZM) <span class="u">dobrapraxe.cz</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <h3>Co to je a co to není</h3>
+      <p>Tato stránka navazuje na studii <a href="index.html">Zaječov 1263 → 2046</a> a na návrh <a href="prostory.html">Prostory Zaječova</a>. Studie popisuje, co obec čeká; Prostory nabízejí, co dělat s tím, co už stojí; a tato stránka ukazuje, co už jinde v Česku funguje.</p>
+      <p>Není to stanovisko obce, spolků ani volebního uskupení. Každý příklad má uvedený zdroj a je přenositelný jen částečně — záleží na místních podmínkách a souhlasu třetích stran. <strong>Opravy a doplnění vítám.</strong></p>
+    </div>
+    <div class="foot-rule">
+      <span><a href="index.html">← Studie</a> · <a href="prostory.html">Prostory Zaječova</a></span>
+      <span>Volby do zastupitelstva 9.–10. října 2026</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -6% 0px',threshold:0.04});
+  els.forEach(function(el){io.observe(el);});
+})();
+/* aktivni polozka menu podle pozice */
+(function(){
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  if(!secs.length||!('IntersectionObserver' in window))return;
+  var vis={};
+  var spy=new IntersectionObserver(function(es){
+    es.forEach(function(e){vis[e.target.id]=e.isIntersecting?e.intersectionRatio:0;});
+    var best=null,bv=0;secs.forEach(function(s){var v=vis[s.id]||0;if(v>bv){bv=v;best=s.id;}});
+    links.forEach(function(a){a.classList.toggle('on',best!==null&&a.getAttribute('href')==='#'+best);});
+  },{rootMargin:'-52px 0px -55% 0px',threshold:[0,0.15,0.35,0.6,1]});
+  secs.forEach(function(s){spy.observe(s);});
+})();
+</script>
+</body>
+</html>
