@@ -13,7 +13,7 @@
 <meta property="og:title" content="Prostory Zaječova: co už stojí a jak to oživit">
 <meta property="og:description" content="Šest míst, která už v obci jsou. Návrh, jak je využít tak, aby sloužila místním a zároveň něco vracela do rozpočtu.">
 <meta name="theme-color" content="#2E4A39">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M9 27V13h14v14'/%3E%3Cpath d='M11 13C10 9 13 6 16 4c3 2 6 5 5 9z'/%3E%3Ccircle cx='16' cy='3' r='1.3'/%3E%3Cpath d='M16 1.7V-1M14.4 0h3.2'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -27,10 +27,10 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Libre Franklin",system-ui,sans-serif;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-h1,h2{font-family:"Archivo",system-ui,sans-serif;line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green)}
-h1{font-size:clamp(2.2rem,6.5vw,3.6rem);font-weight:700;letter-spacing:-.03em}
-h2{font-size:clamp(1.5rem,3.6vw,2.15rem)}
-h3{font-family:"Libre Franklin",sans-serif;font-size:1.1rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
+h1,h2{font-family:"Archivo",system-ui,sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green)}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-family:"Libre Franklin",sans-serif;font-size:1.12rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
 p{margin:0 0 1em}
 a{color:var(--rust);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{color:var(--green)}
@@ -44,8 +44,9 @@ strong{font-weight:600;color:var(--green)}
 .nav-mark span{color:var(--rust)}
 .nav-links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;min-width:0}
 .nav-links::-webkit-scrollbar{display:none}
-.nav-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;border-bottom:2px solid transparent}
+.nav-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:hover{color:var(--green)}
+.nav-links a.on{color:var(--rust);border-bottom-color:var(--rust)}
 .nav-sep{flex:none;width:1px;align-self:center;height:22px;background:var(--rule-2)}
 .nav-cta{flex:none;display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;font-size:.64rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);text-decoration:none;white-space:nowrap;border:1px solid var(--rust);border-radius:3px;padding:7px 13px;transition:background .2s,color .2s}
 .nav-cta:hover,.nav-cta:focus-visible{background:var(--rust);color:var(--paper)}
@@ -55,7 +56,7 @@ section[id]{scroll-margin-top:52px}
 .hero{padding:44px 26px 0}
 .stamp{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 30px;display:flex;flex-wrap:wrap;gap:6px 14px}
 .stamp i{font-style:normal;color:var(--rule-2)}
-.thesis{font-family:"Archivo",system-ui,sans-serif;font-weight:500;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.45;color:var(--ink-soft);max-width:40ch;margin:24px 0 0}
+.thesis{font-family:"Archivo",system-ui,sans-serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.45;color:var(--ink-soft);max-width:40ch;margin:24px 0 0}
 .thesis b{color:var(--green);font-weight:700}
 .byline{border-top:1px solid var(--rule);margin-top:30px;padding:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 30px;font-size:.88rem;color:var(--ink-soft)}
 .byline b{color:var(--green);font-weight:600}
@@ -73,7 +74,7 @@ section+section{border-top:1px solid var(--rule)}
 .place{background:#fff;border:1px solid var(--rule);padding:0;margin-bottom:20px}
 .place-hd{padding:22px 28px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
 .place-hd .n{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--rust);font-weight:700}
-.place-hd h3{font-family:"Archivo",sans-serif;font-size:1.35rem;font-weight:700;letter-spacing:-.015em}
+.place-hd h3{font-family:"Archivo",sans-serif;font-size:1.32rem;font-weight:600;letter-spacing:-.015em}
 .place-hd .who{font-family:"JetBrains Mono",monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
 .place-body{padding:16px 28px 26px}
 .place dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 20px}
@@ -113,7 +114,7 @@ tr.hi td:first-child{color:var(--green)}
 
 footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 .foot{padding:50px 0 28px;font-size:.92rem;max-width:66ch}
-.foot h3{font-family:"Archivo",sans-serif;font-size:1.3rem;font-weight:700;margin-bottom:14px;letter-spacing:-.015em}
+.foot h3{font-family:"Archivo",sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
 .foot-rule{border-top:1px solid var(--rule-2);padding:16px 0 40px;font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
 
 .rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
@@ -138,7 +139,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <a href="#penize">Peníze</a>
     </div>
     <span class="nav-sep" aria-hidden="true"></span>
-    <a class="nav-cta" href="index.html" aria-label="Zpět na studii Zaječov 1263 až 2046">←&nbsp;Zpět&nbsp;na&nbsp;studii</a>
+    <a class="nav-cta" href="index.html" aria-label="Zpet na studii Zajecov 1263 az 2046">←&nbsp;Zpět&nbsp;na&nbsp;studii</a>
   </div>
 </nav>
 
@@ -591,6 +592,20 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
     entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
   els.forEach(function(el){ io.observe(el); });
+})();
+/* aktivni polozka menu podle pozice ve strance */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
+  if (!secs.length || !('IntersectionObserver' in window)) return;
+  var visible = {};
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ visible[e.target.id] = e.isIntersecting ? e.intersectionRatio : 0; });
+    var best = null, bestVal = 0;
+    secs.forEach(function(s){ var v = visible[s.id] || 0; if (v > bestVal){ bestVal = v; best = s.id; } });
+    links.forEach(function(a){ a.classList.toggle('on', best !== null && a.getAttribute('href') === '#' + best); });
+  }, { rootMargin: '-52px 0px -55% 0px', threshold: [0, 0.15, 0.35, 0.6, 1] });
+  secs.forEach(function(s){ spy.observe(s); });
 })();
 </script>
 </body>

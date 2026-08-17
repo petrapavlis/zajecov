@@ -45,7 +45,7 @@
 
     <link
       rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.6' stroke-linejoin='round'%3E%3Cpath d='M9 27V13h14v14'/%3E%3Cpath d='M11 13C10 9 13 6 16 4c3 2 6 5 5 9z'/%3E%3Ccircle cx='16' cy='3' r='1.3'/%3E%3Cpath d='M16 1.7V-1M14.4 0h3.2'/%3E%3C/g%3E%3C/svg%3E"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -108,6 +108,13 @@
       }
       h2 {
         font-size: clamp(1.55rem, 3.8vw, 2.3rem);
+      }
+      h2.fit-lines {
+        font-size: clamp(0.82rem, 4vw, 2.3rem);
+        line-height: 1.3;
+      }
+      #shrnuti .sec-head {
+        max-width: none;
       }
       h3 {
         font-family: "Libre Franklin", sans-serif;
@@ -216,7 +223,7 @@
         color: var(--rust);
         border-bottom-color: var(--rust);
       }
-      /* ---- sekundární odkaz na sesterskou stránku ---- */
+      /* ---- sekundarni odkaz na sesterskou stranku ---- */
       .nav-sep {
         flex: none;
         width: 1px;
@@ -259,7 +266,6 @@
         }
         .nav-links {
           gap: 18px;
-          /* náznak, že se dá scrollovat na skryté položky vpravo */
           -webkit-mask-image: linear-gradient(
             to right,
             #000 calc(100% - 20px),
@@ -660,15 +666,19 @@
       .pull q {
         font-family: "Archivo", system-ui, sans-serif;
         font-weight: 600;
-        font-size: clamp(1.45rem, 4.2vw, 2.3rem);
+        font-size: clamp(0.66rem, 3.4vw, 2.3rem);
         line-height: 1.3;
         display: block;
-        max-width: 34ch;
+        max-width: 46ch;
         margin: 0 auto;
         quotes: none;
         color: var(--green);
       }
+      .pull q .blk {
+        display: block;
+      }
       .pull q .o {
+        display: block;
         color: var(--rust);
       }
       .pull p {
@@ -1054,7 +1064,7 @@
           <a href="#zdroje">Zdroje</a>
         </div>
         <span class="nav-sep" aria-hidden="true"></span>
-        <a class="nav-cta" href="prostory.html" aria-label="Přejít na navazující stránku Prostory Zaječova">Prostory&nbsp;Zaječova&nbsp;→</a>
+        <a class="nav-cta" href="prostory.html" aria-label="Prejit na navazujici stranku Prostory Zajecova">Prostory&nbsp;Zaječova&nbsp;→</a>
       </div>
     </nav>
 
@@ -1261,9 +1271,9 @@
     <section class="wrap rv" id="shrnuti">
       <div class="sec-head">
         <span class="eyebrow">Shrnutí</span>
-        <h2>
-          Obec je vybavená, roste a investuje.<br />
-          Čtyři čísla přesto stojí za pozornost.
+        <h2 class="fit-lines">
+          <span>Obec je vybavená, roste a investuje.</span><br />
+          <span>Čtyři čísla přesto stojí za pozornost.</span>
         </h2>
       </div>
 
@@ -2206,8 +2216,10 @@
     <section class="wrap rv">
       <div class="pull">
         <q
-          >Všechny plánované projekty kandidujících uskupení mají horizont čtyř
-          let.<br /><span class="o">Tyto věci mají horizont třiceti.</span></q
+          ><span class="blk"
+            >Všechny plánované projekty kandidujících uskupení mají horizont čtyř
+            let.</span
+          ><span class="o">Tyto věci mají horizont třiceti.</span></q
         >
         <p>
           Není to výtka. Je to důsledek formátu, ve kterém komunální politika
