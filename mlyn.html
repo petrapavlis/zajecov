@@ -122,27 +122,61 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 @media print{.nav{display:none}.rv{opacity:1;transform:none}section.wrap{padding:14pt 0}.place{break-inside:avoid}}
-</style>
+
+      /* ==== dvouúrovňové menu ==== */
+      .nav-primary{border-bottom:1px solid var(--rule)}
+      .nav-brand{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+      .nav-brand span{color:var(--rust)}
+      .nav-tabs{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0}
+      .nav-tabs::-webkit-scrollbar{display:none}
+      .nav-tabs a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:7px 12px;border:1px solid transparent;border-radius:3px;transition:color .2s,border-color .2s,background .2s}
+      .nav-tabs a:hover{color:var(--green)}
+      .nav-tabs a.on{color:var(--rust);border-color:var(--rust)}
+      .nav-secondary .nav-in{height:44px}
+      .nav-secondary .nav-links{margin-left:0}
+      section[id]{scroll-margin-top:98px}
+      @media(max-width:720px){
+        .nav-secondary{display:none}
+        .nav-tabs{margin-left:auto}
+        section[id]{scroll-margin-top:54px}
+      }
+      @media(max-width:460px){
+        .nav-brand{display:none}
+        .nav-tabs{margin-left:0}
+      }
+      /* ==== patička: přechod mezi stránkami ==== */
+      .foot-nav{padding:42px 0 10px;display:flex;flex-wrap:wrap;gap:10px 10px}
+      .foot-nav a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:8px 14px;border:1px solid var(--rule-2);border-radius:3px;transition:color .2s,border-color .2s}
+      .foot-nav a:hover{color:var(--green);border-color:var(--green-soft)}
+      .foot-nav a.on{color:var(--rust);border-color:var(--rust)}
+    </style>
 </head>
 <body>
-<nav class="nav" aria-label="Obsah stránky">
-  <div class="nav-in">
-    <a class="nav-mark" href="#top">Dům pro <span>seniory</span></a>
-    <div class="nav-links">
-      <a href="#kontext">Kontext</a>
-      <a href="#objekt">Objekt</a>
-      <a href="#poloha">Poloha</a>
-      <a href="#kapacita">Kapacita</a>
-      <a href="#penize">Peníze</a>
-      <a href="#scenare">Scénáře</a>
-      <a href="#provoz">Provoz</a>
-      <a href="#kroky">Kroky</a>
-      <a href="#zdroje">Zdroje</a>
+<nav class="nav" aria-label="Navigace">
+  <div class="nav-primary">
+    <div class="nav-in">
+      <a class="nav-brand" href="index.html">Zaječov <span>2026–2046</span></a>
+      <div class="nav-tabs">
+        <a href="index.html">Studie</a>
+        <a href="prostory.html">Prostory</a>
+        <a href="inspirace.html">Inspirace</a>
+        <a href="mlyn.html" class="on">Dům pro seniory</a>
+      </div>
     </div>
-    <span class="nav-sep" aria-hidden="true"></span>
-    <div class="nav-sib">
-      <a class="nav-cta" href="index.html">Studie</a>
-      <a class="nav-cta" href="inspirace.html">Inspirace</a>
+  </div>
+  <div class="nav-secondary">
+    <div class="nav-in">
+      <div class="nav-links">
+        <a href="#kontext">Kontext</a>
+        <a href="#objekt">Objekt</a>
+        <a href="#poloha">Poloha</a>
+        <a href="#kapacita">Kapacita</a>
+        <a href="#penize">Peníze</a>
+        <a href="#scenare">Scénáře</a>
+        <a href="#provoz">Provoz</a>
+        <a href="#kroky">Kroky</a>
+        <a href="#zdroje">Zdroje</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -371,7 +405,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
         <li><strong>Ověřit územní plán</strong> — smí na pozemku stát sociální služba? (obec Jívina / stavební úřad Hořovice)</li>
         <li><strong>Schůzka s Odborem sociálních věcí Středočeského kraje</strong> — je o takovou kapacitu v síti zájem a za jakých podmínek zařazení?</li>
         <li><strong>Jednat společně Zaječov + Jívina</strong> přes Mikroregion Hořovicko — sdílení nákladů i budoucí kapacity.</li>
-        <li><strong>Oslovit potenciální investory a provozovatele</strong></li>
+        <li><strong>Oslovit potenciální investory a provozovatele</strong> — mají zájem o lokalitu?</li>
         <li><strong>Kapacitní studie vody</strong> — studna a jímka pro 20+ lůžek je jiná kategorie než pro rodinu; napojit na <a href="index.html#rizika">vodní téma studie</a>.</li>
         <li><strong>Ověřit potřebu</strong> — kolik lůžek region naplní? Váže se na chybějící <a href="index.html#mezery">demografickou prognózu</a>.</li>
         <li><strong>Rozhodnout scénář A / B / C</strong> — kdo vlastní, kdo provozuje.</li>
@@ -417,10 +451,16 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 </section>
 <footer>
   <div class="wrap">
+        <div class="foot-nav">
+      <a href="index.html">Studie</a>
+      <a href="prostory.html">Prostory</a>
+      <a href="inspirace.html">Inspirace</a>
+      <a href="mlyn.html" class="on">Dům pro seniory</a>
+    </div>
     <div class="foot">
       <h3>Co to je a co to není</h3>
       <p>Tato stránka rozpracovává jeden konkrétní námět ze stránky <a href="inspirace.html#seniori">Inspirace</a> a váže se na prioritu péče o seniory ve <a href="index.html#priority">studii</a>. Ukázka principu „nestavět nové, využít co stojí“ ze stránky <a href="prostory.html">Prostory Zaječova</a>.</p>
-      <p>Není to stanovisko obce ani nabídka nemovitosti. Čísla jsou orientační odhady z veřejných zdrojů a platných norem; každý krok vyžaduje ověření. <strong>Opravy a doplnění vítány.</strong></p>
+      <p>Není to stanovisko obce ani nabídka nemovitosti. Čísla jsou orientační odhady z veřejných zdrojů a platných norem; každý krok vyžaduje ověření. <strong>Opravy a doplnění vítány.</strong> Napište přes <a href="https://github.com/petrapavlis/zajecov/issues/new" target="_blank" rel="noopener">GitHub Issues</a>.</p>
     </div>
     <div class="foot-rule">
       <span><a href="index.html">← Studie</a> · <a href="prostory.html">Prostory</a> · <a href="inspirace.html">Inspirace</a></span>
@@ -451,6 +491,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
   },{rootMargin:'-52px 0px -55% 0px',threshold:[0,0.15,0.35,0.6,1]});
   secs.forEach(function(s){spy.observe(s);});
 })();
+(function(){var a=document.querySelector('.nav-tabs a.on');var w=document.querySelector('.nav-tabs');if(a&&w){w.scrollLeft=Math.max(0,a.offsetLeft-16);}})();
 </script>
 </body>
 </html>

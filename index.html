@@ -1047,28 +1047,62 @@
           color: var(--green) !important;
         }
       }
+    
+      /* ==== dvouúrovňové menu ==== */
+      .nav-primary{border-bottom:1px solid var(--rule)}
+      .nav-brand{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+      .nav-brand span{color:var(--rust)}
+      .nav-tabs{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0}
+      .nav-tabs::-webkit-scrollbar{display:none}
+      .nav-tabs a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:7px 12px;border:1px solid transparent;border-radius:3px;transition:color .2s,border-color .2s,background .2s}
+      .nav-tabs a:hover{color:var(--green)}
+      .nav-tabs a.on{color:var(--rust);border-color:var(--rust)}
+      .nav-secondary .nav-in{height:44px}
+      .nav-secondary .nav-links{margin-left:0}
+      section[id]{scroll-margin-top:98px}
+      @media(max-width:720px){
+        .nav-secondary{display:none}
+        .nav-tabs{margin-left:auto}
+        section[id]{scroll-margin-top:54px}
+      }
+      @media(max-width:460px){
+        .nav-brand{display:none}
+        .nav-tabs{margin-left:0}
+      }
+      /* ==== patička: přechod mezi stránkami ==== */
+      .foot-nav{padding:42px 0 10px;display:flex;flex-wrap:wrap;gap:10px 10px}
+      .foot-nav a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:8px 14px;border:1px solid var(--rule-2);border-radius:3px;transition:color .2s,border-color .2s}
+      .foot-nav a:hover{color:var(--green);border-color:var(--green-soft)}
+      .foot-nav a.on{color:var(--rust);border-color:var(--rust)}
     </style>
   </head>
   <body>
-    <nav class="nav" aria-label="Obsah studie">
-      <div class="nav-in">
-        <a class="nav-mark" href="#top">1263 <span>→</span> 2046</a>
-        <div class="nav-links">
-          <a href="#shrnuti">Shrnutí</a>
-          <a href="#data">Data</a>
-          <a href="#rizika">Rizika</a>
-          <a href="#priority">Priority</a>
-          <a href="#plan">Plán</a>
-          <a href="#mezery">Co chybí</a>
-          <a href="#zdroje">Zdroje</a>
-        </div>
-        <span class="nav-sep" aria-hidden="true"></span>
-        <div class="nav-sib">
-          <a class="nav-cta" href="prostory.html">Prostory&nbsp;→</a>
-          <a class="nav-cta" href="inspirace.html">Inspirace&nbsp;→</a>
-        </div>
+    <nav class="nav" aria-label="Navigace">
+  <div class="nav-primary">
+    <div class="nav-in">
+      <a class="nav-brand" href="index.html">Zaječov <span>2026–2046</span></a>
+      <div class="nav-tabs">
+        <a href="index.html" class="on">Studie</a>
+        <a href="prostory.html">Prostory</a>
+        <a href="inspirace.html">Inspirace</a>
+        <a href="mlyn.html">Dům pro seniory</a>
       </div>
-    </nav>
+    </div>
+  </div>
+  <div class="nav-secondary">
+    <div class="nav-in">
+      <div class="nav-links">
+        <a href="#shrnuti">Shrnutí</a>
+        <a href="#data">Data</a>
+        <a href="#rizika">Rizika</a>
+        <a href="#priority">Priority</a>
+        <a href="#plan">Plán</a>
+        <a href="#mezery">Co chybí</a>
+        <a href="#zdroje">Zdroje</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
     <!-- ================= HLAVIČKA ================= -->
     <header class="wrap hero" id="top">
@@ -3000,7 +3034,13 @@
     <!-- ================= PATIČKA ================= -->
     <footer>
       <div class="wrap">
-        <div class="foot">
+            <div class="foot-nav">
+      <a href="index.html" class="on">Studie</a>
+      <a href="prostory.html">Prostory</a>
+      <a href="inspirace.html">Inspirace</a>
+      <a href="mlyn.html">Dům pro seniory</a>
+    </div>
+    <div class="foot">
           <h3>Kdo to napsal a proč</h3>
           <p>
             Petra Pavlisová. V Zaječově zatím trvale nebydlím, ale posledních
@@ -3017,7 +3057,7 @@
           <p>
             Data jsou z veřejných zdrojů uvedených výše, stav k srpnu 2026. Kde
             jde o odhad nebo interpolaci, je to označeno. Kde jsem něco
-            nezjistila, je to napsané. <strong>Opravy a doplnění vítám.</strong>
+            nezjistila, je to napsané. <strong>Opravy a doplnění vítám.</strong> Napište přes <a href="https://github.com/petrapavlis/zajecov/issues/new" target="_blank" rel="noopener">GitHub Issues</a>.
           </p>
         </div>
         <div class="foot-rule">
@@ -3099,6 +3139,7 @@
           spy.observe(s);
         });
       })();
-    </script>
+    (function(){var a=document.querySelector('.nav-tabs a.on');var w=document.querySelector('.nav-tabs');if(a&&w){w.scrollLeft=Math.max(0,a.offsetLeft-16);}})();
+</script>
   </body>
 </html>

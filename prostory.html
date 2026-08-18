@@ -122,27 +122,61 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 .rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 @media print{.nav{display:none}.rv{opacity:1;transform:none}section.wrap{padding:14pt 0}.place{break-inside:avoid}}
-</style>
+
+      /* ==== dvouúrovňové menu ==== */
+      .nav-primary{border-bottom:1px solid var(--rule)}
+      .nav-brand{font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:700;letter-spacing:.02em;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+      .nav-brand span{color:var(--rust)}
+      .nav-tabs{display:flex;gap:6px;margin-left:auto;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;min-width:0}
+      .nav-tabs::-webkit-scrollbar{display:none}
+      .nav-tabs a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:7px 12px;border:1px solid transparent;border-radius:3px;transition:color .2s,border-color .2s,background .2s}
+      .nav-tabs a:hover{color:var(--green)}
+      .nav-tabs a.on{color:var(--rust);border-color:var(--rust)}
+      .nav-secondary .nav-in{height:44px}
+      .nav-secondary .nav-links{margin-left:0}
+      section[id]{scroll-margin-top:98px}
+      @media(max-width:720px){
+        .nav-secondary{display:none}
+        .nav-tabs{margin-left:auto}
+        section[id]{scroll-margin-top:54px}
+      }
+      @media(max-width:460px){
+        .nav-brand{display:none}
+        .nav-tabs{margin-left:0}
+      }
+      /* ==== patička: přechod mezi stránkami ==== */
+      .foot-nav{padding:42px 0 10px;display:flex;flex-wrap:wrap;gap:10px 10px}
+      .foot-nav a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:8px 14px;border:1px solid var(--rule-2);border-radius:3px;transition:color .2s,border-color .2s}
+      .foot-nav a:hover{color:var(--green);border-color:var(--green-soft)}
+      .foot-nav a.on{color:var(--rust);border-color:var(--rust)}
+    </style>
 </head>
 <body>
 
-<nav class="nav" aria-label="Obsah stránky">
-  <div class="nav-in">
-    <a class="nav-mark" href="#top">Prostory <span>Zaječova</span></a>
-    <div class="nav-links">
-      <a href="#princip">Princip</a>
-      <a href="#zdena">Zděná</a>
-      <a href="#kurty">Kurty</a>
-      <a href="#hriste">Hřiště</a>
-      <a href="#lidovy-dum">Lidový dům</a>
-      <a href="#klaster">Klášter</a>
-      <a href="#naves">Náves</a>
-      <a href="#penize">Peníze</a>
+<nav class="nav" aria-label="Navigace">
+  <div class="nav-primary">
+    <div class="nav-in">
+      <a class="nav-brand" href="index.html">Zaječov <span>2026–2046</span></a>
+      <div class="nav-tabs">
+        <a href="index.html">Studie</a>
+        <a href="prostory.html" class="on">Prostory</a>
+        <a href="inspirace.html">Inspirace</a>
+        <a href="mlyn.html">Dům pro seniory</a>
+      </div>
     </div>
-    <span class="nav-sep" aria-hidden="true"></span>
-    <div class="nav-sib">
-      <a class="nav-cta" href="index.html">←&nbsp;Studie</a>
-      <a class="nav-cta" href="inspirace.html">Inspirace&nbsp;→</a>
+  </div>
+  <div class="nav-secondary">
+    <div class="nav-in">
+      <div class="nav-links">
+        <a href="#princip">Princip</a>
+        <a href="#zdena">Zděná</a>
+        <a href="#kurty">Kurty</a>
+        <a href="#hriste">Hřiště</a>
+        <a href="#lidovy-dum">Lidový dům</a>
+        <a href="#klaster">Klášter</a>
+        <a href="#naves">Náves</a>
+        <a href="#penize">Peníze</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -569,6 +603,12 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
 
 <footer>
   <div class="wrap">
+        <div class="foot-nav">
+      <a href="index.html">Studie</a>
+      <a href="prostory.html" class="on">Prostory</a>
+      <a href="inspirace.html">Inspirace</a>
+      <a href="mlyn.html">Dům pro seniory</a>
+    </div>
     <div class="foot">
       <h3>Co to je a co to není</h3>
       <p>Tato stránka navazuje na studii <a href="index.html">Zaječov 1263 → 2046</a>, konkrétně na prioritu
@@ -577,7 +617,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       <p>Není to stanovisko obce, spolků ani volebního uskupení. Je to návrh k diskusi, postavený na
       veřejných datech a na ověřených příkladech z jiných obcí. Řada bodů závisí na souhlasu třetích stran —
       spolků, řádu, vlastníků — a to je v textu vždy uvedeno.
-      <strong>Opravy a doplnění vítám.</strong></p>
+      <strong>Opravy a doplnění vítám.</strong> Napište přes <a href="https://github.com/petrapavlis/zajecov/issues/new" target="_blank" rel="noopener">GitHub Issues</a>.</p>
     </div>
     <div class="foot-rule">
       <span><a href="index.html">← Studie Zaječov 1263 → 2046</a></span>
@@ -610,6 +650,7 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
   },{rootMargin:'-52px 0px -55% 0px',threshold:[0,0.15,0.35,0.6,1]});
   secs.forEach(function(s){spy.observe(s);});
 })();
+(function(){var a=document.querySelector('.nav-tabs a.on');var w=document.querySelector('.nav-tabs');if(a&&w){w.scrollLeft=Math.max(0,a.offsetLeft-16);}})();
 </script>
 </body>
 </html>
