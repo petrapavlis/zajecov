@@ -149,6 +149,9 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
       .foot-nav a{font-family:"JetBrains Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:8px 14px;border:1px solid var(--rule-2);border-radius:3px;transition:color .2s,border-color .2s}
       .foot-nav a:hover{color:var(--green);border-color:var(--green-soft)}
       .foot-nav a.on{color:var(--rust);border-color:var(--rust)}
+      /* ==== skica v hlavičce ==== */
+      .hero-art{display:block;width:100%;height:auto;margin:34px 0 0;color:var(--green)}
+      .art-cap{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);text-align:center;margin:8px 0 0}
     </style>
 </head>
 <body>
@@ -184,6 +187,107 @@ footer{background:var(--paper-2);border-top:1px solid var(--rule)}
   <p class="stamp"><span>Zaječov · Jívina · Mikroregion Hořovicko</span><i>/</i><span>Navazuje na studii a Inspiraci</span><i>/</i><span>Srpen 2026</span></p>
   <h1>Dům pro seniory</h1>
   <p class="thesis">Konkrétní objekt u Zaječova — <b>Hudečkův mlýn</b> — a co by z něj mohlo vzniknout: <b>malý domov rodinného typu</b>. Rozpracování námětu ze stránky Inspirace, karta <a href="inspirace.html#seniori">Malá domácnost, ne ústav</a>.</p>
+  <svg class="hero-art" viewBox="0 0 1000 300" fill="none" role="img"
+  aria-label="Hudečkův mlýn — obytné stavení s předním štítem a strmou střechou, za ním hospodářské křídlo s oblouky vrat, v popředí mlýnský náhon"
+  preserveAspectRatio="xMidYMax meet">
+
+  <!-- ===== POZADÍ: brdský hřbet ===== -->
+  <g stroke="currentColor" fill="none" stroke-linecap="round" opacity=".2">
+    <path d="M40 150 C 240 108, 520 116, 760 132 C 860 138, 940 146, 1000 156" stroke-width="1.2"/>
+    <path d="M120 160 C 320 128, 560 134, 800 150" stroke-width="1" opacity=".7"/>
+  </g>
+
+  <!-- ===== HOSPODÁŘSKÉ KŘÍDLO VZADU (perpendikulární stodola s oblouky) ===== -->
+  <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round" opacity=".8">
+    <!-- nižší sedlová střecha, mírně z boku -->
+    <path d="M300 150 L338 108 H560 L560 150 Z" stroke-width="1.5"/>
+    <path d="M338 108 H560" stroke-width="1.7"/>
+    <!-- stěna -->
+    <path d="M312 150 v70 H560 v-70" stroke-width="1.5"/>
+    <!-- dva velké oblouky vrat -->
+    <g stroke-width="1.2" fill="none" opacity=".9">
+      <path d="M356 220 v-30 a20 20 0 0 1 40 0 v30 z"/>
+      <path d="M430 220 v-30 a20 20 0 0 1 40 0 v30 z"/>
+    </g>
+  </g>
+
+  <!-- ===== OBYTNÉ STAVENÍ V POPŘEDÍ — přední štít + strmá střecha ===== -->
+  <g stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+    <!-- boční plocha strmé sedlové střechy (ustupuje doprava) -->
+    <path d="M470 150 L536 66 L820 118 L788 176 Z" fill="var(--paper)" stroke-width="1.6"/>
+    <!-- hřeben -->
+    <path d="M536 66 L820 118" stroke-width="1.5" opacity=".85"/>
+
+    <!-- přední ŠTÍT (trojúhelník) -->
+    <path d="M470 150 L536 66 L602 150 Z" fill="var(--paper)" stroke-width="1.7"/>
+    <!-- okap přes celé čelo -->
+    <path d="M462 150 H610" stroke-width="1.5"/>
+
+    <!-- dvě štítová okna v trojúhelníku -->
+    <g stroke-width="1.05" fill="none" opacity=".8">
+      <path d="M512 128 v-15 h13 v15 z M549 128 v-15 h13 v15 z"/>
+    </g>
+
+    <!-- čelní stěna přízemí (štítová strana) -->
+    <path d="M478 150 v76 H596 v-76" fill="var(--paper)" stroke-width="1.6"/>
+    <!-- dvě řady oken na čele -->
+    <g stroke-width="1.05" fill="none" opacity=".78">
+      <path d="M498 176 v-16 h15 v16 z M556 176 v-16 h15 v16 z"/>
+      <path d="M498 214 v-18 h15 v18 z M556 214 v-18 h15 v18 z"/>
+    </g>
+
+    <!-- boční (delší) stěna ustupující doprava -->
+    <path d="M596 150 L788 176 v58 L596 226 Z" fill="var(--paper)" stroke-width="1.5"/>
+    <path d="M596 188 L788 210" stroke-width="0.9" opacity=".35"/>
+    <!-- řada oken na boční stěně -->
+    <g stroke-width="1" fill="none" opacity=".7">
+      <path d="M628 208 v-16 h13 v16 z M676 212 v-16 h13 v16 z M724 216 v-16 h13 v16 z"/>
+    </g>
+
+    <!-- dva komíny na hřebeni -->
+    <path d="M596 92 v-24 h13 v24" fill="var(--paper)" stroke-width="1.4"/>
+    <path d="M726 118 v-26 h15 v26" fill="var(--paper)" stroke-width="1.45"/>
+  </g>
+
+  <!-- ===== STROMY VLEVO u vody (olše) ===== -->
+  <g stroke="currentColor" fill="var(--paper)" stroke-linejoin="round" stroke-linecap="round" opacity=".5">
+    <path d="M150 250 v-104" fill="none" stroke-width="1.3"/>
+    <path d="M150 168 c-28 -2 -37 -24 -21 -37 c-6 -20 24 -32 39 -18
+             c15 -9 34 7 27 24 c9 13 -7 28 -36 26z" stroke-width="1.3"/>
+    <path d="M205 250 v-78" fill="none" stroke-width="1.2"/>
+    <path d="M205 184 c-22 -2 -28 -19 -15 -28 c-5 -15 19 -24 30 -13
+             c12 -6 25 6 18 19 c8 10 -6 21 -28 20z" stroke-width="1.2"/>
+  </g>
+
+  <!-- sloup s drátem vpravo -->
+  <g stroke="currentColor" stroke-linecap="round" opacity=".42">
+    <path d="M916 234 v-96" fill="none" stroke-width="1.3"/>
+    <path d="M904 144 h24" stroke-width="1.2"/>
+    <path d="M916 138 C 952 144, 984 148, 1000 154" fill="none" stroke-width="1"/>
+    <path d="M916 146 C 872 158, 830 172, 792 176" fill="none" stroke-width="1"/>
+  </g>
+
+  <!-- ===== VODA / MLÝNSKÝ NÁHON V POPŘEDÍ ===== -->
+  <path d="M0 262 H 1000" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+  <g stroke="currentColor" stroke-width="1" opacity=".24">
+    <path d="M40 268 H 300 M340 268 H 520 M560 268 H 740 M780 268 H 970"/>
+    <path d="M110 275 H 430 M480 275 H 680 M720 275 H 910"/>
+    <path d="M60 283 H 360 M410 283 H 620 M670 283 H 880"/>
+  </g>
+  <!-- lekníny na hladině -->
+  <g stroke="currentColor" fill="var(--paper)" stroke-width="1" opacity=".3">
+    <ellipse cx="300" cy="266" rx="16" ry="4.5"/>
+    <ellipse cx="410" cy="272" rx="12" ry="4"/>
+    <ellipse cx="520" cy="267" rx="17" ry="5"/>
+    <ellipse cx="360" cy="280" rx="13" ry="4"/>
+    <ellipse cx="620" cy="274" rx="11" ry="3.6"/>
+  </g>
+  <!-- rákosí u levého břehu -->
+  <g stroke="currentColor" fill="none" stroke-width="1" opacity=".33" stroke-linecap="round">
+    <path d="M250 262 v-16 M256 262 v-20 M262 262 v-13 M268 262 v-18"/>
+  </g>
+</svg>
+  <p class="art-cap">Hudečkův mlýn · první zmínka ve 14. století · na potoce mezi Zaječovem a Jívinou</p>
   <div class="byline">
     <span><b>Případová studie k využití existující budovy</b></span>
     <span>Petra Pavlisová</span>
