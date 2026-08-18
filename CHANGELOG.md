@@ -68,6 +68,72 @@ Studie je živý dokument. Každou věcnou opravu zaznamenávám včetně toho, 
   stojí na ověřitelnosti a není míněn jako útok na nikoho konkrétního, nepatří. Věcné jádro
   (kvalita a vhodnost jídla pro seniory jako podmínka) zůstalo zachováno v obecné podobě.
 
+## 2026-08-17
+
+### Rozšířeno
+
+- **Ze studie se stal web čtyř provázaných stránek.** Samostatný dokument se rozrostl na
+  **Studii**, **Prostory Zaječova**, **Inspiraci** (co funguje jinde) a **Dům pro seniory**
+  (případová studie). Stránky se vzájemně prolinkují a mají společnou navigaci i patičku.
+
+### Přidáno
+
+- **Stránka Inspirace — co funguje jinde.** Ověřené příklady z jiných českých obcí a dotační tituly
+  k tématům voda, senioři, energetika, ekonomika, odpady, zapojení občanů a škola. Každý příklad
+  má uvedený zdroj a odkaz na konkrétní obec, program nebo zákon.
+- **Nová priorita: Mládež a vzdělávání.** Doplňuje mezeru, kde studie mířila silně na seniory, ale
+  na děti a mládež skoro ne — přestože škola je největší výdaj obce a obec roste jen migrací.
+  Studie má nově osm priorit. Odděluje rekonstrukci střechy školy (nutná údržba, dobře
+  financovatelná) od nové tělocvičny (investice na desítky let, závislá na demografii a jiné
+  dotační cestě).
+- **Karta: Malá domácnost, ne ústav.** Ukazuje, že malý registrovaný domov pro seniory rodinného
+  typu (8–20 lůžek) v přestavěné budově funguje pár kilometrů odsud v Brdech (Péče Těně v bývalé
+  škole, Vital Life, Zátor u Hostomic). Obec nemusí stavět ani provozovat, jen poskytnout budovu.
+- **Stránka Dům pro seniory — případová studie.** Rozpracovává jeden konkrétní objekt u Zaječova
+  (Hudečkův mlýn v Jívině): odhad kapacity podle norem MPSV, náklady, dotační tituly, tři scénáře
+  vlastnictví a provozu, hybridní model financování a poznámku k meziobecní spolupráci
+  (katastrálně Jívina, spádově Zaječov).
+
+### Opraveno
+
+- **Škola a školka existují — a je to úplná devítiletka.** Původně jsem u priority Mládež
+  a vzdělávání i v jedné kartě Inspirace navrhovala výstavbu nebo navýšení kapacity mateřské školy,
+  jako by v obci škola byla problém k vyřešení. Ve skutečnosti Zaječov **má** vlastní MŠ (61 dětí)
+  i úplnou základní školu 1. až 9. třídy (170 žáků, 36 zaměstnanců), navíc spádovou pro okolí.
+  Úkol tedy není stavět, ale plnou školu udržet — což je vzácné aktivum, které řada obcí ztrácí.
+  Karta i priorita byly přepsány.
+- **Příspěvek na dojíždějící žáky — vyřazeno.** V kartě o školství jsem tvrdila, že domovská obec
+  musí přispívat na neinvestiční náklady školy za své dojíždějící žáky. Tato povinnost byla
+  **zrušena k 1. 1. 2013** (financování přešlo na rozpočtové určení daní a stát platí na žáka).
+  Karta byla nahrazena poctivější — o dobrovolné meziobecní dohodě a o přechodu ONIV na obce
+  od roku 2026.
+- **Obchod v obci.** Karta o programu Obchůdek 2021+ původně slibovala „záchranu prodejny" pro celý
+  Zaječov. Upřesněno: samotný Zaječov je pokrytý (Coop 24/7 i večerka), smysl dává jen pro místní
+  části Kvaň a Novou Ves, kde žádný obchod není. Titulek i text přeformulovány.
+- **Proč územní plán zakazuje fotovoltaiku.** Doplněna jedna věta vysvětlující kontext: zákaz
+  pochází z ÚP 2012 jako reakce na tehdejší solární boom a ochranu CHKO Brdy; míří na velké farmy
+  na polích, ne na panely na střeše školy či úřadu.
+- **Spisovnost.** Napříč všemi stránkami sjednoceny tvary „tohle → toto", „tyhle → tyto",
+  „tahle → tata". Opraveny také překlepy (cizní, brát, fiskální, navazuje).
+
+### Vzhled a orientace
+
+- **Favicon.** Původní ikona (obrys věže kláštera) se v malé velikosti špatně četla. Nahrazena
+  jednoduchým obrysem zajíce — tematicky k názvu obce.
+- **Dvouúrovňové menu.** Se čtyřmi stránkami se navigace na jeden řádek nevešla. Rozdělena na
+  primární řádek (přepínač mezi čtyřmi stránkami, aktivní zvýrazněná) a sekundární řádek (kotvy
+  sekcí aktuální stránky se zvýrazněním podle pozice). Na mobilu jsou kotvy skryté a zůstává jen
+  přepínač stránek.
+- **Patička.** Zjednodušena na přehledný přechod mezi čtyřmi stránkami; rozsáhlý rozcestník se
+  všemi kotvami byl zbytečný.
+- **Kontakt.** Doplněna možnost posílat opravy a doplnění přes GitHub Issues.
+
+### Zváženo a nezařazeno
+
+- **Konkrétní provozovatelé v případovce mlýna.** V sekci „Co ověřit" byl původně návrh oslovit
+  jmenovitě tři provozovatele. Zobecněno na „potenciální investory a provozovatele" — případová
+  studie nemá vyznívat jako reklama na konkrétní firmy.
+
 ## Otevřené otázky
 
 Průběžně aktualizovaný seznam je v sekci *Co jsem nezjistila*. Aktuálně:
