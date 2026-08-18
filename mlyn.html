@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dům pro seniory · Případová studie objektu u Zaječova</title>
+<meta name="description" content="Hudečkův mlýn u Zaječova jako možný malý domov pro seniory rodinného typu. Kapacita, náklady, dotace, provoz a meziobecní spolupráce — včetně zdrojů.">
+<meta name="author" content="Petra Pavlisová">
+<link rel="canonical" href="https://petrapavlis.github.io/zajecov/mlyn.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Zaječov 2026–2046">
+<meta property="og:title" content="Dům pro seniory: případová studie objektu u Zaječova">
+<meta property="og:description" content="Co by mohlo vzniknout z Hudečkova mlýna — malý domov pro seniory. Kapacita, náklady, dotace, provoz.">
+<meta name="theme-color" content="#2E4A39">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F6F1'/%3E%3Cg stroke='%232E4A39' fill='none' stroke-width='1.8' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M12.6 13.5 C10.4 10.3 10 4.3 11.7 1.6 C13.4 4 14 8.6 14 12.6'/%3E%3Cpath d='M19.4 13.5 C21.6 10.3 22 4.3 20.3 1.6 C18.6 4 18 8.6 18 12.6'/%3E%3Cellipse cx='16' cy='19' rx='6.1' ry='7.6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Libre+Franklin:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2e4a39; --green-soft:#7a9484; --rust:#a8613f;
+  --paper:#f7f6f1; --paper-2:#efeee6; --rule:#dcdbd1; --rule-2:#c9c8bc;
+  --ink:#2e332f; --ink-soft:#666b64; --maxw:940px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Libre Franklin",system-ui,sans-serif;font-size:16.5px;line-height:1.68;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+h1,h2{font-family:"Archivo",system-ui,sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.018em;margin:0;color:var(--green)}
+h1{font-size:clamp(2.6rem,8vw,5rem);font-weight:700;letter-spacing:-.035em}
+h2{font-size:clamp(1.55rem,3.8vw,2.3rem)}
+h3{font-family:"Libre Franklin",sans-serif;font-size:1.12rem;font-weight:600;color:var(--green);margin:0;letter-spacing:-.005em}
+p{margin:0 0 1em}
+a{color:var(--rust);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--green)}
+strong{font-weight:600;color:var(--green)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);display:block;margin:0 0 1.4em}
+.lede{font-size:1.08rem;color:var(--ink-soft)}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,246,241,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:20px;height:52px}
+.nav-mark{font-family:"JetBrains Mono",monospace;font-size:.7rem;font-weight:700;color:var(--green);text-decoration:none;white-space:nowrap;flex:none}
+.nav-mark span{color:var(--rust)}
+.nav-links{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding:18px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a.on{color:var(--rust);border-bottom-color:var(--rust)}
+.nav-sep{flex:none;width:1px;align-self:center;height:22px;background:var(--rule-2)}
+.nav-sib{flex:none;display:flex;align-items:center;gap:9px}
+.nav-cta{flex:none;display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);text-decoration:none;white-space:nowrap;border:1px solid var(--rust);border-radius:3px;padding:7px 11px;transition:background .2s,color .2s}
+.nav-cta:hover,.nav-cta:focus-visible{background:var(--rust);color:var(--paper)}
+@media(max-width:720px){.nav-in{gap:12px}.nav-links{display:none}.nav-sep{display:none}.nav-sib{margin-left:auto;gap:8px}.nav-cta{padding:8px 11px;font-size:.62rem;letter-spacing:.08em}}@media(max-width:380px){.nav-cta{padding:7px 9px;font-size:.58rem;letter-spacing:.06em}}
+section[id]{scroll-margin-top:52px}
+
+.hero{padding:44px 26px 0}
+.stamp{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 30px;display:flex;flex-wrap:wrap;gap:6px 14px}
+.stamp i{font-style:normal;color:var(--rule-2)}
+.thesis{font-family:"Archivo",system-ui,sans-serif;font-weight:400;font-size:clamp(1.2rem,3vw,1.7rem);line-height:1.45;color:var(--ink-soft);max-width:40ch;margin:24px 0 0}
+.thesis b{color:var(--green);font-weight:700}
+.byline{border-top:1px solid var(--rule);margin-top:30px;padding:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 30px;font-size:.88rem;color:var(--ink-soft)}
+.byline b{color:var(--green);font-weight:600}
+.notice{border-left:3px solid var(--rust);padding:2px 0 2px 16px;margin:26px 0 8px;font-size:.88rem;color:var(--ink-soft)}
+.back{display:inline-flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin:24px 0 0}
+
+section.wrap{padding-top:88px;padding-bottom:72px}
+section+section{border-top:1px solid var(--rule)}
+.sec-head{margin-bottom:36px;max-width:62ch}
+
+.block{background:#fff;border:1px solid var(--rule);padding:26px 28px}
+.block+.block{margin-top:16px}
+
+/* karta lokality */
+.place{background:#fff;border:1px solid var(--rule);padding:0;margin-bottom:20px}
+.place-hd{padding:22px 28px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.place-hd .n{font-family:"JetBrains Mono",monospace;font-size:.74rem;color:var(--rust);font-weight:700}
+.place-hd h3{font-family:"Archivo",sans-serif;font-size:1.32rem;font-weight:600;letter-spacing:-.015em}
+.place-hd .who{font-family:"JetBrains Mono",monospace;font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-left:auto}
+.place-body{padding:16px 28px 26px}
+.place dl{margin:0;display:grid;grid-template-columns:118px 1fr;gap:2px 20px}
+.place dt{font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);padding-top:.42em}
+.place dd{margin:0 0 14px}
+.place dd:last-child{margin-bottom:0}
+.place ol,.place ul{margin:.4em 0 0;padding-left:1.2em}
+.place li{margin-bottom:.35em}
+.place li::marker{color:var(--green-soft)}
+@media(max-width:640px){.place dl{grid-template-columns:1fr;gap:0}.place dt{margin-top:14px}.place-hd .who{margin-left:0}.place-body{padding-left:20px;padding-right:20px}.place dl,.place dd{min-width:0}.place table,.block table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:6px}
+th,td{padding:9px 0;text-align:left;border-top:1px solid var(--rule)}
+th{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.64rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-soft);border-top:0}
+td:last-child,th:last-child{text-align:right;font-family:"JetBrains Mono",monospace;font-size:.85rem;white-space:nowrap}
+tr.hi td{color:var(--rust);font-weight:700}
+tr.hi td:first-child{color:var(--green)}
+
+.grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.grid>*{background:#fff;padding:22px 24px}
+@media(max-width:720px){.g3{grid-template-columns:1fr}}
+.stat .num{font-family:"Archivo",sans-serif;font-weight:700;color:var(--rust);font-size:2.1rem;line-height:1;letter-spacing:-.03em;display:block;margin-bottom:9px}
+.stat b{display:block;color:var(--green);font-size:.9rem;margin-bottom:4px}
+.stat span.t{font-size:.85rem;color:var(--ink-soft);line-height:1.5}
+
+.tag{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:.63rem;letter-spacing:.12em;color:var(--green);border:1px solid var(--green);padding:3px 9px;display:inline-block}
+.tag.warn{color:var(--rust);border-color:var(--rust)}
+
+.srcgrp{margin-bottom:22px}
+.srcgrp:last-child{margin-bottom:0}
+.srcgrp h3{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.srcgrp ul{list-style:none;margin:0;padding:0}
+.srcgrp li{padding:8px 0;font-size:.87rem;border-top:1px solid var(--rule);line-height:1.5}
+.srcgrp li:first-child{border-top:0}
+.srcgrp .u{display:block;font-family:"JetBrains Mono",monospace;font-size:.71rem;color:var(--ink-soft);margin-top:2px}
+
+footer{background:var(--paper-2);border-top:1px solid var(--rule)}
+.foot{padding:50px 0 28px;font-size:.92rem;max-width:66ch}
+.foot h3{font-family:"Archivo",sans-serif;font-size:1.4rem;font-weight:600;margin-bottom:16px;letter-spacing:-.015em}
+.foot-rule{border-top:1px solid var(--rule-2);padding:16px 0 40px;font-family:"JetBrains Mono",monospace;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+.rv{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+@media print{.nav{display:none}.rv{opacity:1;transform:none}section.wrap{padding:14pt 0}.place{break-inside:avoid}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Obsah stránky">
+  <div class="nav-in">
+    <a class="nav-mark" href="#top">Dům pro <span>seniory</span></a>
+    <div class="nav-links">
+      <a href="#kontext">Kontext</a>
+      <a href="#objekt">Objekt</a>
+      <a href="#poloha">Poloha</a>
+      <a href="#kapacita">Kapacita</a>
+      <a href="#penize">Peníze</a>
+      <a href="#scenare">Scénáře</a>
+      <a href="#provoz">Provoz</a>
+      <a href="#kroky">Kroky</a>
+      <a href="#zdroje">Zdroje</a>
+    </div>
+    <span class="nav-sep" aria-hidden="true"></span>
+    <div class="nav-sib">
+      <a class="nav-cta" href="index.html">Studie</a>
+      <a class="nav-cta" href="inspirace.html">Inspirace</a>
+    </div>
+  </div>
+</nav>
+<header class="wrap hero" id="top">
+  <p class="stamp"><span>Zaječov · Jívina · Mikroregion Hořovicko</span><i>/</i><span>Navazuje na studii a Inspiraci</span><i>/</i><span>Srpen 2026</span></p>
+  <h1>Dům pro seniory</h1>
+  <p class="thesis">Konkrétní objekt u Zaječova — <b>Hudečkův mlýn</b> — a co by z něj mohlo vzniknout: <b>malý domov rodinného typu</b>. Rozpracování námětu ze stránky Inspirace, karta <a href="inspirace.html#seniori">Malá domácnost, ne ústav</a>.</p>
+  <div class="byline">
+    <span><b>Případová studie k využití existující budovy</b></span>
+    <span>Petra Pavlisová</span>
+    <span>Zpracováno z veřejných zdrojů</span>
+  </div>
+  <div class="notice">
+    Občanský námět k diskusi, ne stanovisko obce ani nabídka konkrétní nemovitosti. Čísla jsou orientační odhady podle veřejně dostupných údajů a platných norem. Každý krok vyžaduje ověření.
+  </div>
+  <a class="back" href="inspirace.html#seniori">← zpět na Inspiraci: Malá domácnost, ne ústav</a>
+</header>
+<section class="wrap rv" id="kontext">
+  <div class="sec-head">
+    <span class="eyebrow">Kontext</span>
+    <h2>Proč zrovna tento objekt</h2>
+    <p class="lede">Studie označuje chybějící zázemí pro seniory za jednu z největších mezer obce. Tato stránka bere jeden konkrétní dům a ptá se, co by z něj šlo udělat — ne teoreticky, ale s čísly.</p>
+  </div>
+  <div class="grid g3">
+    <div class="stat">
+      <span class="num">01</span>
+      <b>Řeší reálnou mezeru</b>
+      <span class="t">V obci není žádné pobytové zařízení ani dům s pečovatelskou službou, a seniorů přibylo za dvacet let o 52 %. Viz <a href="index.html#rizika">Rizika studie</a>.</span>
+    </div>
+    <div class="stat">
+      <span class="num">02</span>
+      <b>Nestavět, využít co stojí</b>
+      <span class="t">Přesně v duchu stránky <a href="prostory.html">Prostory Zaječova</a> a modelu <a href="prostory.html#zdena">Zděné</a>: obec poskytne budovu, provoz nese profesionál.</span>
+    </div>
+    <div class="stat">
+      <span class="num">03</span>
+      <b>Je to za humny</b>
+      <span class="t">Objekt leží přímo u Zaječova, u hlavní silnice a autobusové zastávky. Existující příklady rodinných domovů fungují pár kilometrů odsud v Brdech.</span>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="objekt">
+  <div class="sec-head">
+    <span class="eyebrow">Objekt</span>
+    <h2>Co se nabízí</h2>
+    <p class="lede">Hudečkův mlýn — historický objekt s první písemnou zmínkou ze 14. století, pod tímto názvem od 16. století. Podle veřejného inzerátu (stav srpen 2026):</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">—</span><h3>Parametry nemovitosti</h3><span class="who">veřejný inzerát</span></div>
+    <div class="place-body">
+      <table>
+        <thead><tr><th>Parametr</th><th>Hodnota</th></tr></thead>
+        <tbody>
+          <tr class="hi"><td>Cena</td><td>5,9 mil. Kč</td></tr>
+          <tr><td>Užitná plocha (dnes)</td><td>100 m²</td></tr>
+          <tr class="hi"><td>Pozemek</td><td>4 286 m²</td></tr>
+          <tr><td>Zastavitelná část</td><td>většina pozemku</td></tr>
+          <tr><td>Stav</td><td>v rekonstrukci, energ. třída G</td></tr>
+          <tr><td>Sítě</td><td>studna, septik, jímka</td></tr>
+        </tbody>
+      </table>
+      <p style="margin:14px 0 0;font-size:.9rem">Energetická třída G a stav „v rekonstrukci“ znamenají, že objekt vyžaduje <strong>celkovou rekonstrukci</strong>. Hodnota tedy není v současných 100 m², ale v historickém jádru a velkém zastavitelném pozemku.</p>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="poloha">
+  <div class="sec-head">
+    <span class="eyebrow">Poloha</span>
+    <h2>Kam to územně patří — a proč je to spíš výhoda</h2>
+    <p class="lede">Objekt je formálně „samota“, ale poloha je paradoxně silná stránka: leží přímo u Zaječova, na hlavní silnici směrem na Komárov a Hořovice, a autobus staví přímo u něj.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">—</span><h3>Dostupnost</h3><span class="who">z inzerátu</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Doprava</dt>
+        <dd>Autobusová zastávka <strong>„Zaječov, mlýn“ přímo u objektu (61 m)</strong>. Hlavní silnice Zaječov–Komárov–Hořovice — dobrá dostupnost pro personál, zásobování i návštěvy.</dd>
+        <dt>Občanská vybavenost</dt>
+        <dd>ZŠ a MŠ Zaječov, COOP i pošta do 1,9 km, lékař 2,8 km. Na „samotu“ překvapivě obslužné místo.</dd>
+        <dt>Poloha vůči obci</dt>
+        <dd>Přírodně a spádově patří k Zaječovu; katastrálně spadá pod obec Jívina (okres Beroun). To je z pohledu školy i služeb Zaječov, z pohledu úřadu Jívina.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">—</span><h3>Územní příslušnost a meziobecní spolupráce</h3><span class="who">Mikroregion Hořovicko</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Kdo rozhoduje</dt>
+        <dd>Stavební a územní řízení jde přes obec, v jejíž katastru objekt leží — tedy přes <strong>Jívinu</strong>. První krok je proto ověřit přesný katastr a co na pozemku připouští územní plán.</dd>
+        <dt>Proč to není překážka</dt>
+        <dd>Zařízení na hranici dvou obcí <strong>může sloužit oběma</strong> — a náklady i investici lze rozložit. Obě obce jsou členy Mikroregionu Hořovicko, což je přirozený rámec pro společný projekt.</dd>
+        <dt>Nástroje</dt>
+        <dd>Dohoda obcí, společný projekt v rámci mikroregionu, případně <strong>společenství obcí</strong> se sdíleným úředníkem. Meziobecní spolupráce je přesně pro takové případy na hranici území.</dd>
+        <dt>Doporučení</dt>
+        <dd>Nejednat jako jedna obec, ale rovnou jako <strong>Zaječov + Jívina společně</strong> přes mikroregion. Sdílené lůžka i náklady jsou legitimní a otevírají větší dotační možnosti.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="kapacita">
+  <div class="sec-head">
+    <span class="eyebrow">Kapacita</span>
+    <h2>Kolik lůžek by tam mohlo být</h2>
+    <p class="lede">Odhad podle platných norem MPSV (Doporučený postup 2/2016) a ČSN 73 4301: jednolůžko 12 m², dvojlůžko 20 m², a poměr obytná:užitná plocha 55:45 (zbytek jsou chodby, jídelna, kuchyň, technika, zázemí personálu).</p>
+  </div>
+  <div class="block">
+    <table>
+      <thead><tr><th>Užitná plocha</th><th>Reálná lůžka</th></tr></thead>
+      <tbody>
+        <tr><td>100 m² (dnešní stav)</td><td>~5–6</td></tr>
+        <tr><td>300 m²</td><td>~14–16</td></tr>
+        <tr class="hi"><td>400–500 m² (po přístavbě)</td><td>~18–28</td></tr>
+        <tr><td>600 m²</td><td>~28–33</td></tr>
+      </tbody>
+    </table>
+    <p style="margin:14px 0 0"><strong>Závěr:</strong> samotný mlýn je moc malý — v 100 m² by vyšlo jen ~5–6 lůžek, což neuživí 24/7 personál. Ale rekonstrukce a přístavba na zastavitelném pozemku na <strong>~400–500 m²</strong> dá <strong>~20–25 lůžek</strong> — přesně velikost domovů rodinného typu (Vital Life 16, Lužec 20).</p>
+  </div>
+</section>
+<section class="wrap rv" id="penize">
+  <div class="sec-head">
+    <span class="eyebrow">Peníze</span>
+    <h2>Náklady a dotace</h2>
+    <p class="lede">Investice je velká a víceletá — obec ji sama neutáhne. Nemusí ale: fiskální pravidlo neomezuje dotace a provoz nese provozovatel. Klíčové je <strong>zařazení do krajské sítě</strong>.</p>
+  </div>
+  <div class="block">
+    <h3 style="margin-bottom:14px">Orientační náklady (20 lůžek)</h3>
+    <table>
+      <thead><tr><th>Položka</th><th>Částka</th></tr></thead>
+      <tbody>
+        <tr><td>Nákup objektu</td><td>5,9 mil. Kč</td></tr>
+        <tr><td>Rekonstrukce + přístavba ~500 m²</td><td>~11,6 mil. Kč</td></tr>
+        <tr><td>Projekt, vybavení, bezbariérovost, sítě</td><td>zbytek</td></tr>
+        <tr class="hi"><td>Celkem reálně</td><td>25–40 mil. Kč</td></tr>
+        <tr><td>Strop dotace MPSV (1,58 mil./lůžko)</td><td>až 31,6 mil. Kč</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="block">
+    <h3 style="margin-bottom:14px">Dotační tituly</h3>
+    <p><span class="tag">MPSV</span> &nbsp;<strong>Program 013 310 — Rozvoj a obnova materiálně technické základny sociálních služeb.</strong> Přímo na výstavbu a rekonstrukci pobytových zařízení, strop <strong>1,58 mil. Kč na lůžko</strong>. Běží do konce roku 2027. Podmínka: registrovaný poskytovatel a zařazení do krajské sítě.</p>
+    <p><span class="tag">IROP</span> &nbsp;<strong>IROP 2021–2027, sociální infrastruktura (SC 4.2).</strong> Alokace 8,8 mld. Kč na modernizaci služeb a deinstitucionalizaci — tedy přechod od velkých ústavů k „domácnostnímu“ modelu. Žadatelé výzev na deinstitucionalizaci jsou <strong>obce a kraje</strong>, výzvy otevřené do konce roku 2027.</p>
+    <p><span class="tag">kraj</span> &nbsp;<strong>Středočeský kraj — síť a vyrovnávací platba.</strong> Provoz služby v síti financuje kraj přes vyrovnávací platbu. Nový střednědobý plán 2026–2028 a síť k 1. 1. 2026 — sem se služba musí dostat.</p>
+    <p style="margin-bottom:0"><span class="tag warn">pozor</span> &nbsp;Bez <strong>zařazení do sítě kraje</strong> není ani provozní dotace, ani investiční program MPSV. Předjednat s krajem je proto první krok, ne poslední.</p>
+  </div>
+</section>
+<section class="wrap rv" id="scenare">
+  <div class="sec-head">
+    <span class="eyebrow">Scénáře</span>
+    <h2>Tři cesty — kdo vlastní a kdo provozuje</h2>
+    <p class="lede">Obec zařízení nemusí provozovat. Podle toho, kdo objekt koupí a kdo vede provoz, vznikají tři modely s různým rizikem pro rozpočet.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">A</span><h3>Obec koupí, pronajme provozovateli</h3><span class="who">model Zděné</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Jak to funguje</dt>
+        <dd>Obec koupí a zrekonstruuje z dotace, pak <strong>pronajme</strong> registrovanému poskytovateli. Provoz nese profesionál, nájem jde do rozpočtu, obec drží vliv i přednost pro místní.</dd>
+        <dt>Pro / proti</dt>
+        <dd>Největší kontrola obce, ale obec platí investici (byť z dotace). Vhodné, když obec chtějí držet vliv — a IROP deinstitucionalizace má obce přímo mezi žadateli.</dd>
+        <dt>Vzor</dt>
+        <dd><a href="prostory.html#zdena">Zděná</a> — spolek pronajme prostor, nájem jde do fondu oprav.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">B</span><h3>Investor koupí a provozuje sám</h3><span class="who">model SenLife</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Jak to funguje</dt>
+        <dd>Soukromá firma koupí, zrekonstruuje a provozuje. Obec jen pomůže s územním řízením a „dohodí“ pozemek.</dd>
+        <dt>Pro / proti</dt>
+        <dd><strong>Nulové riziko pro rozpočet</strong>, ale menší vliv obce. Nejrychlejší cesta.</dd>
+        <dt>Vzor</dt>
+        <dd>SenLife přestavuje památky na domovy pro seniory (klášter Mělník, zámek Tmaň u Berouna) — ministr kultury to označil za dobrou praxi. Mlýn je pro ně menší, ale princip sedí.</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">C</span><h3>Nezisková organizace / charita</h3><span class="who">model Vital Life</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Jak to funguje</dt>
+        <dd>Provozuje spolek, o.p.s. nebo charita, obec je partnerem. Vhodné pro „domácnostní“ typ 8–16 lůžek.</dd>
+        <dt>Pro / proti</dt>
+        <dd>Silně „rodinný“ charakter, komunitní ukotvení. Menší kapacita, cit na personál.</dd>
+        <dt>Vzor</dt>
+        <dd>Vital Life (16 lůžek v přestavěné budově), Péče Těně (v bývalé škole) — obě přímo v Brdech.</dd>
+      </dl>
+    </div>
+  </div>
+  <p style="margin:6px 2px 0;font-size:.92rem;color:var(--ink-soft)">Doporučení: pro obec je nejčistší <strong>B</strong> (rychlé, bez rozpočtového rizika) nebo <strong>A</strong> (větší kontrola a přednost pro místní).</p>
+</section>
+<section class="wrap rv" id="provoz">
+  <div class="sec-head">
+    <span class="eyebrow">Provoz</span>
+    <h2>Kdo zaplatí provoz — a hybrid místní / přespolní</h2>
+    <p class="lede">Provoz nefinancuje obec. Skládá se z příspěvku na péči klienta, úhrady za ubytování a stravu a vyrovnávací platby kraje pro lůžka v síti.</p>
+  </div>
+  <div class="place">
+    <div class="place-hd"><span class="n">—</span><h3>Model „místní dotovaně, přespolní za plno“</h3><span class="who">co jde a co ne</span></div>
+    <div class="place-body">
+      <dl>
+        <dt>Co nejde</dt>
+        <dd>Účtovat místním nižší cenu pokoje a stravy. Úhrada je regulovaná a stejná pro všechny bez ohledu na bydliště.</dd>
+        <dt>Síťová vs. komerční lůžka</dt>
+        <dd>Část kapacity v krajské síti (dotovaná, nižší doplatek) + část <strong>komerčně za plnou cenu</strong> pro přespolní. Takto běžně mixují soukromé domovy.</dd>
+        <dt>Obecní příspěvek</dt>
+        <dd>Obec může individuálně dotovat doplatek <strong>svému</strong> občanovi, zatímco přespolní si platí sami. Legální a běžné.</dd>
+        <dt>Budova za přednost</dt>
+        <dd>Obec poskytne objekt a ve smlouvě si vymíní <strong>přednostní přijímání místních</strong> (rezervovaná lůžka). Provoz i tak nese kraj a klient.</dd>
+      </dl>
+    </div>
+  </div>
+  <p style="margin:6px 2px 0;font-size:.92rem;color:var(--ink-soft)">Jinými slovy: registrovaná služba v krajské síti + smlouva obce o přednosti či příspěvku pro místní = přesně ten hybrid, kde místní mají dotovaný pobyt a přespolní komerční.</p>
+</section>
+<section class="wrap rv" id="kroky">
+  <div class="sec-head">
+    <span class="eyebrow">Další kroky</span>
+    <h2>Co ověřit a v jakém pořadí</h2>
+    <p class="lede">Postupný checklist — od nejlevnějších ověření k rozhodnutí o modelu.</p>
+  </div>
+  <div class="block">
+    <div class="place-body" style="padding:0">
+      <ol style="margin:0;padding-left:1.2em;line-height:1.7">
+        <li><strong>Ověřit územní plán</strong> — smí na pozemku stát sociální služba? (obec Jívina / stavební úřad Hořovice)</li>
+        <li><strong>Schůzka s Odborem sociálních věcí Středočeského kraje</strong> — je o takovou kapacitu v síti zájem a za jakých podmínek zařazení?</li>
+        <li><strong>Jednat společně Zaječov + Jívina</strong> přes Mikroregion Hořovicko — sdílení nákladů i budoucí kapacity.</li>
+        <li><strong>Oslovit potenciální investory a provozovatele</strong></li>
+        <li><strong>Kapacitní studie vody</strong> — studna a jímka pro 20+ lůžek je jiná kategorie než pro rodinu; napojit na <a href="index.html#rizika">vodní téma studie</a>.</li>
+        <li><strong>Ověřit potřebu</strong> — kolik lůžek region naplní? Váže se na chybějící <a href="index.html#mezery">demografickou prognózu</a>.</li>
+        <li><strong>Rozhodnout scénář A / B / C</strong> — kdo vlastní, kdo provozuje.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="wrap rv" id="zdroje">
+  <div class="sec-head">
+    <span class="eyebrow">Ověřitelnost</span>
+    <h2>Zdroje</h2>
+  </div>
+  <div class="block">
+    <div class="srcgrp">
+      <h3>Objekt a poloha</h3>
+      <ul>
+        <li>Veřejný inzerát nemovitosti — Hudečkův mlýn, Jívina (cena, plocha, sítě, dostupnost) <span class="u">sreality.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Normy kapacity</h3>
+      <ul>
+        <li>MPSV — Doporučený postup 2/2016, materiálně technický standard pobytových služeb <span class="u">mpsv.gov.cz</span></li>
+        <li>Technické charakteristiky pro registraci (ČSN 73 4301, plochy pokojů) <span class="u">msk.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Dotace a síť</h3>
+      <ul>
+        <li>MPSV — Program 013 310 (rozvoj a obnova základny soc. služeb, do 2027) <span class="u">mpsv.gov.cz</span></li>
+        <li>IROP 2021–2027 — sociální infrastruktura, SC 4.2 (deinstitucionalizace) <span class="u">irop.gov.cz</span></li>
+        <li>Středočeský kraj — síť soc. služeb, vyrovnávací platba, střednědobý plán 2026–2028 <span class="u">stredoceskykraj.cz</span></li>
+      </ul>
+    </div>
+    <div class="srcgrp">
+      <h3>Vzory přestaveb</h3>
+      <ul>
+        <li>SenLife — přestavba památek na domovy pro seniory <span class="u">senlife.cz</span></li>
+        <li>Vital Life, Péče Těně — malé domovy rodinného typu v Brdech (viz <a href="inspirace.html#seniori">Inspirace</a>)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <h3>Co to je a co to není</h3>
+      <p>Tato stránka rozpracovává jeden konkrétní námět ze stránky <a href="inspirace.html#seniori">Inspirace</a> a váže se na prioritu péče o seniory ve <a href="index.html#priority">studii</a>. Ukázka principu „nestavět nové, využít co stojí“ ze stránky <a href="prostory.html">Prostory Zaječova</a>.</p>
+      <p>Není to stanovisko obce ani nabídka nemovitosti. Čísla jsou orientační odhady z veřejných zdrojů a platných norem; každý krok vyžaduje ověření. <strong>Opravy a doplnění vítány.</strong></p>
+    </div>
+    <div class="foot-rule">
+      <span><a href="index.html">← Studie</a> · <a href="prostory.html">Prostory</a> · <a href="inspirace.html">Inspirace</a></span>
+      <span>Volby do zastupitelstva 9.–10. října 2026</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window)){
+    els.forEach(function(el){el.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{rootMargin:'0px 0px -6% 0px',threshold:0.04});
+  els.forEach(function(el){io.observe(el);});
+})();
+(function(){
+  var links=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  if(!secs.length||!('IntersectionObserver' in window))return;
+  var vis={};
+  var spy=new IntersectionObserver(function(es){
+    es.forEach(function(e){vis[e.target.id]=e.isIntersecting?e.intersectionRatio:0;});
+    var best=null,bv=0;secs.forEach(function(s){var v=vis[s.id]||0;if(v>bv){bv=v;best=s.id;}});
+    links.forEach(function(a){a.classList.toggle('on',best!==null&&a.getAttribute('href')==='#'+best);});
+  },{rootMargin:'-52px 0px -55% 0px',threshold:[0,0.15,0.35,0.6,1]});
+  secs.forEach(function(s){spy.observe(s);});
+})();
+</script>
+</body>
+</html>
