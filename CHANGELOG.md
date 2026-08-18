@@ -110,11 +110,8 @@ Studie je živý dokument. Každou věcnou opravu zaznamenávám včetně toho, 
 - **Obchod v obci.** Karta o programu Obchůdek 2021+ původně slibovala „záchranu prodejny" pro celý
   Zaječov. Upřesněno: samotný Zaječov je pokrytý (Coop 24/7 i večerka), smysl dává jen pro místní
   části Kvaň a Novou Ves, kde žádný obchod není. Titulek i text přeformulovány.
-- **Proč územní plán zakazuje fotovoltaiku.** Doplněna jedna věta vysvětlující kontext: zákaz
-  pochází z ÚP 2012 jako reakce na tehdejší solární boom a ochranu CHKO Brdy; míří na velké farmy
-  na polích, ne na panely na střeše školy či úřadu.
 - **Spisovnost.** Napříč všemi stránkami sjednoceny tvary „tohle → toto", „tyhle → tyto",
-  „tahle → tata". Opraveny také překlepy (cizní, brát, fiskální, navazuje).
+  „tahle → tato". Opraveny také překlepy (cizní, brát, fiskální, navazuje).
 
 ### Vzhled a orientace
 
@@ -124,15 +121,69 @@ Studie je živý dokument. Každou věcnou opravu zaznamenávám včetně toho, 
   primární řádek (přepínač mezi čtyřmi stránkami, aktivní zvýrazněná) a sekundární řádek (kotvy
   sekcí aktuální stránky se zvýrazněním podle pozice). Na mobilu jsou kotvy skryté a zůstává jen
   přepínač stránek.
-- **Patička.** Zjednodušena na přehledný přechod mezi čtyřmi stránkami; rozsáhlý rozcestník se
-  všemi kotvami byl zbytečný.
+- **Patička.** Zjednodušena na přehledný přechod mezi čtyřmi stránkami.
 - **Kontakt.** Doplněna možnost posílat opravy a doplnění přes GitHub Issues.
+
+## 2026-08-18
+
+Toto kolo bylo hlavně o **ověřování**: většina úprav vznikla porovnáním webu proti primárním
+zdrojům, ne proti webu samotnému.
+
+### Ověřeno proti primárním rozpočtovým dokumentům
+
+- **Kompletní finanční kontrola.** Každý číselný údaj na webu byl porovnán proti osmi primárním
+  výkazům obce (schválený rozpočet 2026, plnění rozpočtu, rozvaha, rozpočtová odpovědnost,
+  monitoring SIMU, přehled příspěvkových organizací, rozpočty mikroregionu a DSO). Přiznávám, že
+  do té doby část „ověření" fakticky stála na tom, co tvrdil web sám o sobě — teď stojí na zdroji.
+  Výsledek: **datová část webu je přesná**, řada čísel sedí na korunu (dluh 66 365,94 tis.;
+  podíl 97,99 %; umoření 1 286 410 Kč; příjmy 2022–2025; dluhová služba 8 202 tis.; nedokončený
+  majetek 150 765,82 tis.; dohadné účty 105 146,24 tis.).
+
+### Opraveno
+
+- **Sociální výdaje — poměr 39:1 upřesněn.** Datová tabulka uváděla „sociální oblast 13 tisíc" a
+  z toho poměr 39:1 vůči sportu a spolkům. To platí jen pro **dotace a transfery** externím
+  organizacím za první pololetí. Schválený rozpočet na rok 2026 ale obsahuje položku
+  **4351 Osobní asistence, pečovatelská služba = 230 tis. Kč** jako vlastní provozní výdaj obce,
+  který v tabulce nebyl. Po jeho započtení je poměr mírnější, zhruba osm ku jedné. Doplněno
+  upřesnění, jádro (sociální oblast je výrazně pod sportem) ale zůstává.
+- **Otevřená otázka o pečovatelské službě zodpovězena.** Web u „Senior Care" přiznával, že se
+  z veřejných zdrojů nedá zjistit, zda služba dnes funguje. Rozpočtová položka 4351 = 230 tis.
+  ukazuje, že **pečovatelská služba je financovaná** — poznámka byla doplněna.
+- **Priority — nadpis a odkazy.** Nadpis stále uváděl „Sedm priorit", ačkoli po přidání priority
+  Mládež a vzdělávání jich je osm. Opraveno na „Osm priorit". Zároveň čtyři odkazy z Inspirace,
+  Prostor a Domu pro seniory mířily na obecnou kotvu sekce priorit (a přistávaly na Vodní bilanci);
+  nově míří na konkrétní prioritu (péče o seniory, živá obec, provozní témata).
+- **Duplicita v „Co jsem nezjistila".** Bod o retenčních opatřeních VH 1, VH 2 a VH 3 tam byl
+  uveden dvakrát; jeden výskyt odstraněn.
+- **Gramatika případové studie.** „Sdílené lůžka" → „Sdílená lůžka"; „když obec chtějí držet vliv"
+  → „když obec chce držet vliv".
+
+### Doplněno
+
+- **Schopnost splácet dluh.** Riziko „Rozpočtová expozice" popisovalo jen výši a napjatost dluhu,
+  ale mlčelo o provozní schopnosti ho splácet — což vyznívalo pesimističtěji než realita. Doplněna
+  faktická věta ze SIMU: obec má **provozní saldo ~19,8 mil. Kč** a **kryje dluhovou službu 2,4×**.
+  Dluh je tedy vysoký vůči hranici 60 %, ale z provozního hlediska ustálitelný — splátky pokrývá
+  z běžného rozpočtu, ne dalším zadlužováním. Věta zároveň potvrzuje, že volný prostor pro nové
+  výdaje je malý; jen nejde o existenční tíseň.
+- **Fotovoltaika — cílená regulace místo plošného zákazu.** Na čtyřech místech doplněno, že plošný
+  zákaz komerčních FVE z územního plánu 2012 je právně vratký (Nejvyšší správní soud, 2025)
+  a že změnu lze udělat cíleně: povolit fotovoltaiku na střechách obecních budov a zároveň
+  ponechat zákaz velkoplošných pozemních elektráren, odůvodněný ochranou krajinného rázu CHKO Brdy
+  a zemědělské půdy. To je právně pevnější než dnešní plošný zákaz.
+- **Skica Hudečkova mlýna.** Do hlavičky případové studie přidána ruční kresba objektu ve stejném
+  rukopisu jako klášter na hlavní stránce.
 
 ### Zváženo a nezařazeno
 
-- **Konkrétní provozovatelé v případovce mlýna.** V sekci „Co ověřit" byl původně návrh oslovit
-  jmenovitě tři provozovatele. Zobecněno na „potenciální investory a provozovatele" — případová
-  studie nemá vyznívat jako reklama na konkrétní firmy.
+- **Skica Zděné.** Pokus doplnit ilustraci i na stránku Prostory nedopadl — kresba se skutečné
+  stavbě dostatečně nepodobala, proto zůstává bez ilustrace.
+- **Jména vlastníků mlýna.** Katastr uvádí konkrétní osoby (dva spoluvlastníci). Konkrétní jména
+  ani adresy soukromých osob do veřejného dokumentu nepatří; případová studie zůstává obecná.
+- **Konkrétní provozovatelé v případovce.** V sekci „Co ověřit" byla dřív jmenovitá trojice
+  provozovatelů; zobecněno na „potenciální investory a provozovatele", aby studie nevyzněla jako
+  reklama.
 
 ## Otevřené otázky
 
@@ -143,3 +194,5 @@ Průběžně aktualizovaný seznam je v sekci *Co jsem nezjistila*. Aktuálně:
 - Nová kapacita ČOV a vodovodu po rozšíření
 - Věkové složení obyvatel po pětiletých skupinách
 - Počet příjemců příspěvku na péči s trvalým pobytem v obci
+- Rozsah pečovatelské služby (že je financovaná, potvrdil rozpočet 2026; kolik hodin či klientů
+  reálně pokrývá, z veřejných zdrojů patrné není)
